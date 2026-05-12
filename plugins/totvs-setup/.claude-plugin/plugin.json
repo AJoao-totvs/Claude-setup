@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Onboarding interativo do Claude Code para devs e gestores TOTVS. Instala superpowers, context7, code-review, github, ADVPL specialist e gera CLAUDE.md do projeto.",
   "author": {
-    "name": "TOTVS MIT-IA",
+    "name": "Augusto João",
     "email": "augusto.zanini@totvs.com.br"
   },
   "homepage": "https://github.com/AJoao-totvs/Claude-setup",

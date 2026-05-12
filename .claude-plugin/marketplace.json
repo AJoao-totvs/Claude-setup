@@ -14,7 +14,7 @@
       "description": "Onboarding interativo do Claude Code para devs e gestores TOTVS (instala superpowers, context7, code-review, github, ADVPL specialist, MCPs e templates de projeto).",
       "version": "1.0.0",
       "author": {
-        "name": "TOTVS MIT-IA",
+        "name": "Augusto João",
         "email": "augusto.zanini@totvs.com.br"
       },
       "category": "productivity",
@@ -26,7 +26,7 @@
       "description": "Conexao RDP automatizada ao server-iqs-saopaulo001 via OCI Bastion. Orquestra two-hop SSH e lanca o cliente RDP nativo com configuracao de pico.",
       "version": "0.1.0",
       "author": {
-        "name": "TOTVS MIT-IA",
+        "name": "Augusto João",
         "email": "augusto.zanini@totvs.com.br"
       },
       "category": "infrastructure",
