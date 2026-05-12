@@ -1,0 +1,12 @@
+{
+  "name": "totvs-rdp",
+  "version": "0.1.0",
+  "description": "Conexao RDP automatizada ao server-iqs-saopaulo001 via OCI Bastion. Orquestra two-hop SSH e lanca o cliente RDP nativo com configuracao de pico (32 bpp + H.264 + LAN).",
+  "author": {
+    "name": "TOTVS MIT-IA",
+    "email": "augusto.zanini@totvs.com.br"
+  },
+  "homepage": "https://github.com/AJoao-totvs/Claude-setup",
+  "repository": "https://github.com/AJoao-totvs/Claude-setup",
+  "keywords": ["totvs", "rdp", "ssh", "oci-bastion", "remote-desktop"]
+}

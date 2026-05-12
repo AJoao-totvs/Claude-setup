@@ -196,44 +196,39 @@ Qual seu perfil?
 2. Dev — desenvolvimento (Python, Go, ADVPL, Angular/PO-UI, Docker/K8s)
 ```
 
-### Fase 4: Instalar commands e templates (via Git)
+### Fase 4: Instalar commands e templates
 
-Clone o repo do bundle e copie commands + templates para o projeto:
+Os slash commands (`/prime`, `/plan`, `/implement`, etc) ja vem instalados automaticamente com este plugin — nao precisa clonar nada. Eles aparecem como `/totvs-setup:prime`, `/totvs-setup:plan`, etc.
 
+Copie o template `CLAUDE.md` apropriado para o projeto atual usando `${CLAUDE_PLUGIN_ROOT}`:
+
+**Dev:**
 ```bash
-git clone https://github.com/AJoao-totvs/Claude-setup.git --depth 1 %TEMP%\claude-setup 2>$null
-mkdir -p .claude/commands
-cp %TEMP%\claude-setup\skills\totvs-setup\commands\*.md .claude/commands/
+cp "${CLAUDE_PLUGIN_ROOT}/assets/templates/CLAUDE-dev.md" ./CLAUDE.md
 ```
 
-Se o usuario nao tiver git ou o clone falhar, ofereca alternativa manual:
-```
-Baixe o repo em https://github.com/AJoao-totvs/Claude-setup
-Copie a pasta skills/totvs-setup/commands/ para .claude/commands/ do seu projeto
-```
-
-Tambem copie o template CLAUDE.md apropriado:
+**Gestao:**
 ```bash
-cp %TEMP%\claude-setup\templates\CLAUDE-dev.md .\CLAUDE.md
+cp "${CLAUDE_PLUGIN_ROOT}/assets/templates/CLAUDE-gestao.md" ./CLAUDE.md
 ```
 
-Limpe o clone temporario:
-```bash
-rm -rf %TEMP%\claude-setup 2>$null
+No Windows (PowerShell):
+```powershell
+Copy-Item "$env:CLAUDE_PLUGIN_ROOT\assets\templates\CLAUDE-dev.md" .\CLAUDE.md
 ```
 
-Estes comandos ficam disponiveis como slash commands:
-- `/prime` — Carregar contexto do projeto
-- `/plan` — Criar plano de implementacao
-- `/implement` — Executar plano com validacao
-- `/validate` — Lint + tests + E2E + security
-- `/review` — Code review
-- `/security-review` — Review de seguranca
-- `/create-prd` — Gerar PRD
-- `/create-stories` — Gerar tasks no ClickUp
-- `/create-rules` — Gerar CLAUDE.md do codebase
-- `/install` — Instalar deps e subir dev server
-- `/prime-server`, `/prime-client`, `/prime-endpoint`, `/prime-components` — Variantes focadas
+Comandos disponiveis (todos namespaced sob `totvs-setup:`):
+- `/totvs-setup:prime` — Carregar contexto do projeto
+- `/totvs-setup:plan` — Criar plano de implementacao
+- `/totvs-setup:implement` — Executar plano com validacao
+- `/totvs-setup:validate` — Lint + tests + E2E + security
+- `/totvs-setup:review` — Code review
+- `/totvs-setup:security-review` — Review de seguranca
+- `/totvs-setup:create-prd` — Gerar PRD
+- `/totvs-setup:create-stories` — Gerar tasks no ClickUp
+- `/totvs-setup:create-rules` — Gerar CLAUDE.md do codebase
+- `/totvs-setup:install` — Instalar deps e subir dev server
+- `/totvs-setup:prime-server`, `/totvs-setup:prime-client`, `/totvs-setup:prime-endpoint`, `/totvs-setup:prime-components` — Variantes focadas
 
 ### Fase 5: Instalar plugins e MCP
 

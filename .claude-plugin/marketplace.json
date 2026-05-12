@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "totvs-claude-setup",
+  "version": "1.0.0",
+  "description": "Marketplace interno do time MIT-IA (TOTVS). Skills e plugins proprietarios para Claude Code: onboarding e ferramentas internas.",
+  "owner": {
+    "name": "TOTVS MIT-IA",
+    "url": "https://github.com/AJoao-totvs"
+  },
+  "plugins": [
+    {
+      "name": "totvs-setup",
+      "source": "./plugins/totvs-setup",
+      "description": "Onboarding interativo do Claude Code para devs e gestores TOTVS (instala superpowers, context7, code-review, github, ADVPL specialist, MCPs e templates de projeto).",
+      "version": "1.0.0",
+      "author": {
+        "name": "TOTVS MIT-IA",
+        "email": "augusto.zanini@totvs.com.br"
+      },
+      "category": "productivity",
+      "tags": ["onboarding", "totvs", "setup"]
+    },
+    {
+      "name": "totvs-rdp",
+      "source": "./plugins/totvs-rdp",
+      "description": "Conexao RDP automatizada ao server-iqs-saopaulo001 via OCI Bastion. Orquestra two-hop SSH e lanca o cliente RDP nativo com configuracao de pico.",
+      "version": "0.1.0",
+      "author": {
+        "name": "TOTVS MIT-IA",
+        "email": "augusto.zanini@totvs.com.br"
+      },
+      "category": "infrastructure",
+      "tags": ["rdp", "ssh", "oci-bastion", "totvs"]
+    }
+  ]
+}
