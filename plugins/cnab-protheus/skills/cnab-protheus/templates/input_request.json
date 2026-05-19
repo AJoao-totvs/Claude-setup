@@ -1,0 +1,13 @@
+{
+  "_comment": "Exemplo de payload de input para a skill cnab-protheus. Use este formato ao invocar a skill diretamente sem orquestração via Claude.",
+  "banco": "001",
+  "operacao": "pagamento",
+  "direcao": "remessa",
+  "output_path": "build/001PG.2PE",
+  "refresh_spec": false,
+  "options": {
+    "skip_byte_diff": false,
+    "skip_agent_review": false,
+    "encoding_policy": "replace"
+  }
+}

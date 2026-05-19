@@ -31,6 +31,18 @@
       },
       "category": "infrastructure",
       "tags": ["rdp", "ssh", "oci-bastion", "totvs"]
+    },
+    {
+      "name": "cnab-protheus",
+      "source": "./plugins/cnab-protheus",
+      "description": "Gera arquivos de configuração Protheus SIGACFG (.2PE remessa / .2PR retorno) para CNAB 240 dos principais bancos brasileiros (BB, Bradesco, Itaú, Santander).",
+      "version": "1.0.0-a",
+      "author": {
+        "name": "Augusto João",
+        "email": "augusto.zanini@totvs.com.br"
+      },
+      "category": "banking",
+      "tags": ["cnab", "protheus", "totvs", "banking", "brazil"]
     }
   ]
 }
