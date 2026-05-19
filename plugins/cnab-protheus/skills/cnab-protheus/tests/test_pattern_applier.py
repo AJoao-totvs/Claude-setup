@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import pytest
+import yaml
 
 from scripts.pattern_applier import (
     PatternApplier,
@@ -70,3 +71,11 @@ def test_apply_missing_arg_raises(applier):
     )
     with pytest.raises(PatternError, match="missing arg"):
         applier.apply(fs)
+
+
+def test_pattern_applier_malformed_yaml_raises(tmp_path):
+    # Invalid YAML should be wrapped in PatternError with context.
+    path = tmp_path / "bad.yaml"
+    path.write_text("invalid: yaml: content:\n  - unbalanced")
+    with pytest.raises(PatternError, match="failed to parse patterns YAML"):
+        PatternApplier(path)

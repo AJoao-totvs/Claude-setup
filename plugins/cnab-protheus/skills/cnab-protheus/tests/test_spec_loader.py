@@ -124,3 +124,11 @@ def test_load_spec_same_flag_overlap_raises(tmp_path):
     # Should raise due to overlap with same flag
     with pytest.raises(SpecValidationError, match="overlaps"):
         load_spec(path)
+
+
+def test_load_spec_malformed_yaml_raises(tmp_path):
+    # Invalid YAML should be wrapped in SpecValidationError with context.
+    path = tmp_path / "bad.yaml"
+    path.write_text("invalid: yaml: content:\n  - unbalanced")
+    with pytest.raises(SpecValidationError, match="failed to parse YAML"):
+        load_spec(path)

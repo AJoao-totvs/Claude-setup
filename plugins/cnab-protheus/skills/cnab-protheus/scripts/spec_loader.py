@@ -45,7 +45,10 @@ class Spec:
 
 
 def load_spec(path: Path) -> Spec:
-    raw = yaml.safe_load(path.read_text(encoding="utf-8"))
+    try:
+        raw = yaml.safe_load(path.read_text(encoding="utf-8"))
+    except yaml.YAMLError as e:
+        raise SpecValidationError(f"failed to parse YAML at {path}: {e}") from e
     if not isinstance(raw, dict):
         raise SpecValidationError("spec root must be a mapping")
     for required in ("banco", "operacao", "direcao", "declaracoes", "campos"):

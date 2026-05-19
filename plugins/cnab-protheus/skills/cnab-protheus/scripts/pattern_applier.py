@@ -20,7 +20,12 @@ _PLACEHOLDER_RE = re.compile(r"\{(\w+)\}")
 
 class PatternApplier:
     def __init__(self, patterns_yaml: Path) -> None:
-        raw = yaml.safe_load(patterns_yaml.read_text(encoding="utf-8"))
+        try:
+            raw = yaml.safe_load(patterns_yaml.read_text(encoding="utf-8"))
+        except yaml.YAMLError as e:
+            raise PatternError(f"failed to parse patterns YAML at {patterns_yaml}: {e}") from e
+        if not isinstance(raw, dict) or "patterns" not in raw:
+            raise PatternError("patterns YAML must have a top-level 'patterns' mapping")
         self.patterns: dict[str, dict[str, Any]] = raw["patterns"]
 
     def apply(self, field: FieldSpec) -> str:
