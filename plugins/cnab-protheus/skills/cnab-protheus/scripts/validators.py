@@ -1,6 +1,7 @@
 """Local syntactic validation of Protheus SIGACFG (.2PE/.2PR) content."""
 
 from dataclasses import dataclass
+import re
 
 LINE_LENGTH = 500
 
@@ -38,24 +39,34 @@ _EXPRESSION_COLS = slice(27, LINE_LENGTH)
 _DECL_NAME_COLS = slice(4, 37)
 _DECL_CONDITION_COLS = slice(37, LINE_LENGTH)
 
+# Position block: 6 consecutive digits followed by any single char (the flag)
+_POSITION_BLOCK_RE = re.compile(r"(\d{6})(.)")
+
 
 def parse_field_definition(line: str) -> FieldDefinition:
     if len(line) != LINE_LENGTH:
         raise ValidationError(f"line not 500 chars: got {len(line)}")
     register = line[_REGISTER_COLS]
     subtype = line[_SUBTYPE_COLS].rstrip()
-    name = line[_NAME_COLS].rstrip()
-    position = line[_POSITION_COLS]
-    expression = line[_EXPRESSION_COLS].rstrip()
-    start = int(position[0:3])
-    end = int(position[3:6])
-    flag = position[6]
+
+    # Find position block starting at or after col 4 (after register+subtype)
+    rest = line[4:]
+    match = _POSITION_BLOCK_RE.search(rest)
+    if not match:
+        raise ValidationError(f"no position block found in line: {line[:80]!r}")
+
+    name = rest[: match.start()].rstrip()
+    start_str = match.group(1)[0:3]
+    end_str = match.group(1)[3:6]
+    flag = match.group(2)
+    expression = rest[match.end() :].rstrip()
+
     return FieldDefinition(
         register=register,
         subtype=subtype,
         name=name,
-        start=start,
-        end=end,
+        start=int(start_str),
+        end=int(end_str),
         flag=flag,
         expression=expression,
     )

@@ -73,3521 +73,3521 @@ declaracoes:
 campos:
 - register: '25'
   subtype: D
-  name: TIPO REGISTRO  0
+  name: TIPO REGISTRO
+  start: 1
+  end: 1
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"M"'
+- register: '25'
+  subtype: D
+  name: DATA VENCTO
+  start: 2
+  end: 9
+  flag: '0'
+  pattern: raw
+  args:
+    value: ' SUBS(DTOS(SE2->E2_VENCTO),7,2)+   SUBS(DTOS(SE2->E2_VENCTO),5,2)+   SUBS(DTOS(SE2->E2_VENCTO),1,4)'
+- register: '25'
+  subtype: D
+  name: COD RECEITA
   start: 10
-  end: 10
-  flag: '"'
-  pattern: raw
-  args:
-    value: M"
-- register: '25'
-  subtype: D
-  name: DATA VENCTO    0
-  start: 20
-  end: 90
-  flag: ' '
-  pattern: raw
-  args:
-    value: SUBS(DTOS(SE2->E2_VENCTO),7,2)+   SUBS(DTOS(SE2->E2_VENCTO),5,2)+   SUBS(DTOS(SE2->E2_VENCTO),1,4)
-- register: '25'
-  subtype: D
-  name: COD RECEITA    0
-  start: 100
-  end: 130
-  flag: ' '
+  end: 13
+  flag: '0'
   pattern: raw
   args:
     value: ''
 - register: '25'
   subtype: D
-  name: INSC ESTADUAL  0
-  start: 140
-  end: 300
-  flag: S
+  name: INSC ESTADUAL
+  start: 14
+  end: 30
+  flag: '0'
   pattern: raw
   args:
-    value: M0->M0_INSC
+    value: SM0->M0_INSC
 - register: '25'
   subtype: D
-  name: TIPO CGC/CNPJ  0
-  start: 310
-  end: 310
-  flag: '"'
-  pattern: raw
-  args:
-    value: 2"
-- register: '25'
-  subtype: D
-  name: CNPJ           0
-  start: 320
-  end: 450
-  flag: S
-  pattern: raw
-  args:
-    value: M0->M0_CGC
-- register: '25'
-  subtype: D
-  name: INSC DIV ATI/ET0
-  start: 460
-  end: 620
-  flag: ' '
-  pattern: raw
-  args:
-    value: ''
-- register: '25'
-  subtype: D
-  name: REFERENCIA     0
-  start: 630
-  end: 680
-  flag: S
-  pattern: raw
-  args:
-    value: UBS(DTOS(SE2->E2_EMISSAO),5,2)+   SUBS(DTOS(SE2->E2_EMISSAO),1,4))
-- register: '25'
-  subtype: D
-  name: AIM/DEIC/PARC  0
-  start: 690
-  end: 850
-  flag: ' '
-  pattern: raw
-  args:
-    value: ''
-- register: '25'
-  subtype: D
-  name: VALOR RECEITA  0
-  start: 861
-  end: 20
-  flag: ' '
-  pattern: raw
-  args:
-    value: ''
-- register: '25'
-  subtype: D
-  name: VALOR JUROS    1
+  name: TIPO CGC/CNPJ
   start: 31
-  end: 190
-  flag: S
+  end: 31
+  flag: '0'
   pattern: raw
   args:
-    value: TRZERO(INT(SE2->E2_JUROS*100),17)
+    value: '"2"'
 - register: '25'
   subtype: D
-  name: VALOR MULTA    1
-  start: 201
-  end: 360
-  flag: S
+  name: CNPJ
+  start: 32
+  end: 45
+  flag: '0'
   pattern: raw
   args:
-    value: TRZERO(INT(SE2->E2_MULTA*100),17)
+    value: SM0->M0_CGC
 - register: '25'
   subtype: D
-  name: VALOR ACRESC   1
-  start: 371
-  end: 530
-  flag: ' '
+  name: INSC DIV ATI/ET
+  start: 46
+  end: 62
+  flag: '0'
   pattern: raw
   args:
     value: ''
 - register: '25'
   subtype: D
-  name: VALOR HONO     1
-  start: 541
-  end: 700
-  flag: ' '
+  name: REFERENCIA
+  start: 63
+  end: 68
+  flag: '0'
+  pattern: raw
+  args:
+    value: SUBS(DTOS(SE2->E2_EMISSAO),5,2)+   SUBS(DTOS(SE2->E2_EMISSAO),1,4))
+- register: '25'
+  subtype: D
+  name: AIM/DEIC/PARC
+  start: 69
+  end: 85
+  flag: '0'
   pattern: raw
   args:
     value: ''
 - register: '25'
   subtype: D
-  name: VALOR TOTAL    1
-  start: 711
-  end: 870
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(INT(SE2->E2_VLCRUZ*100),17)
-- register: '25'
-  subtype: D
-  name: TIPO RECIBO    1
-  start: 881
-  end: 880
-  flag: '"'
-  pattern: raw
-  args:
-    value: 1"
-- register: '25'
-  subtype: D
-  name: NOME CONTRIB   1
-  start: 892
-  end: 180
-  flag: S
-  pattern: raw
-  args:
-    value: M0->M0_NOME
-- register: '25'
-  subtype: D
-  name: OBSERVACAO     2
-  start: 192
-  end: 580
-  flag: ' '
+  name: VALOR RECEITA
+  start: 86
+  end: 102
+  flag: '0'
   pattern: raw
   args:
     value: ''
 - register: '25'
   subtype: D
-  name: IND CTA DEBITO 2
-  start: 592
-  end: 590
-  flag: '"'
+  name: VALOR JUROS
+  start: 103
+  end: 119
+  flag: '0'
   pattern: raw
   args:
-    value: 2"
+    value: STRZERO(INT(SE2->E2_JUROS*100),17)
 - register: '25'
   subtype: D
-  name: FILLER         2
-  start: 602
-  end: 950
-  flag: ' '
+  name: VALOR MULTA
+  start: 120
+  end: 136
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(INT(SE2->E2_MULTA*100),17)
+- register: '25'
+  subtype: D
+  name: VALOR ACRESC
+  start: 137
+  end: 153
+  flag: '0'
   pattern: raw
   args:
     value: ''
 - register: '25'
   subtype: D
-  name: SEQUENCIAL     2
-  start: 963
-  end: 0
-  flag: I
+  name: VALOR HONO
+  start: 154
+  end: 170
+  flag: '0'
   pattern: raw
   args:
-    value: NCREMENTA()
+    value: ''
+- register: '25'
+  subtype: D
+  name: VALOR TOTAL
+  start: 171
+  end: 187
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(INT(SE2->E2_VLCRUZ*100),17)
+- register: '25'
+  subtype: D
+  name: TIPO RECIBO
+  start: 188
+  end: 188
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"1"'
+- register: '25'
+  subtype: D
+  name: NOME CONTRIB
+  start: 189
+  end: 218
+  flag: '0'
+  pattern: raw
+  args:
+    value: SM0->M0_NOME
+- register: '25'
+  subtype: D
+  name: OBSERVACAO
+  start: 219
+  end: 258
+  flag: '0'
+  pattern: raw
+  args:
+    value: ''
+- register: '25'
+  subtype: D
+  name: IND CTA DEBITO
+  start: 259
+  end: 259
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"2"'
+- register: '25'
+  subtype: D
+  name: FILLER
+  start: 260
+  end: 295
+  flag: '0'
+  pattern: raw
+  args:
+    value: ''
+- register: '25'
+  subtype: D
+  name: SEQUENCIAL
+  start: 296
+  end: 300
+  flag: ' '
+  pattern: raw
+  args:
+    value: INCREMENTA()
 - register: '24'
   subtype: T
-  name: TIPO REGISTRO  0
+  name: TIPO REGISTRO
+  start: 1
+  end: 1
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"Z"'
+- register: '24'
+  subtype: T
+  name: QTDE REGISTROS
+  start: 2
+  end: 7
+  flag: '0'
+  pattern: raw
+  args:
+    value: INCREMENTA() +1
+- register: '24'
+  subtype: T
+  name: FILLER
+  start: 8
+  end: 295
+  flag: '0'
+  pattern: raw
+  args:
+    value: ''
+- register: '24'
+  subtype: T
+  name: SEQUENCIAL
+  start: 296
+  end: 300
+  flag: '0'
+  pattern: raw
+  args:
+    value: INCREMENTA() +1
+- register: '24'
+  subtype: D
+  name: TIPO REGISTRO
+  start: 1
+  end: 1
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"D"'
+- register: '24'
+  subtype: D
+  name: PERIODO ARRECA
+  start: 2
+  end: 9
+  flag: '0'
+  pattern: raw
+  args:
+    value: ' (SUBS(DTOS(SE2->E2_EMISSAO),1,4)+   SUBS(DTOS(SE2->E2_EMISSAO),5,2)+   SUBS(DTOS(SE2->E2_EMISSAO),7,2))'
+- register: '24'
+  subtype: D
+  name: TIPO INSC
   start: 10
   end: 10
-  flag: '"'
+  flag: '0'
   pattern: raw
   args:
-    value: Z"
+    value: '"2"'
 - register: '24'
-  subtype: T
-  name: QTDE REGISTROS 0
-  start: 20
+  subtype: D
+  name: CGC
+  start: 11
+  end: 24
+  flag: '0'
+  pattern: raw
+  args:
+    value: SM0->M0_CGC
+- register: '24'
+  subtype: D
+  name: COD RECEITA
+  start: 25
+  end: 28
+  flag: '0'
+  pattern: raw
+  args:
+    value: ALLTRIM(SE2->E2_CODRET)
+- register: '24'
+  subtype: D
+  name: REFERENCIA
+  start: 29
+  end: 45
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"00000000000000000"'
+- register: '24'
+  subtype: D
+  name: DATA VENCTO
+  start: 46
+  end: 53
+  flag: '0'
+  pattern: raw
+  args:
+    value: ' (SUBS(DTOS(SE2->E2_VENCTO),1,4)+   SUBS(DTOS(SE2->E2_VENCTO),5,2)+   SUBS(DTOS(SE2->E2_VENCTO),7,2))'
+- register: '24'
+  subtype: D
+  name: VALOR PRINC
+  start: 54
   end: 70
-  flag: I
+  flag: '0'
   pattern: raw
   args:
-    value: NCREMENTA() +1
-- register: '24'
-  subtype: T
-  name: FILLER         0
-  start: 82
-  end: 950
-  flag: ' '
-  pattern: raw
-  args:
-    value: ''
-- register: '24'
-  subtype: T
-  name: SEQUENCIAL     2
-  start: 963
-  end: 0
-  flag: I
-  pattern: raw
-  args:
-    value: NCREMENTA() +1
+    value: (INT(SE2->E2_VALOR*100))
 - register: '24'
   subtype: D
-  name: TIPO REGISTRO  0
-  start: 10
-  end: 10
-  flag: '"'
+  name: MULTA
+  start: 71
+  end: 87
+  flag: '0'
   pattern: raw
   args:
-    value: D"
+    value: (INT(SE2->E2_MULTA*100))
 - register: '24'
   subtype: D
-  name: PERIODO ARRECA 0
-  start: 20
-  end: 90
-  flag: ' '
+  name: JUROS
+  start: 88
+  end: 104
+  flag: '0'
   pattern: raw
   args:
-    value: (SUBS(DTOS(SE2->E2_EMISSAO),1,4)+   SUBS(DTOS(SE2->E2_EMISSAO),5,2)+   SUBS(DTOS(SE2->E2_EMISSAO),7,2))
+    value: (INT(SE2->E2_JUROS*100))
 - register: '24'
   subtype: D
-  name: TIPO INSC      0
-  start: 100
-  end: 100
-  flag: '"'
+  name: VALOR TOTAL
+  start: 105
+  end: 121
+  flag: '0'
   pattern: raw
   args:
-    value: 2"
+    value: (INT(SE2->E2_VALOR*100))
 - register: '24'
   subtype: D
-  name: CGC            0
-  start: 110
-  end: 240
-  flag: S
-  pattern: raw
-  args:
-    value: M0->M0_CGC
-- register: '24'
-  subtype: D
-  name: COD RECEITA    0
-  start: 250
-  end: 280
-  flag: A
-  pattern: raw
-  args:
-    value: LLTRIM(SE2->E2_CODRET)
-- register: '24'
-  subtype: D
-  name: REFERENCIA     0
-  start: 290
-  end: 450
-  flag: '"'
-  pattern: raw
-  args:
-    value: 00000000000000000"
-- register: '24'
-  subtype: D
-  name: DATA VENCTO    0
-  start: 460
-  end: 530
-  flag: ' '
-  pattern: raw
-  args:
-    value: (SUBS(DTOS(SE2->E2_VENCTO),1,4)+   SUBS(DTOS(SE2->E2_VENCTO),5,2)+   SUBS(DTOS(SE2->E2_VENCTO),7,2))
-- register: '24'
-  subtype: D
-  name: VALOR PRINC    0
-  start: 540
-  end: 700
-  flag: (
-  pattern: raw
-  args:
-    value: INT(SE2->E2_VALOR*100))
-- register: '24'
-  subtype: D
-  name: MULTA          0
-  start: 710
-  end: 870
-  flag: (
-  pattern: raw
-  args:
-    value: INT(SE2->E2_MULTA*100))
-- register: '24'
-  subtype: D
-  name: JUROS          0
-  start: 881
-  end: 40
-  flag: (
-  pattern: raw
-  args:
-    value: INT(SE2->E2_JUROS*100))
-- register: '24'
-  subtype: D
-  name: VALOR TOTAL    1
-  start: 51
-  end: 210
-  flag: (
-  pattern: raw
-  args:
-    value: INT(SE2->E2_VALOR*100))
-- register: '24'
-  subtype: D
-  name: TIPO RECIBO    1
-  start: 221
-  end: 220
-  flag: ' '
+  name: TIPO RECIBO
+  start: 122
+  end: 122
+  flag: '0'
   pattern: raw
   args:
     value: ''
 - register: '24'
   subtype: D
-  name: CONTRIBUINTE   1
-  start: 231
-  end: 520
-  flag: S
+  name: CONTRIBUINTE
+  start: 123
+  end: 152
+  flag: '0'
   pattern: raw
   args:
-    value: M0->M0_NOME
+    value: SM0->M0_NOME
 - register: '24'
   subtype: D
-  name: CONTA DEBITO   1
-  start: 531
-  end: 530
-  flag: '2'
+  name: CONTA DEBITO
+  start: 153
+  end: 153
+  flag: '0'
   pattern: raw
   args:
-    value: ''
+    value: '2'
 - register: '24'
   subtype: D
-  name: DATA PAGTO     1
-  start: 541
-  end: 610
-  flag: (
-  pattern: raw
-  args:
-    value: SUBS(DTOS(DDATABASE),1,4)+   SUBS(DTOS(DDATABASE),5,2)+   SUBS(DTOS(DDATABASE),7,2))
-- register: '24'
-  subtype: D
-  name: FILLER         1
-  start: 622
-  end: 950
-  flag: ' '
-  pattern: raw
-  args:
-    value: ''
-- register: '24'
-  subtype: D
-  name: SEQUENCIAL     2
-  start: 963
-  end: 0
-  flag: I
-  pattern: raw
-  args:
-    value: NCREMENTA()
-- register: '24'
-  subtype: H
-  name: TIPO REGISTRO  0
-  start: 10
-  end: 10
-  flag: '"'
-  pattern: raw
-  args:
-    value: A"
-- register: '24'
-  subtype: H
-  name: NOME ARQ       0
-  start: 20
-  end: 70
-  flag: '"'
-  pattern: raw
-  args:
-    value: ART300"
-- register: '24'
-  subtype: H
-  name: CGC            0
-  start: 80
-  end: 210
-  flag: S
-  pattern: raw
-  args:
-    value: M0->M0_CGC
-- register: '24'
-  subtype: H
-  name: DATA REMESSA   0
-  start: 220
-  end: 290
-  flag: ' '
+  name: DATA PAGTO
+  start: 154
+  end: 161
+  flag: '0'
   pattern: raw
   args:
     value: (SUBS(DTOS(DDATABASE),1,4)+   SUBS(DTOS(DDATABASE),5,2)+   SUBS(DTOS(DDATABASE),7,2))
 - register: '24'
-  subtype: H
-  name: ORIGEM REMESSA 0
-  start: 300
-  end: 310
-  flag: '"'
-  pattern: raw
-  args:
-    value: PR"
-- register: '24'
-  subtype: H
-  name: NUMERO REMESSA 0
-  start: 320
-  end: 330
-  flag: N
-  pattern: raw
-  args:
-    value: SEQ + 1
-- register: '24'
-  subtype: H
-  name: AGENCIA        0
-  start: 340
-  end: 370
-  flag: (
-  pattern: raw
-  args:
-    value: SUBSTR(SA6->A6_AGENCIA,2,4))
-- register: '24'
-  subtype: H
-  name: DIG AGENCIA    0
-  start: 380
-  end: 380
-  flag: S
-  pattern: raw
-  args:
-    value: A6->A6_DIGAGE
-- register: '24'
-  subtype: H
-  name: C/C            0
-  start: 390
-  end: 470
-  flag: P
-  pattern: raw
-  args:
-    value: ADL(SUBSTR(SA6->A6_NUMCON,2,9),9,"0")
-- register: '24'
-  subtype: H
-  name: DIG C/C        0
-  start: 480
-  end: 480
-  flag: S
-  pattern: raw
-  args:
-    value: A6->A6_DIGCONT
-- register: '24'
-  subtype: H
-  name: DOC            0
-  start: 490
-  end: 500
-  flag: I
-  pattern: raw
-  args:
-    value: IF(SEA->EA_MODELO $ "17", "09","01")
-- register: '24'
-  subtype: H
-  name: NOME CONVENIO  0
-  start: 510
-  end: 900
-  flag: S
-  pattern: raw
-  args:
-    value: M0->M0_NOME
-- register: '24'
-  subtype: H
-  name: FILLER         0
-  start: 910
-  end: 980
-  flag: ' '
+  subtype: D
+  name: FILLER
+  start: 162
+  end: 295
+  flag: '0'
   pattern: raw
   args:
     value: ''
 - register: '24'
-  subtype: H
-  name: COD CONVENIO   0
-  start: 991
-  end: 40
-  flag: (
+  subtype: D
+  name: SEQUENCIAL
+  start: 296
+  end: 300
+  flag: '0'
   pattern: raw
   args:
-    value: SEE->EE_CODEMP)
+    value: INCREMENTA()
 - register: '24'
   subtype: H
-  name: FILLER         1
-  start: 52
-  end: 870
-  flag: ' '
-  pattern: raw
-  args:
-    value: ''
-- register: '24'
-  subtype: H
-  name: VERSAO APLIC   2
-  start: 882
-  end: 950
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(8)
-- register: '24'
-  subtype: H
-  name: SEQUENCIA      2
-  start: 963
-  end: 0
-  flag: I
-  pattern: raw
-  args:
-    value: NCREMENTA()
-- register: '23'
-  subtype: T
-  name: COD BANCO      0
-  start: 10
-  end: 30
-  flag: '"'
-  pattern: raw
-  args:
-    value: 001"
-- register: '22'
-  subtype: T
-  name: COD BANCO      0
-  start: 10
-  end: 30
-  flag: '"'
-  pattern: raw
-  args:
-    value: 001"
-- register: '22'
-  subtype: T
-  name: LOTE SERVICO   0
-  start: 40
-  end: 70
-  flag: '"'
-  pattern: raw
-  args:
-    value: 9999"
-- register: '22'
-  subtype: T
-  name: REGISTRO LOTE  0
-  start: 80
-  end: 80
-  flag: '"'
-  pattern: raw
-  args:
-    value: 9"
-- register: '22'
-  subtype: T
-  name: FILLER         0
-  start: 90
-  end: 170
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(9)
-- register: '22'
-  subtype: T
-  name: QTDE LOTES     0
-  start: 180
-  end: 230
-  flag: U
-  pattern: raw
-  args:
-    value: _TTCNABM2(5)
-- register: '22'
-  subtype: T
-  name: QTDE REGISTROS 0
-  start: 240
-  end: 290
-  flag: N
-  pattern: raw
-  args:
-    value: TOTCNAB2 + 3
-- register: '22'
-  subtype: T
-  name: ZERO           0
-  start: 300
-  end: 300
-  flag: U
-  pattern: raw
-  args:
-    value: _TTCNABM2()
-- register: '22'
-  subtype: T
-  name: QTDE CONTAS    0
-  start: 310
-  end: 350
-  flag: '"'
-  pattern: raw
-  args:
-    value: 00000"
-- register: '22'
-  subtype: T
-  name: OCORRENCIA RET 0
-  start: 362
-  end: 400
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(205)
-- register: '20'
-  subtype: T
-  name: COD BANCO      0
-  start: 10
-  end: 30
-  flag: '"'
-  pattern: raw
-  args:
-    value: 001"
-- register: '20'
-  subtype: T
-  name: LOTE SERVICO   0
-  start: 40
-  end: 70
-  flag: '"'
-  pattern: raw
-  args:
-    value: 9999"
-- register: '20'
-  subtype: T
-  name: REGISTRO ARQ   0
-  start: 80
-  end: 80
-  flag: '"'
-  pattern: raw
-  args:
-    value: 9"
-- register: '20'
-  subtype: T
-  name: FILLER         0
-  start: 90
-  end: 170
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(9)
-- register: '20'
-  subtype: T
-  name: QTDE LOTES     0
-  start: 180
-  end: 230
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(NLOTCNAB2,6)
-- register: '20'
-  subtype: T
-  name: QTDE REGISTROS 0
-  start: 240
-  end: 290
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(FNLINCNAB2(),6)
-- register: '20'
-  subtype: T
-  name: ZERO           0
-  start: 300
-  end: 350
-  flag: '"'
-  pattern: raw
-  args:
-    value: 000000"
-- register: '20'
-  subtype: T
-  name: FILLER         0
-  start: 362
-  end: 400
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(205)
-- register: '25'
-  subtype: T
-  name: COD BANCO      0
-  start: 10
-  end: 30
-  flag: '"'
-  pattern: raw
-  args:
-    value: 001"
-- register: '25'
-  subtype: T
-  name: LOTE SERVICO   0
-  start: 40
-  end: 70
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(NLOTCNAB2,4)
-- register: '25'
-  subtype: T
-  name: REGISTRO ARQ   0
-  start: 80
-  end: 80
-  flag: '"'
-  pattern: raw
-  args:
-    value: 5"
-- register: '25'
-  subtype: T
-  name: FILLER         0
-  start: 90
-  end: 170
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(9)
-- register: '25'
-  subtype: T
-  name: QTDE LOTES     0
-  start: 180
-  end: 230
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(F420LINLOT(),6)
-- register: '25'
-  subtype: T
-  name: QTDE REGISTROS 0
-  start: 240
-  end: 410
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(NSOMAVLLOTE*100,18)
-- register: '25'
-  subtype: T
-  name: SOMA DE MOEDA  0
-  start: 420
-  end: 590
-  flag: R
-  pattern: raw
-  args:
-    value: EPLICATE("0",18)
-- register: '25'
-  subtype: T
-  name: NRO AVISO DEB  0
-  start: 600
-  end: 650
-  flag: R
-  pattern: raw
-  args:
-    value: EPLICATE("0",6)
-- register: '25'
-  subtype: T
-  name: FILLER         0
-  start: 662
-  end: 300
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(165)
-- register: '25'
-  subtype: T
-  name: OCORRENCIA RET 2
-  start: 312
-  end: 400
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(10)
-- register: '26'
-  subtype: T
-  name: COD BANCO      0
-  start: 10
-  end: 30
-  flag: '"'
-  pattern: raw
-  args:
-    value: 001"
-- register: '26'
-  subtype: T
-  name: LOTE SERVICO   0
-  start: 40
-  end: 70
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(NLOTCNAB2,4)
-- register: '26'
-  subtype: T
-  name: REGISTRO ARQ   0
-  start: 80
-  end: 80
-  flag: '"'
-  pattern: raw
-  args:
-    value: 5"
-- register: '26'
-  subtype: T
-  name: FEBRABAN       0
-  start: 90
-  end: 170
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(9)
-- register: '26'
-  subtype: T
-  name: QTIDA DE REGIST0
-  start: 180
-  end: 230
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(F420LINLOT(),6)
-- register: '26'
-  subtype: T
-  name: SOMATORIA VLRS 0
-  start: 240
-  end: 412
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(NSOMAVLLOTE*100,18)
-- register: '26'
-  subtype: T
-  name: COMPLEMENTO RGS0
-  start: 422
-  end: 300
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(189)
-- register: '26'
-  subtype: T
-  name: OCORRENCIA     2
-  start: 312
-  end: 400
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(10)
-- register: '21'
-  subtype: T
-  name: COD BANCO      0
-  start: 10
-  end: 30
-  flag: '"'
-  pattern: raw
-  args:
-    value: 001"
-- register: '21'
-  subtype: T
-  name: LOTE SERVICO   0
-  start: 40
-  end: 70
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(NLOTCNAB2,4)
-- register: '21'
-  subtype: T
-  name: REGISTRO LOTE  0
-  start: 80
-  end: 80
-  flag: '"'
-  pattern: raw
-  args:
-    value: 5"
-- register: '21'
-  subtype: T
-  name: FILLER         0
-  start: 90
-  end: 170
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(9)
-- register: '21'
-  subtype: T
-  name: QTDE REG 01    0
-  start: 180
-  end: 230
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(F420LINLOT(),6)
-- register: '21'
-  subtype: T
-  name: SOMATORIA VLRS 0
-  start: 240
-  end: 410
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(NSOMAVLLOTE*100,18)
-- register: '21'
-  subtype: T
-  name: SOMA QTD MOEDAS0
-  start: 420
-  end: 590
-  flag: R
-  pattern: raw
-  args:
-    value: EPLICATE("0",18)
-- register: '21'
-  subtype: T
-  name: NRO AVISO DEBIT0
-  start: 600
-  end: 650
-  flag: R
-  pattern: raw
-  args:
-    value: EPLICATE("0",6)
-- register: '21'
-  subtype: T
-  name: FILLER         0
-  start: 662
-  end: 300
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(165)
-- register: '21'
-  subtype: T
-  name: OCORRENCIA RET 2
-  start: 312
-  end: 400
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(10)
-- register: '22'
-  subtype: D
-  name: COD BANCO      0
-  start: 10
-  end: 30
-  flag: '"'
-  pattern: raw
-  args:
-    value: 001"
-- register: '22'
-  subtype: D
-  name: LOTE SERVICO   0
-  start: 40
-  end: 70
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(NLOTCNAB2,4)
-- register: '22'
-  subtype: D
-  name: REGISTRO LOTE  0
-  start: 80
-  end: 80
-  flag: '"'
-  pattern: raw
-  args:
-    value: 3"
-- register: '22'
-  subtype: D
-  name: SEQUENCIAL LOTE0
-  start: 90
-  end: 130
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(F420SEQLOT(),5)
-- register: '22'
-  subtype: D
-  name: SEGMENTO LOTE  0
-  start: 140
-  end: 140
-  flag: '"'
-  pattern: raw
-  args:
-    value: B"
-- register: '22'
-  subtype: D
-  name: FILLER         0
-  start: 150
-  end: 170
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(3)
-- register: '22'
-  subtype: D
-  name: FAV TIPO INSCR 0
-  start: 180
-  end: 180
-  flag: I
-  pattern: raw
-  args:
-    value: IF(SA2->A2_TIPO == "J", 2, 1)
-- register: '22'
-  subtype: D
-  name: IDENT CONTRIBU 0
-  start: 190
-  end: 320
-  flag: P
-  pattern: raw
-  args:
-    value: ADL((ALLTRIM(SA2->A2_CGC)),14,"0")
-- register: '22'
-  subtype: D
-  name: FAV ENDERECO   0
-  start: 330
-  end: 670
-  flag: A
-  pattern: raw
-  args:
-    value: LLTRIM(SUBSTR(SA2->A2_END,AT(",",SA2->A2_END)+1))
-- register: '22'
-  subtype: D
-  name: COMPLEMENTO    0
-  start: 680
-  end: 820
-  flag: A
-  pattern: raw
-  args:
-    value: LLTRIM(SA2->A2_COMPLEM)
-- register: '22'
-  subtype: D
-  name: FAV BAIRRO     0
-  start: 830
-  end: 970
-  flag: A
-  pattern: raw
-  args:
-    value: LLTRIM(SA2->A2_BAIRRO)
-- register: '22'
-  subtype: D
-  name: FAV CIDADE     0
-  start: 981
-  end: 170
-  flag: A
-  pattern: raw
-  args:
-    value: LLTRIM(SA2->A2_MUN)
-- register: '22'
-  subtype: D
-  name: FAV CEP        1
-  start: 181
-  end: 250
-  flag: S
-  pattern: raw
-  args:
-    value: A2->A2_CEP
-- register: '22'
-  subtype: D
-  name: FAV ESTADO     1
-  start: 261
-  end: 270
-  flag: S
-  pattern: raw
-  args:
-    value: A2->A2_EST
-- register: '22'
-  subtype: D
-  name: DATA VENCIMENTO1
-  start: 281
-  end: 350
-  flag: G
-  pattern: raw
-  args:
-    value: RAVADATA(SE2->E2_VENCREA,.F.,5)
-- register: '22'
-  subtype: D
-  name: VALOR DOC      1
-  start: 361
-  end: 500
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(SE2->E2_SALDO*100,15)
-- register: '22'
-  subtype: D
-  name: VALOR ABATIMENT1
-  start: 511
-  end: 650
-  flag: R
-  pattern: raw
-  args:
-    value: EPLICATE("0",15)
-- register: '22'
-  subtype: D
-  name: VALOR DESCONTO 1
-  start: 661
-  end: 800
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(SE2->E2_DECRESC*100,15)
-- register: '22'
-  subtype: D
-  name: VALOR MORA     1
-  start: 811
-  end: 950
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(SE2->E2_ACRESC*100,15)
-- register: '22'
-  subtype: D
-  name: VALOR MULTA    1
-  start: 962
-  end: 100
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(SE2->E2_VALJUR*100,15)
-- register: '22'
-  subtype: D
-  name: COD FAVORECIDO 2
-  start: 112
-  end: 250
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(15)
-- register: '22'
-  subtype: D
-  name: AVISO FAVOREC  2
-  start: 262
-  end: 260
-  flag: '"'
-  pattern: raw
-  args:
-    value: 5"
-- register: '22'
-  subtype: D
-  name: EXCLUSIVO SIAPE2
-  start: 272
-  end: 320
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(6)
-- register: '22'
-  subtype: D
-  name: CNAB           2
-  start: 332
-  end: 400
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(8)
-- register: '22'
-  subtype: H
-  name: COD BANCO      0
-  start: 10
-  end: 30
-  flag: '"'
-  pattern: raw
-  args:
-    value: 001"
-- register: '22'
-  subtype: H
-  name: LOTE SERVICO   0
-  start: 40
-  end: 70
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(NLOTCNAB2,4)
-- register: '22'
-  subtype: H
-  name: REGISTRO LOTE  0
-  start: 80
-  end: 80
-  flag: '"'
-  pattern: raw
-  args:
-    value: 1"
-- register: '22'
-  subtype: H
-  name: TIPO OPERACAO  0
-  start: 90
-  end: 90
-  flag: '"'
-  pattern: raw
-  args:
-    value: C"
-- register: '22'
-  subtype: H
-  name: TIPO SERVICO   0
-  start: 100
-  end: 110
-  flag: S
-  pattern: raw
-  args:
-    value: EA->EA_TIPOPAG
-- register: '22'
-  subtype: H
-  name: TIPO LANCAMENTO0
-  start: 120
-  end: 130
-  flag: S
-  pattern: raw
-  args:
-    value: EA->EA_MODELO
-- register: '22'
-  subtype: H
-  name: VERSAO LOTE    0
-  start: 140
-  end: 160
-  flag: '"'
-  pattern: raw
-  args:
-    value: 040"
-- register: '22'
-  subtype: H
-  name: FILLER         0
-  start: 170
-  end: 170
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(1)
-- register: '22'
-  subtype: H
-  name: TIPO INSCR EMP 0
-  start: 180
-  end: 180
-  flag: '"'
-  pattern: raw
-  args:
-    value: 2"
-- register: '22'
-  subtype: H
-  name: NUM INSCR EMP  0
-  start: 190
-  end: 320
-  flag: A
-  pattern: raw
-  args:
-    value: LLTRIM(SM0->M0_CGC)
-- register: '22'
-  subtype: H
-  name: NUM CONTRATO   0
-  start: 330
-  end: 520
-  flag: P
-  pattern: raw
-  args:
-    value: ADL(ALLTRIM(SEE->EE_CODEMP),13,"0")
-- register: '22'
-  subtype: H
-  name: COD AGENCIA    0
-  start: 530
-  end: 570
-  flag: P
-  pattern: raw
-  args:
-    value: ADL(ALLTRIM(SEE->EE_AGENCIA),5,"0")
-- register: '22'
-  subtype: H
-  name: DV AGENCIA     0
-  start: 580
-  end: 580
-  flag: P
-  pattern: raw
-  args:
-    value: ADL(ALLTRIM(SEE->EE_DVAGE),1,"0")
-- register: '22'
-  subtype: H
-  name: NUM CONTA      0
-  start: 590
-  end: 700
-  flag: P
-  pattern: raw
-  args:
-    value: ADL(ALLTRIM(SUBSTR(SEE->EE_CONTA,1,10)),12,"0")
-- register: '22'
-  subtype: H
-  name: DV CONTA       0
-  start: 710
-  end: 710
-  flag: S
-  pattern: raw
-  args:
-    value: EE->EE_DVCTA
-- register: '22'
-  subtype: H
-  name: DV AG/CONTA    0
-  start: 720
-  end: 720
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(1)
-- register: '22'
-  subtype: H
-  name: NOME EMPRESA   0
-  start: 731
-  end: 20
-  flag: P
-  pattern: raw
-  args:
-    value: ADR(SM0->M0_NOMECOM,30)
-- register: '22'
-  subtype: H
-  name: MENSAGEM       1
-  start: 31
-  end: 420
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(40)
-- register: '22'
-  subtype: H
-  name: ENDERECO       1
-  start: 431
-  end: 770
-  flag: P
-  pattern: raw
-  args:
-    value: ADR(IIF(EMPTY(SM0->M0_ENDENT),SM0->M0_ENDCOB,SM0->M0_ENDENT),35)
-- register: '22'
-  subtype: H
-  name: COMPLEMENTO    1
-  start: 781
-  end: 920
-  flag: S
-  pattern: raw
-  args:
-    value: M0->M0_COMPENT
-- register: '22'
-  subtype: H
-  name: CIDADE         1
-  start: 932
-  end: 120
-  flag: P
-  pattern: raw
-  args:
-    value: ADR(IIF(EMPTY(SM0->M0_CIDENT),SM0->M0_CIDCOB,SM0->M0_CIDENT),20)
-- register: '22'
-  subtype: H
-  name: CEP            2
-  start: 132
-  end: 200
-  flag: P
-  pattern: raw
-  args:
-    value: ADR(IIF(EMPTY(SM0->M0_CEPENT),SM0->M0_CEPCOB,SM0->M0_CEPENT),8,"0")
-- register: '22'
-  subtype: H
-  name: ESTADO         2
-  start: 212
-  end: 220
-  flag: P
-  pattern: raw
-  args:
-    value: ADR(IIF(EMPTY(SM0->M0_ESTENT),SM0->M0_ESTCOB,SM0->M0_ESTENT),2)
-- register: '22'
-  subtype: H
-  name: FILLER         2
-  start: 232
-  end: 300
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(8)
-- register: '22'
-  subtype: H
-  name: OCORRENCIAS    2
-  start: 312
-  end: 400
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(10)
-- register: '23'
-  subtype: D1
-  name: BANCO          0
-  start: 10
-  end: 30
-  flag: '"'
-  pattern: raw
-  args:
-    value: 001"
-- register: '23'
-  subtype: D1
-  name: LOTE           0
-  start: 40
-  end: 70
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(NLOTCNAB2,4)
-- register: '23'
-  subtype: D1
-  name: TIPO REGISTRO  0
-  start: 80
-  end: 80
-  flag: '"'
-  pattern: raw
-  args:
-    value: 3"
-- register: '23'
-  subtype: D1
-  name: SEQ LOTE       0
-  start: 90
-  end: 130
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(F420SEQLOT(),5)
-- register: '23'
-  subtype: D1
-  name: COD SEGMENTO   0
-  start: 140
-  end: 140
-  flag: '"'
-  pattern: raw
-  args:
-    value: J"
-- register: '23'
-  subtype: D1
-  name: FILLER         0
-  start: 150
-  end: 150
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(1)
-- register: '23'
-  subtype: D1
-  name: COD MOV        0
-  start: 160
-  end: 170
-  flag: '"'
-  pattern: raw
-  args:
-    value: 00"
-- register: '23'
-  subtype: D1
-  name: IDENT REGISTRO 0
-  start: 180
-  end: 190
-  flag: '"'
-  pattern: raw
-  args:
-    value: 52"
-- register: '23'
-  subtype: D1
-  name: TP INSC SACADO 0
-  start: 200
-  end: 200
-  flag: '"'
-  pattern: raw
-  args:
-    value: 2"
-- register: '23'
-  subtype: D1
-  name: NUM INSC       0
-  start: 210
-  end: 350
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(VAL(SM0->M0_CGC),15)
-- register: '23'
-  subtype: D1
-  name: NOME SACADO    0
-  start: 360
-  end: 750
-  flag: S
-  pattern: raw
-  args:
-    value: UBSTR(SM0->M0_NOMECOM,1,30)
-- register: '23'
-  subtype: D1
-  name: TP INSC CEDENTE0
-  start: 760
-  end: 760
-  flag: I
-  pattern: raw
-  args:
-    value: IF(SA2->A2_TIPO == "F","1","2")
-- register: '23'
-  subtype: D1
-  name: NUM INSC CEDENT0
-  start: 770
-  end: 910
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(VAL(SA2->A2_CGC),15)
-- register: '23'
-  subtype: D1
-  name: NOME CEDENTE   0
-  start: 921
-  end: 310
-  flag: S
-  pattern: raw
-  args:
-    value: A2->A2_NOME
-- register: '23'
-  subtype: D1
-  name: FILLER         1
-  start: 322
-  end: 400
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(108)
-- register: '26'
-  subtype: H
-  name: COD BANCO      0
-  start: 10
-  end: 30
-  flag: '"'
-  pattern: raw
-  args:
-    value: 001"
-- register: '26'
-  subtype: H
-  name: LOTE  SERVICO  0
-  start: 40
-  end: 70
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(NLOTCNAB2,4)
-- register: '26'
-  subtype: H
-  name: TP REGISTRO    0
-  start: 80
-  end: 80
-  flag: '"'
-  pattern: raw
-  args:
-    value: 1"
-- register: '26'
-  subtype: H
-  name: TP OPERACAO    0
-  start: 90
-  end: 90
-  flag: '"'
-  pattern: raw
-  args:
-    value: C"
-- register: '26'
-  subtype: H
-  name: TP SERVICO     0
-  start: 100
-  end: 110
-  flag: I
-  pattern: raw
-  args:
-    value: IF (SEA->EA_TIPOPAG = "20", "20","98")
-- register: '26'
-  subtype: H
-  name: FORMA LANCAM   0
-  start: 120
-  end: 130
-  flag: S
-  pattern: raw
-  args:
-    value: EA->EA_MODELO
-- register: '26'
-  subtype: H
-  name: NUM VERS LOTE  0
-  start: 140
-  end: 160
-  flag: '"'
-  pattern: raw
-  args:
-    value: 012"
-- register: '26'
-  subtype: H
-  name: FILLER         0
-  start: 170
-  end: 170
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(1)
-- register: '26'
-  subtype: H
-  name: TP INSC EMP    0
-  start: 180
-  end: 180
-  flag: '"'
-  pattern: raw
-  args:
-    value: 2"
-- register: '26'
-  subtype: H
-  name: Nº INSC EMPRESA0
-  start: 190
-  end: 320
-  flag: S
-  pattern: raw
-  args:
-    value: UBSTR(SM0->M0_CGC,1,14)
-- register: '26'
-  subtype: H
-  name: COD CONVENIO   0
-  start: 330
-  end: 520
-  flag: P
-  pattern: raw
-  args:
-    value: ADL(ALLTRIM(SEE->EE_CODEMP),13,"0")
-- register: '26'
-  subtype: H
-  name: COD AGENCIA    0
-  start: 530
-  end: 570
-  flag: P
-  pattern: raw
-  args:
-    value: ADL(ALLTRIM(SEE->EE_AGENCIA),5,"0")
-- register: '26'
-  subtype: H
-  name: DV AGENCIA     0
-  start: 580
-  end: 580
-  flag: P
-  pattern: raw
-  args:
-    value: ADL(ALLTRIM(SEE->EE_DVAGE),1,"0")
-- register: '26'
-  subtype: H
-  name: NUM CONTA      0
-  start: 590
-  end: 700
-  flag: P
-  pattern: raw
-  args:
-    value: ADL(ALLTRIM(SUBSTR(SEE->EE_CONTA,1,10)),12,"0")
-- register: '26'
-  subtype: H
-  name: DV CONTA       0
-  start: 710
-  end: 710
-  flag: S
-  pattern: raw
-  args:
-    value: EE->EE_DVCTA
-- register: '26'
-  subtype: H
-  name: DV AG/CONTA    0
-  start: 720
-  end: 720
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(1)
-- register: '26'
-  subtype: H
-  name: NOME EMPRESA   0
-  start: 731
-  end: 20
-  flag: P
-  pattern: raw
-  args:
-    value: ADR(SM0->M0_NOMECOM,30)
-- register: '26'
-  subtype: H
-  name: MENSAGEM       1
-  start: 31
-  end: 420
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(40)
-- register: '26'
-  subtype: H
-  name: ENDERECO       1
-  start: 431
-  end: 770
-  flag: I
-  pattern: raw
-  args:
-    value: IF(EMPTY(SM0->M0_ENDENT),SM0->M0_ENDENT,SM0->M0_ENDENT)
-- register: '26'
-  subtype: H
-  name: COMPLEMENTO    1
-  start: 781
-  end: 920
-  flag: S
-  pattern: raw
-  args:
-    value: M0->M0_COMPENT
-- register: '26'
-  subtype: H
-  name: CIDADE         1
-  start: 932
-  end: 120
-  flag: P
-  pattern: raw
-  args:
-    value: ADR(IIF(EMPTY(SM0->M0_CIDENT),SM0->M0_CIDCOB,SM0->M0_CIDENT),20)
-- register: '26'
-  subtype: H
-  name: CEP            2
-  start: 132
-  end: 200
-  flag: P
-  pattern: raw
-  args:
-    value: ADR(IIF(EMPTY(SM0->M0_CEPENT),SM0->M0_CEPCOB,SM0->M0_CEPENT),8,"0")
-- register: '26'
-  subtype: H
-  name: ESTADO         2
-  start: 212
-  end: 220
-  flag: P
-  pattern: raw
-  args:
-    value: ADR(IIF(EMPTY(SM0->M0_ESTENT),SM0->M0_ESTCOB,SM0->M0_ESTENT),2)
-- register: '26'
-  subtype: H
-  name: CNAB           2
-  start: 232
-  end: 300
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(8)
-- register: '26'
-  subtype: H
-  name: OCORRENCIAS    2
-  start: 312
-  end: 400
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(10)
-- register: '27'
-  subtype: H
-  name: COD BCO COMPENS0
-  start: 10
-  end: 30
-  flag: S
-  pattern: raw
-  args:
-    value: EE->EE_CODIGO
-- register: '27'
-  subtype: H
-  name: LOTE DE SERVICO0
-  start: 40
-  end: 70
-  flag: '"'
-  pattern: raw
-  args:
-    value: 0001"
-- register: '27'
-  subtype: H
-  name: REG.HEADER LOTE0
-  start: 80
-  end: 80
-  flag: '"'
-  pattern: raw
-  args:
-    value: 1"
-- register: '27'
-  subtype: H
-  name: TIPO OPERACAO  0
-  start: 90
-  end: 90
-  flag: '"'
-  pattern: raw
-  args:
-    value: C"
-- register: '27'
-  subtype: H
-  name: TIPO DE SERVICO0
-  start: 100
-  end: 110
-  flag: '"'
-  pattern: raw
-  args:
-    value: 98"
-- register: '27'
-  subtype: H
-  name: FORMA LANCAMENT0
-  start: 120
-  end: 130
-  flag: S
-  pattern: raw
-  args:
-    value: EA->EA_MODELO
-- register: '27'
-  subtype: H
-  name: NR V. LAYOUT   0
-  start: 140
-  end: 160
-  flag: '"'
-  pattern: raw
-  args:
-    value: 012"
-- register: '27'
-  subtype: H
-  name: USO FEBRA/CNAB10
-  start: 170
-  end: 170
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(1)
-- register: '27'
-  subtype: H
-  name: TIPO INSCR EMPR0
-  start: 180
-  end: 180
-  flag: '"'
-  pattern: raw
-  args:
-    value: 2"
-- register: '27'
-  subtype: H
-  name: NR. INSCR EMPRE0
-  start: 190
-  end: 320
-  flag: S
-  pattern: raw
-  args:
-    value: M0->M0_CGC
-- register: '27'
-  subtype: H
-  name: CONVENIO       0
-  start: 330
-  end: 450
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(VAL(SEE->EE_CODEMP),13)
-- register: '27'
-  subtype: H
-  name: VAZIO          0
-  start: 460
-  end: 520
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(7)
-- register: '27'
-  subtype: H
-  name: AGENCIA CONTA  0
-  start: 530
-  end: 570
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(VAL(SEE->EE_AGENCIA),5)
-- register: '27'
-  subtype: H
-  name: DV. DA AGENCIA 0
-  start: 580
-  end: 580
-  flag: S
-  pattern: raw
-  args:
-    value: EE->EE_DVAGE
-- register: '27'
-  subtype: H
-  name: NR. C. CORRENTE0
-  start: 590
-  end: 700
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(VAL(SEE->EE_CONTA),12)
-- register: '27'
-  subtype: H
-  name: DV. DA CONTA   0
-  start: 710
-  end: 710
-  flag: S
-  pattern: raw
-  args:
-    value: EE->EE_DVCTA
-- register: '27'
-  subtype: H
-  name: DIGIT VER AG/CO0
-  start: 720
-  end: 720
-  flag: ' '
-  pattern: raw
-  args:
-    value: ''
-- register: '27'
-  subtype: H
-  name: NOME DA EMPRESA0
-  start: 731
-  end: 20
-  flag: S
-  pattern: raw
-  args:
-    value: M0->M0_NOMECOM
-- register: '27'
-  subtype: H
-  name: MENSAGEM       1
-  start: 31
-  end: 420
-  flag: ' '
-  pattern: raw
-  args:
-    value: ''
-- register: '27'
-  subtype: H
-  name: NOME R,AV,PCA,11
-  start: 431
-  end: 720
-  flag: S
-  pattern: raw
-  args:
-    value: UBSTR(SM0->M0_CIDENT,1,30)
-- register: '27'
-  subtype: H
-  name: NUMERO         1
-  start: 731
-  end: 770
-  flag: ' '
-  pattern: raw
-  args:
-    value: ''
-- register: '27'
-  subtype: H
-  name: COMPLEMENTO    1
-  start: 781
-  end: 920
-  flag: ' '
-  pattern: raw
-  args:
-    value: ''
-- register: '27'
-  subtype: H
-  name: CIDADE         1
-  start: 932
-  end: 120
-  flag: S
-  pattern: raw
-  args:
-    value: UBSTR(SM0->M0_CIDENT,1,20)
-- register: '27'
-  subtype: H
-  name: CEP            2
-  start: 132
-  end: 200
-  flag: S
-  pattern: raw
-  args:
-    value: M0->M0_CEPENT
-- register: '27'
-  subtype: H
-  name: ESTADO         2
-  start: 212
-  end: 220
-  flag: S
-  pattern: raw
-  args:
-    value: M0->M0_ESTENT
-- register: '27'
-  subtype: H
-  name: EMISSAO EM LOTE2
-  start: 232
-  end: 300
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(8)
-- register: '27'
-  subtype: H
-  name: COD.OCORR P/RET2
-  start: 312
-  end: 40
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(10)
-- register: '27'
-  subtype: T
-  name: BCO COMPENSACAO0
-  start: 10
-  end: 30
-  flag: S
-  pattern: raw
-  args:
-    value: EE->EE_CODIGO
-- register: '27'
-  subtype: T
-  name: LOTE SERVICO   0
-  start: 40
-  end: 70
-  flag: '"'
-  pattern: raw
-  args:
-    value: 0001"
-- register: '27'
-  subtype: T
-  name: TIPO REGISTRO  0
-  start: 80
-  end: 80
-  flag: '"'
-  pattern: raw
-  args:
-    value: 5"
-- register: '27'
-  subtype: T
-  name: FEBRABAN       0
-  start: 90
-  end: 170
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(9)
-- register: '27'
-  subtype: T
-  name: QNTE REG LOTE  0
-  start: 180
-  end: 230
-  flag: N
-  pattern: raw
-  args:
-    value: SEQ:=NSEQ+2
-- register: '27'
-  subtype: T
-  name: SOMATORIO      0
-  start: 240
-  end: 410
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(SOMAVALOR(),18)
-- register: '27'
-  subtype: T
-  name: ZEROS          0
-  start: 420
-  end: 590
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(18)
-- register: '27'
-  subtype: T
-  name: ZEROS          0
-  start: 600
-  end: 650
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(6)
-- register: '27'
-  subtype: T
-  name: COMPLEM        0
-  start: 662
-  end: 300
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(171)
-- register: '27'
-  subtype: T
-  name: OCORRENCIAS    2
-  start: 312
-  end: 400
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(10)
-- register: '27'
-  subtype: D1
-  name: COD BCO COMPENS0
-  start: 10
-  end: 30
-  flag: S
-  pattern: raw
-  args:
-    value: EE->EE_CODIGO
-- register: '27'
-  subtype: D1
-  name: LOTE DE SERVICO0
-  start: 40
-  end: 70
-  flag: '"'
-  pattern: raw
-  args:
-    value: 0001"
-- register: '27'
-  subtype: D1
-  name: RG.DETALHE LOTE0
-  start: 80
-  end: 80
-  flag: '"'
-  pattern: raw
-  args:
-    value: 3"
-- register: '27'
-  subtype: D1
-  name: SEQ. REG. LOTE 0
-  start: 90
-  end: 130
-  flag: ' '
-  pattern: raw
-  args:
-    value: INCREMENTAL()-1
-- register: '27'
-  subtype: D1
-  name: SEG.           0
-  start: 140
-  end: 140
-  flag: '"'
-  pattern: raw
-  args:
-    value: N"
-- register: '27'
-  subtype: D1
-  name: TIPO DE MOVIMEN0
-  start: 150
-  end: 150
-  flag: '"'
-  pattern: raw
-  args:
-    value: 0"
-- register: '27'
-  subtype: D1
-  name: CODIGO DA INSTR0
-  start: 160
-  end: 170
-  flag: '"'
-  pattern: raw
-  args:
-    value: 00"
-- register: '27'
-  subtype: D1
-  name: Nº DCTO EMPRESA0
-  start: 180
-  end: 370
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(VAL(SE2->E2_IDCNAB),20)
-- register: '27'
-  subtype: D1
-  name: Nº DCTO BANCO  0
-  start: 380
-  end: 570
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(20)
-- register: '27'
-  subtype: D1
-  name: NOME DO CONTRIB0
-  start: 580
-  end: 870
-  flag: L
-  pattern: raw
-  args:
-    value: EFT(SM0->M0_NOMECOM,30)
-- register: '27'
-  subtype: D1
-  name: DATA DO PAGAMEN0
-  start: 880
-  end: 950
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(DAY(SE2->E2_VENCTO),2)+STRZERO(MONTH(SE2->E2_VENCTO),2)+STRZERO(YEAR(SE2->E2_VENCTO),4)
-- register: '27'
-  subtype: D1
-  name: VALOR DO TOTAL 0
-  start: 961
-  end: 102
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO((ROUND(SE2->E2_SALDO,2)*100),15)
-- register: '27'
-  subtype: D1
-  name: COD RECE TRIBUT1
-  start: 111
-  end: 160
-  flag: P
-  pattern: raw
-  args:
-    value: ADR(SE2->E2_CODRET,6)
-- register: '27'
-  subtype: D1
-  name: TIPO IDENT.CONT1
-  start: 171
-  end: 180
-  flag: '"'
-  pattern: raw
-  args:
-    value: 01"
-- register: '27'
-  subtype: D1
-  name: NR.INSC.CONTRIB1
-  start: 191
-  end: 320
-  flag: S
-  pattern: raw
-  args:
-    value: M0->M0_CGC
-- register: '27'
-  subtype: D1
-  name: COD.IDENT.TRIBU1
-  start: 331
-  end: 340
-  flag: '"'
-  pattern: raw
-  args:
-    value: 18"
-- register: '27'
-  subtype: D1
-  name: PERIODO APURACA1
-  start: 351
-  end: 420
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(DAY(SE2->E2_EMISSAO),2)+STRZERO(MONTH(SE2->E2_EMISSAO),2)+STRZERO(YEAR(SE2->E2_EMISSAO),4)
-- register: '27'
-  subtype: D1
-  name: NR. REFERENCIA 1
-  start: 431
-  end: 590
-  flag: S
-  pattern: raw
-  args:
-    value: E2->E2_XNRREFE
-- register: '27'
-  subtype: D1
-  name: VALOR PRINCIPAL1
-  start: 601
-  end: 742
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(INT(NOROUND(SE2->E2_VALOR*100)),15)
-- register: '27'
-  subtype: D1
-  name: VALOR MULTA    1
-  start: 751
-  end: 892
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(INT(NOROUND(SE2->E2_MULTA *100)),15)
-- register: '27'
-  subtype: D1
-  name: JUROS/ENCARGOS 1
-  start: 902
-  end: 42
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(INT(NOROUND(SE2->E2_JUROS*100)),15)
-- register: '27'
-  subtype: D1
-  name: DATA VENCIMENTO2
-  start: 52
-  end: 120
-  flag: G
-  pattern: raw
-  args:
-    value: RAVADATA(SE2->E2_VENCTO,.F.,5)
-- register: '27'
-  subtype: D1
-  name: FILLER         2
-  start: 132
-  end: 300
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(18)
-- register: '27'
-  subtype: D1
-  name: BRANCO         2
-  start: 312
-  end: 40
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(10)
-- register: '21'
-  subtype: H
-  name: COD BANCO      0
-  start: 10
-  end: 30
-  flag: '"'
-  pattern: raw
-  args:
-    value: 001"
-- register: '21'
-  subtype: H
-  name: LOTE SERVICO   0
-  start: 40
-  end: 70
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(NLOTCNAB2,4)
-- register: '21'
-  subtype: H
-  name: REGISTRO LOTE  0
-  start: 80
-  end: 80
-  flag: '"'
-  pattern: raw
-  args:
-    value: 1"
-- register: '21'
-  subtype: H
-  name: TIPO OPERACAO  0
-  start: 90
-  end: 90
-  flag: '"'
-  pattern: raw
-  args:
-    value: C"
-- register: '21'
-  subtype: H
-  name: TIPO SERVICO   0
-  start: 100
-  end: 110
-  flag: S
-  pattern: raw
-  args:
-    value: EA->EA_TIPOPAG
-- register: '21'
-  subtype: H
-  name: TIPO LANCAMENTO0
-  start: 120
-  end: 130
-  flag: S
-  pattern: raw
-  args:
-    value: EA->EA_MODELO
-- register: '21'
-  subtype: H
-  name: VERSAO LOTE    0
-  start: 140
-  end: 160
-  flag: '"'
-  pattern: raw
-  args:
-    value: 045"
-- register: '21'
-  subtype: H
-  name: FILLER         0
-  start: 170
-  end: 170
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(1)
-- register: '21'
-  subtype: H
-  name: TIPO INSCR EMP 0
-  start: 180
-  end: 180
-  flag: '"'
-  pattern: raw
-  args:
-    value: 2"
-- register: '21'
-  subtype: H
-  name: NUM INSCR EMP  0
-  start: 190
-  end: 320
-  flag: A
-  pattern: raw
-  args:
-    value: LLTRIM(SM0->M0_CGC)
-- register: '21'
-  subtype: H
-  name: NUM CONTRATO   0
-  start: 330
-  end: 520
-  flag: P
-  pattern: raw
-  args:
-    value: ADL(ALLTRIM(SEE->EE_CODEMP),13,"0")
-- register: '21'
-  subtype: H
-  name: COD AGENCIA    0
-  start: 530
-  end: 570
-  flag: P
-  pattern: raw
-  args:
-    value: ADL(ALLTRIM(SEE->EE_AGENCIA),5,"0")
-- register: '21'
-  subtype: H
-  name: DV AGENCIA     0
-  start: 580
-  end: 580
-  flag: P
-  pattern: raw
-  args:
-    value: ADL(ALLTRIM(SEE->EE_DVAGE),1,"0")
-- register: '21'
-  subtype: H
-  name: NUM CONTA      0
-  start: 590
-  end: 700
-  flag: P
-  pattern: raw
-  args:
-    value: ADL(ALLTRIM(SUBSTR(SEE->EE_CONTA,1,10)),12,"0")
-- register: '21'
-  subtype: H
-  name: DV CONTA       0
-  start: 710
-  end: 710
-  flag: S
-  pattern: raw
-  args:
-    value: EE->EE_DVCTA
-- register: '21'
-  subtype: H
-  name: DV AG/CONTA    0
-  start: 720
-  end: 720
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(1)
-- register: '21'
-  subtype: H
-  name: NOME EMPRESA   0
-  start: 731
-  end: 20
-  flag: P
-  pattern: raw
-  args:
-    value: ADR(SM0->M0_NOMECOM,30)
-- register: '21'
-  subtype: H
-  name: MENSAGEM       1
-  start: 31
-  end: 420
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(40)
-- register: '21'
-  subtype: H
-  name: ENDERECO       1
-  start: 431
-  end: 770
-  flag: I
-  pattern: raw
-  args:
-    value: IF(EMPTY(SM0->M0_ENDENT),SM0->M0_ENDENT,SM0->M0_ENDENT)
-- register: '21'
-  subtype: H
-  name: COMPLEMENTO    1
-  start: 781
-  end: 920
-  flag: S
-  pattern: raw
-  args:
-    value: M0->M0_COMPENT
-- register: '21'
-  subtype: H
-  name: CIDADE         1
-  start: 932
-  end: 120
-  flag: P
-  pattern: raw
-  args:
-    value: ADR(IIF(EMPTY(SM0->M0_CIDENT),SM0->M0_CIDCOB,SM0->M0_CIDENT),20)
-- register: '21'
-  subtype: H
-  name: CEP            2
-  start: 132
-  end: 200
-  flag: P
-  pattern: raw
-  args:
-    value: ADR(IIF(EMPTY(SM0->M0_CEPENT),SM0->M0_CEPCOB,SM0->M0_CEPENT),8,"0")
-- register: '21'
-  subtype: H
-  name: ESTADO         2
-  start: 212
-  end: 220
-  flag: P
-  pattern: raw
-  args:
-    value: ADR(IIF(EMPTY(SM0->M0_ESTENT),SM0->M0_ESTCOB,SM0->M0_ESTENT),2)
-- register: '21'
-  subtype: H
-  name: FORMA PAGTO    2
-  start: 232
-  end: 240
-  flag: '"'
-  pattern: raw
-  args:
-    value: 01"
-- register: '21'
-  subtype: H
-  name: FILLER         2
-  start: 252
-  end: 300
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(6)
-- register: '21'
-  subtype: H
-  name: OCORRENCIAS    2
-  start: 312
-  end: 400
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(10)
-- register: '23'
-  subtype: D
-  name: COD.BANCO      0
-  start: 10
-  end: 30
-  flag: '"'
-  pattern: raw
-  args:
-    value: 001"
-- register: '23'
-  subtype: D
-  name: LOTE SERVICO   0
-  start: 40
-  end: 70
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(NLOTCNAB2,4)
-- register: '23'
-  subtype: D
-  name: REGISTRO DETALH0
-  start: 80
-  end: 80
-  flag: '"'
-  pattern: raw
-  args:
-    value: 3"
-- register: '23'
-  subtype: D
-  name: NR.SEQ.LOTE    0
-  start: 90
-  end: 130
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(F420SEQLOT(),5)
-- register: '23'
-  subtype: D
-  name: COD.SEQMENTO   0
-  start: 140
-  end: 140
-  flag: '"'
-  pattern: raw
-  args:
-    value: J"
-- register: '23'
-  subtype: D
-  name: TIPO MOVIMENTO 0
-  start: 150
-  end: 150
-  flag: '"'
-  pattern: raw
-  args:
-    value: 0"
-- register: '23'
-  subtype: D
-  name: COD.INSTRUCAO  0
-  start: 160
-  end: 170
-  flag: '"'
-  pattern: raw
-  args:
-    value: 00"
-- register: '23'
-  subtype: D
-  name: COD.BCO.DESTINO0
-  start: 180
-  end: 610
-  flag: S
-  pattern: raw
-  args:
-    value: UBSTR(SE2->E2_CODBAR,1,44)
-- register: '23'
-  subtype: D
-  name: CEDENTE        0
-  start: 620
-  end: 910
-  flag: S
-  pattern: raw
-  args:
-    value: UBS(SA2->A2_NOME,1,30)
-- register: '23'
-  subtype: D
-  name: VENCIMENTO     0
-  start: 920
-  end: 990
-  flag: G
-  pattern: raw
-  args:
-    value: RAVADATA(SE2->E2_VENCREA,.F.,5)
-- register: '23'
-  subtype: D
-  name: VALOR TITULO   1
+  name: TIPO REGISTRO
   start: 1
-  end: 142
-  flag: S
+  end: 1
+  flag: '0'
   pattern: raw
   args:
-    value: TRZERO(SE2->E2_SALDO*100,15)
-- register: '23'
-  subtype: D
-  name: VALOR DESCONTO 1
-  start: 151
-  end: 292
-  flag: S
+    value: '"A"'
+- register: '24'
+  subtype: H
+  name: NOME ARQ
+  start: 2
+  end: 7
+  flag: '0'
   pattern: raw
   args:
-    value: TRZERO((SE2->E2_DECRESC) * 100, 15)
-- register: '23'
-  subtype: D
-  name: VALOR JUROS    1
-  start: 301
-  end: 442
-  flag: S
+    value: '"ART300"'
+- register: '24'
+  subtype: H
+  name: CGC
+  start: 8
+  end: 21
+  flag: '0'
   pattern: raw
   args:
-    value: TRZERO((SE2->E2_ACRESC+SE2->E2_VALJUR)*100,15)
-- register: '23'
-  subtype: D
-  name: DATA PAGTO     1
-  start: 451
-  end: 520
-  flag: G
+    value: SM0->M0_CGC
+- register: '24'
+  subtype: H
+  name: DATA REMESSA
+  start: 22
+  end: 29
+  flag: '0'
   pattern: raw
   args:
-    value: RAVADATA(SE2->E2_VENCREA,.F.,5)
-- register: '23'
-  subtype: D
-  name: VALOR PAGTO    1
-  start: 531
-  end: 672
-  flag: S
+    value: ' (SUBS(DTOS(DDATABASE),1,4)+   SUBS(DTOS(DDATABASE),5,2)+   SUBS(DTOS(DDATABASE),7,2))'
+- register: '24'
+  subtype: H
+  name: ORIGEM REMESSA
+  start: 30
+  end: 31
+  flag: '0'
   pattern: raw
   args:
-    value: TRZERO((ROUND(SE2->E2_SALDO,2)*100),15)
-- register: '23'
-  subtype: D
-  name: QTDE. MOEDA    1
-  start: 681
-  end: 820
-  flag: R
-  pattern: raw
-  args:
-    value: EPLICATE("0",15)
-- register: '23'
-  subtype: D
-  name: COD.REF.SACADO 1
-  start: 832
-  end: 20
-  flag: S
-  pattern: raw
-  args:
-    value: E2->E2_IDCNAB
-- register: '23'
-  subtype: D
-  name: NRO ATR BANCO  2
+    value: '"PR"'
+- register: '24'
+  subtype: H
+  name: NUMERO REMESSA
   start: 32
-  end: 220
-  flag: S
+  end: 33
+  flag: '0'
   pattern: raw
   args:
-    value: PACE(20)
-- register: '23'
-  subtype: D
-  name: COD MOEDA      2
-  start: 232
-  end: 240
-  flag: '"'
-  pattern: raw
-  args:
-    value: 09"
-- register: '23'
-  subtype: D
-  name: COD MOEDA      2
-  start: 252
-  end: 300
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(6)
-- register: '23'
-  subtype: D
-  name: CNAB           2
-  start: 312
-  end: 400
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(10)
-- register: '26'
-  subtype: D
-  name: COD BANCO      0
-  start: 10
-  end: 30
-  flag: '"'
-  pattern: raw
-  args:
-    value: 001"
-- register: '26'
-  subtype: D
-  name: LOTE SERVICO   0
-  start: 40
-  end: 70
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(NLOTCNAB2,4)
-- register: '26'
-  subtype: D
-  name: REGISTRO LOTE  0
-  start: 80
-  end: 80
-  flag: '"'
-  pattern: raw
-  args:
-    value: 3"
-- register: '26'
-  subtype: D
-  name: SEQUENCIAL LOTE0
-  start: 90
-  end: 130
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(F420SEQLOT(),5)
-- register: '26'
-  subtype: D
-  name: SEGMENTO LOTE  0
-  start: 140
-  end: 140
-  flag: '"'
-  pattern: raw
-  args:
-    value: O"
-- register: '26'
-  subtype: D
-  name: TIPO MOVIMENTO 0
-  start: 150
-  end: 150
-  flag: '"'
-  pattern: raw
-  args:
-    value: 0"
-- register: '26'
-  subtype: D
-  name: COD INSTR MOVTO0
-  start: 160
-  end: 170
-  flag: '"'
-  pattern: raw
-  args:
-    value: 00"
-- register: '26'
-  subtype: D
-  name: COD BARRAS     0
-  start: 180
-  end: 610
-  flag: S
-  pattern: raw
-  args:
-    value: UBSTR(SE2->E2_CODBAR,1,44)
-- register: '26'
-  subtype: D
-  name: NOME CONCESSION0
-  start: 620
-  end: 910
-  flag: S
-  pattern: raw
-  args:
-    value: UBS(SA2->A2_NOME,1,30)
-- register: '26'
-  subtype: D
-  name: DATA VENCIMENTO0
-  start: 920
-  end: 990
-  flag: G
-  pattern: raw
-  args:
-    value: RAVADATA(SE2->E2_VENCREA,.F.,5)
-- register: '26'
-  subtype: D
-  name: DATA PAGTO     1
-  start: 1
-  end: 70
-  flag: G
-  pattern: raw
-  args:
-    value: RAVADATA(SE2->E2_VENCREA,.F.,5)
-- register: '26'
-  subtype: D
-  name: VALOR PAGTO    1
-  start: 81
-  end: 222
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO((ROUND(SE2->E2_SALDO,2)*100),15)
-- register: '26'
-  subtype: D
-  name: Nº DOC ATR EMPR1
-  start: 231
-  end: 420
-  flag: S
-  pattern: raw
-  args:
-    value: E2->E2_IDCNAB
-- register: '26'
-  subtype: D
-  name: Nº DOC ATR BCO 1
-  start: 431
-  end: 620
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(20)
-- register: '26'
-  subtype: D
-  name: FEBRABAN       1
-  start: 632
-  end: 300
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(68)
-- register: '26'
-  subtype: D
-  name: OCORRENCIAS    2
-  start: 312
-  end: 400
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(10)
-- register: '20'
+    value: NSEQ + 1
+- register: '24'
   subtype: H
-  name: CODIGO DO BANCO0
-  start: 10
-  end: 30
-  flag: '"'
+  name: AGENCIA
+  start: 34
+  end: 37
+  flag: '0'
   pattern: raw
   args:
-    value: 001"
-- register: '20'
+    value: (SUBSTR(SA6->A6_AGENCIA,2,4))
+- register: '24'
   subtype: H
-  name: LOTE DE SERVICO0
-  start: 40
-  end: 70
-  flag: '"'
+  name: DIG AGENCIA
+  start: 38
+  end: 38
+  flag: '0'
   pattern: raw
   args:
-    value: 0000"
-- register: '20'
+    value: SA6->A6_DIGAGE
+- register: '24'
   subtype: H
-  name: REG.HEADER ARQ.0
-  start: 80
-  end: 80
-  flag: '"'
+  name: C/C
+  start: 39
+  end: 47
+  flag: '0'
   pattern: raw
   args:
-    value: 0"
-- register: '20'
+    value: PADL(SUBSTR(SA6->A6_NUMCON,2,9),9,"0")
+- register: '24'
   subtype: H
-  name: TIPO OPERACAO  0
-  start: 90
-  end: 170
-  flag: S
+  name: DIG C/C
+  start: 48
+  end: 48
+  flag: '0'
   pattern: raw
   args:
-    value: PACE(9)
-- register: '20'
+    value: SA6->A6_DIGCONT
+- register: '24'
   subtype: H
-  name: TP.INSCR. EMPRE0
-  start: 180
-  end: 180
-  flag: '"'
+  name: DOC
+  start: 49
+  end: 50
+  flag: '0'
   pattern: raw
   args:
-    value: 2"
-- register: '20'
+    value: IIF(SEA->EA_MODELO $ "17", "09","01")
+- register: '24'
   subtype: H
-  name: N. INCR.EMPRESA0
-  start: 190
-  end: 320
-  flag: A
-  pattern: raw
-  args:
-    value: LLTRIM(SM0->M0_CGC)
-- register: '20'
-  subtype: H
-  name: COD. CONV. BCO.0
-  start: 330
-  end: 520
-  flag: P
-  pattern: raw
-  args:
-    value: ADL(ALLTRIM(SEE->EE_CODEMP),13,"0")
-- register: '20'
-  subtype: H
-  name: AG. MANT. CONTA0
-  start: 530
-  end: 570
-  flag: P
-  pattern: raw
-  args:
-    value: ADL(ALLTRIM(SEE->EE_AGENCIA),5,"0")
-- register: '20'
-  subtype: H
-  name: DIGITO VER. AG.0
-  start: 580
-  end: 580
-  flag: P
-  pattern: raw
-  args:
-    value: ADL(ALLTRIM(SEE->EE_DVAGE),1,"0")
-- register: '20'
-  subtype: H
-  name: NUM. C/CORRENTE0
-  start: 590
-  end: 700
-  flag: P
-  pattern: raw
-  args:
-    value: ADL(ALLTRIM(SEE->EE_CONTA),12,"0")
-- register: '20'
-  subtype: H
-  name: DIG. VER. CONTA0
-  start: 710
-  end: 710
-  flag: S
-  pattern: raw
-  args:
-    value: EE->EE_DVCTA
-- register: '20'
-  subtype: H
-  name: DIG. VER. AG/C.0
-  start: 720
-  end: 720
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(1)
-- register: '20'
-  subtype: H
-  name: NOME EMPRESA   0
-  start: 731
-  end: 20
-  flag: P
-  pattern: raw
-  args:
-    value: ADR(SM0->M0_NOMECOM,30)
-- register: '20'
-  subtype: H
-  name: NOME BANCO     1
-  start: 31
-  end: 320
-  flag: '"'
-  pattern: raw
-  args:
-    value: BANCO DO BRASIL"
-- register: '20'
-  subtype: H
-  name: FILLER         1
-  start: 331
-  end: 420
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(10)
-- register: '20'
-  subtype: H
-  name: COD. REM/RETOR.1
-  start: 431
-  end: 430
-  flag: '"'
-  pattern: raw
-  args:
-    value: 1"
-- register: '20'
-  subtype: H
-  name: DT. GERAC. ARQ.1
-  start: 441
-  end: 510
-  flag: S
-  pattern: raw
-  args:
-    value: UBSTR(DTOS(DDATABASE),7,2)+SUBSTR(DTOS(DDATABASE),5,2)+SUBSTR(DTOS(DDATABASE),1,4)
-- register: '20'
-  subtype: H
-  name: HORA GER.ARQ.  1
-  start: 521
-  end: 570
-  flag: S
-  pattern: raw
-  args:
-    value: TRTRAN(TIME(),":")
-- register: '20'
-  subtype: H
-  name: N.SEQUEN.ARQ.  1
-  start: 581
-  end: 630
-  flag: S
-  pattern: raw
-  args:
-    value: EE->EE_ULTDSK
-- register: '20'
-  subtype: H
-  name: N.VERSAO L.OUT.1
-  start: 641
-  end: 660
-  flag: '"'
-  pattern: raw
-  args:
-    value: 087"
-- register: '20'
-  subtype: H
-  name: DENSID. GRAVAC.1
-  start: 671
-  end: 710
-  flag: '"'
-  pattern: raw
-  args:
-    value: 00000"
-- register: '20'
-  subtype: H
-  name: P/ USO RES.BCO 1
-  start: 721
-  end: 910
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(20)
-- register: '20'
-  subtype: H
-  name: P/USO RES.EMPRE1
-  start: 922
-  end: 110
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(20)
-- register: '20'
-  subtype: H
-  name: FILLER         2
-  start: 122
-  end: 400
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(29)
-- register: '27'
-  subtype: D
-  name: COD BANCO      0
-  start: 10
-  end: 30
-  flag: S
-  pattern: raw
-  args:
-    value: EE->EE_CODIGO
-- register: '27'
-  subtype: D
-  name: LOTE SERVICO   0
-  start: 40
-  end: 70
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(NLOTCNAB2,4)
-- register: '27'
-  subtype: D
-  name: REGISTRO LOTE  0
-  start: 80
-  end: 80
-  flag: '"'
-  pattern: raw
-  args:
-    value: 3"
-- register: '27'
-  subtype: D
-  name: SEQUENCIAL LOTE0
-  start: 90
-  end: 130
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(F420SEQLOT(),5)
-- register: '27'
-  subtype: D
-  name: SEGMENTO LOTE  0
-  start: 140
-  end: 140
-  flag: '"'
-  pattern: raw
-  args:
-    value: N"
-- register: '27'
-  subtype: D
-  name: TP LANCAMENTO  0
-  start: 150
-  end: 150
-  flag: '"'
-  pattern: raw
-  args:
-    value: 0"
-- register: '27'
-  subtype: D
-  name: COD MOVTO.     0
-  start: 160
-  end: 170
-  flag: '"'
-  pattern: raw
-  args:
-    value: 00"
-- register: '27'
-  subtype: D
-  name: NUMERO TITULO  0
-  start: 180
-  end: 370
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(VAL(SE2->E2_IDCNAB),20)
-- register: '27'
-  subtype: D
-  name: NUMERO BANCO   0
-  start: 380
-  end: 570
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(20)
-- register: '27'
-  subtype: D
-  name: NOME CONTRIB   0
-  start: 580
-  end: 870
-  flag: P
-  pattern: raw
-  args:
-    value: ADR(UPPER(SM0->M0_NOME),30)
-- register: '27'
-  subtype: D
-  name: DATA PAGTO     0
-  start: 880
-  end: 950
-  flag: G
-  pattern: raw
-  args:
-    value: RAVADATA(SE2->E2_VENCREA,.F.,5)
-- register: '27'
-  subtype: D
-  name: VALOR PAGTO    0
-  start: 961
-  end: 100
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO((ROUND(SE2->E2_SALDO,2)*100),15)
-- register: '27'
-  subtype: D
-  name: COD RECE TRIBUT1
-  start: 111
-  end: 160
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(VAL(SE2->E2_CODRET),6)
-- register: '27'
-  subtype: D
-  name: TIPO DE IDENTIF1
-  start: 171
-  end: 180
-  flag: '"'
-  pattern: raw
-  args:
-    value: 01"
-- register: '27'
-  subtype: D
-  name: IDENTIFICACAO D1
-  start: 191
-  end: 320
-  flag: A
-  pattern: raw
-  args:
-    value: LLTRIM(SM0->M0_CGC)
-- register: '27'
-  subtype: D
-  name: COD IDENT TRIBU1
-  start: 331
-  end: 340
-  flag: '"'
-  pattern: raw
-  args:
-    value: 17"
-- register: '27'
-  subtype: D
-  name: COMPETENCIA    1
-  start: 351
-  end: 400
-  flag: S
-  pattern: raw
-  args:
-    value: E2->E2_XCOMPET
-- register: '27'
-  subtype: D
-  name: VLR INSS       1
-  start: 411
-  end: 550
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO((ROUND(SE2->E2_XVLINSS,2)*100),15)
-- register: '27'
-  subtype: D
-  name: VLR D OU ENT   1
-  start: 561
-  end: 702
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(INT(NOROUND(SE2->E2_XVLENTI*100)),15)
-- register: '27'
-  subtype: D
-  name: ATUA MONE      1
-  start: 711
-  end: 852
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(INT(NOROUND(SE2->E2_ACRESC*100)),15)
-- register: '27'
-  subtype: D
-  name: USO EXCLUSI    1
-  start: 862
-  end: 300
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(45)
-- register: '27'
-  subtype: D
-  name: OCOR. RETORNO  2
-  start: 312
-  end: 400
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(10)
-- register: '21'
-  subtype: D
-  name: COD BANCO      0
-  start: 10
-  end: 30
-  flag: '"'
-  pattern: raw
-  args:
-    value: 001"
-- register: '21'
-  subtype: D
-  name: LOTE SERVICO   0
-  start: 40
-  end: 70
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(NLOTCNAB2,4)
-- register: '21'
-  subtype: D
-  name: REGISTRO LOTE  0
-  start: 80
-  end: 80
-  flag: '"'
-  pattern: raw
-  args:
-    value: 3"
-- register: '21'
-  subtype: D
-  name: SEQUENCIAL LOTE0
-  start: 90
-  end: 130
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(F420SEQLOT(),5)
-- register: '21'
-  subtype: D
-  name: SEGMENTO LOTE  0
-  start: 140
-  end: 140
-  flag: '"'
-  pattern: raw
-  args:
-    value: A"
-- register: '21'
-  subtype: D
-  name: TIPO MOVIMENTO 0
-  start: 150
-  end: 150
-  flag: '"'
-  pattern: raw
-  args:
-    value: 0"
-- register: '21'
-  subtype: D
-  name: COD INSTR MOVTO0
-  start: 160
-  end: 170
-  flag: '"'
-  pattern: raw
-  args:
-    value: 00"
-- register: '21'
-  subtype: D
-  name: COMPENSACAO    0
-  start: 180
-  end: 200
-  flag: I
-  pattern: raw
-  args:
-    value: IF(SEA->EA_MODELO=="03","700",IIF(SEA->EA_MODELO$"41/43","018","000"))
-- register: '21'
-  subtype: D
-  name: BANCO FAVOR    0
-  start: 210
-  end: 230
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(VAL(SE2->E2_FORBCO),3)
-- register: '21'
-  subtype: D
-  name: AGENCIA FAVOR  0
-  start: 240
-  end: 280
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(VAL(SE2->E2_FORAGE),5)
-- register: '21'
-  subtype: D
-  name: DV AGENCIA FAVO0
-  start: 290
-  end: 290
-  flag: S
-  pattern: raw
-  args:
-    value: E2->E2_FAGEDV
-- register: '21'
-  subtype: D
-  name: NUMERO CONTA   0
-  start: 300
-  end: 410
-  flag: S
-  pattern: raw
-  args:
-    value: TRZERO(VAL(SE2->E2_FORCTA),12)
-- register: '21'
-  subtype: D
-  name: DV CONTA       0
-  start: 420
-  end: 430
-  flag: S
-  pattern: raw
-  args:
-    value: E2->E2_FCTADV
-- register: '21'
-  subtype: D
-  name: FAV NOME       0
-  start: 440
-  end: 730
-  flag: S
-  pattern: raw
-  args:
-    value: UBSTR(SE2->E2_NOMFOR,1,30)
-- register: '21'
-  subtype: D
-  name: NUM DOCUMENTO  0
-  start: 740
-  end: 830
-  flag: S
-  pattern: raw
-  args:
-    value: E2->E2_IDCNAB
-- register: '21'
-  subtype: D
-  name: FILLER         0
-  start: 840
-  end: 930
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(10)
-- register: '21'
-  subtype: D
-  name: DATA CREDITO   0
-  start: 941
-  end: 10
-  flag: G
-  pattern: raw
-  args:
-    value: RAVADATA(SE2->E2_VENCREA,.F.,5)
-- register: '21'
-  subtype: D
-  name: TIPO MOEDA     1
-  start: 21
-  end: 40
-  flag: '"'
-  pattern: raw
-  args:
-    value: BRL"
-- register: '21'
-  subtype: D
-  name: QTDE MOEDA     1
+  name: NOME CONVENIO
   start: 51
-  end: 190
-  flag: R
+  end: 90
+  flag: '0'
   pattern: raw
   args:
-    value: EPLICATE("0",15)
-- register: '21'
-  subtype: D
-  name: VLR CREDITO    1
-  start: 201
-  end: 340
-  flag: S
+    value: SM0->M0_NOME
+- register: '24'
+  subtype: H
+  name: FILLER
+  start: 91
+  end: 98
+  flag: '0'
   pattern: raw
   args:
-    value: TRZERO((ROUND(SE2->E2_SALDO,2)*100),15)
-- register: '21'
-  subtype: D
-  name: NUMERO BANCO   1
-  start: 351
-  end: 540
-  flag: S
+    value: ''
+- register: '24'
+  subtype: H
+  name: COD CONVENIO
+  start: 99
+  end: 104
+  flag: '0'
   pattern: raw
   args:
-    value: PACE(20)
-- register: '21'
-  subtype: D
-  name: DATA REAL PGTO 1
-  start: 551
-  end: 620
-  flag: R
+    value: (SEE->EE_CODEMP)
+- register: '24'
+  subtype: H
+  name: FILLER
+  start: 105
+  end: 287
+  flag: '0'
   pattern: raw
   args:
-    value: EPLICATE("0",8)
-- register: '21'
-  subtype: D
-  name: VLR REAL PGTO  1
-  start: 631
-  end: 770
-  flag: R
+    value: ''
+- register: '24'
+  subtype: H
+  name: VERSAO APLIC
+  start: 288
+  end: 295
+  flag: '0'
   pattern: raw
   args:
-    value: EPLICATE("0",15)
-- register: '21'
-  subtype: D
-  name: OUTRAS INFORMAC1
-  start: 782
-  end: 170
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(40)
-- register: '21'
-  subtype: D
-  name: FILLER         2
-  start: 182
-  end: 290
-  flag: S
-  pattern: raw
-  args:
-    value: PACE(12)
-- register: '21'
-  subtype: D
-  name: EMISSAO AVISO  2
-  start: 302
+    value: SPACE(8)
+- register: '24'
+  subtype: H
+  name: SEQUENCIA
+  start: 296
   end: 300
-  flag: '"'
+  flag: '0'
   pattern: raw
   args:
-    value: 5"
+    value: INCREMENTA()
+- register: '23'
+  subtype: T
+  name: COD BANCO
+  start: 1
+  end: 3
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"001"'
+- register: '22'
+  subtype: T
+  name: COD BANCO
+  start: 1
+  end: 3
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"001"'
+- register: '22'
+  subtype: T
+  name: LOTE SERVICO
+  start: 4
+  end: 7
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"9999"'
+- register: '22'
+  subtype: T
+  name: REGISTRO LOTE
+  start: 8
+  end: 8
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"9"'
+- register: '22'
+  subtype: T
+  name: FILLER
+  start: 9
+  end: 17
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(9)
+- register: '22'
+  subtype: T
+  name: QTDE LOTES
+  start: 18
+  end: 23
+  flag: '0'
+  pattern: raw
+  args:
+    value: U_TTCNABM2(5)
+- register: '22'
+  subtype: T
+  name: QTDE REGISTROS
+  start: 24
+  end: 29
+  flag: '0'
+  pattern: raw
+  args:
+    value: NTOTCNAB2 + 3
+- register: '22'
+  subtype: T
+  name: ZERO
+  start: 30
+  end: 30
+  flag: '0'
+  pattern: raw
+  args:
+    value: U_TTCNABM2()
+- register: '22'
+  subtype: T
+  name: QTDE CONTAS
+  start: 31
+  end: 35
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"00000"'
+- register: '22'
+  subtype: T
+  name: OCORRENCIA RET
+  start: 36
+  end: 240
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(205)
+- register: '20'
+  subtype: T
+  name: COD BANCO
+  start: 1
+  end: 3
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"001"'
+- register: '20'
+  subtype: T
+  name: LOTE SERVICO
+  start: 4
+  end: 7
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"9999"'
+- register: '20'
+  subtype: T
+  name: REGISTRO ARQ
+  start: 8
+  end: 8
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"9"'
+- register: '20'
+  subtype: T
+  name: FILLER
+  start: 9
+  end: 17
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(9)
+- register: '20'
+  subtype: T
+  name: QTDE LOTES
+  start: 18
+  end: 23
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(NLOTCNAB2,6)
+- register: '20'
+  subtype: T
+  name: QTDE REGISTROS
+  start: 24
+  end: 29
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(FNLINCNAB2(),6)
+- register: '20'
+  subtype: T
+  name: ZERO
+  start: 30
+  end: 35
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"000000"'
+- register: '20'
+  subtype: T
+  name: FILLER
+  start: 36
+  end: 240
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(205)
+- register: '25'
+  subtype: T
+  name: COD BANCO
+  start: 1
+  end: 3
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"001"'
+- register: '25'
+  subtype: T
+  name: LOTE SERVICO
+  start: 4
+  end: 7
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(NLOTCNAB2,4)
+- register: '25'
+  subtype: T
+  name: REGISTRO ARQ
+  start: 8
+  end: 8
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"5"'
+- register: '25'
+  subtype: T
+  name: FILLER
+  start: 9
+  end: 17
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(9)
+- register: '25'
+  subtype: T
+  name: QTDE LOTES
+  start: 18
+  end: 23
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(F420LINLOT(),6)
+- register: '25'
+  subtype: T
+  name: QTDE REGISTROS
+  start: 24
+  end: 41
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(NSOMAVLLOTE*100,18)
+- register: '25'
+  subtype: T
+  name: SOMA DE MOEDA
+  start: 42
+  end: 59
+  flag: '0'
+  pattern: raw
+  args:
+    value: REPLICATE("0",18)
+- register: '25'
+  subtype: T
+  name: NRO AVISO DEB
+  start: 60
+  end: 65
+  flag: '0'
+  pattern: raw
+  args:
+    value: REPLICATE("0",6)
+- register: '25'
+  subtype: T
+  name: FILLER
+  start: 66
+  end: 230
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(165)
+- register: '25'
+  subtype: T
+  name: OCORRENCIA RET
+  start: 231
+  end: 240
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(10)
+- register: '26'
+  subtype: T
+  name: COD BANCO
+  start: 1
+  end: 3
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"001"'
+- register: '26'
+  subtype: T
+  name: LOTE SERVICO
+  start: 4
+  end: 7
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(NLOTCNAB2,4)
+- register: '26'
+  subtype: T
+  name: REGISTRO ARQ
+  start: 8
+  end: 8
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"5"'
+- register: '26'
+  subtype: T
+  name: FEBRABAN
+  start: 9
+  end: 17
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(9)
+- register: '26'
+  subtype: T
+  name: QTIDA DE REGIST
+  start: 18
+  end: 23
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(F420LINLOT(),6)
+- register: '26'
+  subtype: T
+  name: SOMATORIA VLRS
+  start: 24
+  end: 41
+  flag: '2'
+  pattern: raw
+  args:
+    value: STRZERO(NSOMAVLLOTE*100,18)
+- register: '26'
+  subtype: T
+  name: COMPLEMENTO RGS
+  start: 42
+  end: 230
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(189)
+- register: '26'
+  subtype: T
+  name: OCORRENCIA
+  start: 231
+  end: 240
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(10)
+- register: '21'
+  subtype: T
+  name: COD BANCO
+  start: 1
+  end: 3
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"001"'
+- register: '21'
+  subtype: T
+  name: LOTE SERVICO
+  start: 4
+  end: 7
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(NLOTCNAB2,4)
+- register: '21'
+  subtype: T
+  name: REGISTRO LOTE
+  start: 8
+  end: 8
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"5"'
+- register: '21'
+  subtype: T
+  name: FILLER
+  start: 9
+  end: 17
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(9)
+- register: '21'
+  subtype: T
+  name: QTDE REG 01
+  start: 18
+  end: 23
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(F420LINLOT(),6)
+- register: '21'
+  subtype: T
+  name: SOMATORIA VLRS
+  start: 24
+  end: 41
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(NSOMAVLLOTE*100,18)
+- register: '21'
+  subtype: T
+  name: SOMA QTD MOEDAS
+  start: 42
+  end: 59
+  flag: '0'
+  pattern: raw
+  args:
+    value: REPLICATE("0",18)
+- register: '21'
+  subtype: T
+  name: NRO AVISO DEBIT
+  start: 60
+  end: 65
+  flag: '0'
+  pattern: raw
+  args:
+    value: REPLICATE("0",6)
+- register: '21'
+  subtype: T
+  name: FILLER
+  start: 66
+  end: 230
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(165)
+- register: '21'
+  subtype: T
+  name: OCORRENCIA RET
+  start: 231
+  end: 240
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(10)
+- register: '22'
+  subtype: D
+  name: COD BANCO
+  start: 1
+  end: 3
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"001"'
+- register: '22'
+  subtype: D
+  name: LOTE SERVICO
+  start: 4
+  end: 7
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(NLOTCNAB2,4)
+- register: '22'
+  subtype: D
+  name: REGISTRO LOTE
+  start: 8
+  end: 8
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"3"'
+- register: '22'
+  subtype: D
+  name: SEQUENCIAL LOTE
+  start: 9
+  end: 13
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(F420SEQLOT(),5)
+- register: '22'
+  subtype: D
+  name: SEGMENTO LOTE
+  start: 14
+  end: 14
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"B"'
+- register: '22'
+  subtype: D
+  name: FILLER
+  start: 15
+  end: 17
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(3)
+- register: '22'
+  subtype: D
+  name: FAV TIPO INSCR
+  start: 18
+  end: 18
+  flag: '0'
+  pattern: raw
+  args:
+    value: IIF(SA2->A2_TIPO == "J", 2, 1)
+- register: '22'
+  subtype: D
+  name: IDENT CONTRIBU
+  start: 19
+  end: 32
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADL((ALLTRIM(SA2->A2_CGC)),14,"0")
+- register: '22'
+  subtype: D
+  name: FAV ENDERECO
+  start: 33
+  end: 67
+  flag: '0'
+  pattern: raw
+  args:
+    value: ALLTRIM(SUBSTR(SA2->A2_END,AT(",",SA2->A2_END)+1))
+- register: '22'
+  subtype: D
+  name: COMPLEMENTO
+  start: 68
+  end: 82
+  flag: '0'
+  pattern: raw
+  args:
+    value: ALLTRIM(SA2->A2_COMPLEM)
+- register: '22'
+  subtype: D
+  name: FAV BAIRRO
+  start: 83
+  end: 97
+  flag: '0'
+  pattern: raw
+  args:
+    value: ALLTRIM(SA2->A2_BAIRRO)
+- register: '22'
+  subtype: D
+  name: FAV CIDADE
+  start: 98
+  end: 117
+  flag: '0'
+  pattern: raw
+  args:
+    value: ALLTRIM(SA2->A2_MUN)
+- register: '22'
+  subtype: D
+  name: FAV CEP
+  start: 118
+  end: 125
+  flag: '0'
+  pattern: raw
+  args:
+    value: SA2->A2_CEP
+- register: '22'
+  subtype: D
+  name: FAV ESTADO
+  start: 126
+  end: 127
+  flag: '0'
+  pattern: raw
+  args:
+    value: SA2->A2_EST
+- register: '22'
+  subtype: D
+  name: DATA VENCIMENTO
+  start: 128
+  end: 135
+  flag: '0'
+  pattern: raw
+  args:
+    value: GRAVADATA(SE2->E2_VENCREA,.F.,5)
+- register: '22'
+  subtype: D
+  name: VALOR DOC
+  start: 136
+  end: 150
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(SE2->E2_SALDO*100,15)
+- register: '22'
+  subtype: D
+  name: VALOR ABATIMENT
+  start: 151
+  end: 165
+  flag: '0'
+  pattern: raw
+  args:
+    value: REPLICATE("0",15)
+- register: '22'
+  subtype: D
+  name: VALOR DESCONTO
+  start: 166
+  end: 180
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(SE2->E2_DECRESC*100,15)
+- register: '22'
+  subtype: D
+  name: VALOR MORA
+  start: 181
+  end: 195
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(SE2->E2_ACRESC*100,15)
+- register: '22'
+  subtype: D
+  name: VALOR MULTA
+  start: 196
+  end: 210
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(SE2->E2_VALJUR*100,15)
+- register: '22'
+  subtype: D
+  name: COD FAVORECIDO
+  start: 211
+  end: 225
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(15)
+- register: '22'
+  subtype: D
+  name: AVISO FAVOREC
+  start: 226
+  end: 226
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"5"'
+- register: '22'
+  subtype: D
+  name: EXCLUSIVO SIAPE
+  start: 227
+  end: 232
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(6)
+- register: '22'
+  subtype: D
+  name: CNAB
+  start: 233
+  end: 240
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(8)
+- register: '22'
+  subtype: H
+  name: COD BANCO
+  start: 1
+  end: 3
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"001"'
+- register: '22'
+  subtype: H
+  name: LOTE SERVICO
+  start: 4
+  end: 7
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(NLOTCNAB2,4)
+- register: '22'
+  subtype: H
+  name: REGISTRO LOTE
+  start: 8
+  end: 8
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"1"'
+- register: '22'
+  subtype: H
+  name: TIPO OPERACAO
+  start: 9
+  end: 9
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"C"'
+- register: '22'
+  subtype: H
+  name: TIPO SERVICO
+  start: 10
+  end: 11
+  flag: '0'
+  pattern: raw
+  args:
+    value: SEA->EA_TIPOPAG
+- register: '22'
+  subtype: H
+  name: TIPO LANCAMENTO
+  start: 12
+  end: 13
+  flag: '0'
+  pattern: raw
+  args:
+    value: SEA->EA_MODELO
+- register: '22'
+  subtype: H
+  name: VERSAO LOTE
+  start: 14
+  end: 16
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"040"'
+- register: '22'
+  subtype: H
+  name: FILLER
+  start: 17
+  end: 17
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(1)
+- register: '22'
+  subtype: H
+  name: TIPO INSCR EMP
+  start: 18
+  end: 18
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"2"'
+- register: '22'
+  subtype: H
+  name: NUM INSCR EMP
+  start: 19
+  end: 32
+  flag: '0'
+  pattern: raw
+  args:
+    value: ALLTRIM(SM0->M0_CGC)
+- register: '22'
+  subtype: H
+  name: NUM CONTRATO
+  start: 33
+  end: 52
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADL(ALLTRIM(SEE->EE_CODEMP),13,"0")
+- register: '22'
+  subtype: H
+  name: COD AGENCIA
+  start: 53
+  end: 57
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADL(ALLTRIM(SEE->EE_AGENCIA),5,"0")
+- register: '22'
+  subtype: H
+  name: DV AGENCIA
+  start: 58
+  end: 58
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADL(ALLTRIM(SEE->EE_DVAGE),1,"0")
+- register: '22'
+  subtype: H
+  name: NUM CONTA
+  start: 59
+  end: 70
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADL(ALLTRIM(SUBSTR(SEE->EE_CONTA,1,10)),12,"0")
+- register: '22'
+  subtype: H
+  name: DV CONTA
+  start: 71
+  end: 71
+  flag: '0'
+  pattern: raw
+  args:
+    value: SEE->EE_DVCTA
+- register: '22'
+  subtype: H
+  name: DV AG/CONTA
+  start: 72
+  end: 72
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(1)
+- register: '22'
+  subtype: H
+  name: NOME EMPRESA
+  start: 73
+  end: 102
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADR(SM0->M0_NOMECOM,30)
+- register: '22'
+  subtype: H
+  name: MENSAGEM
+  start: 103
+  end: 142
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(40)
+- register: '22'
+  subtype: H
+  name: ENDERECO
+  start: 143
+  end: 177
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADR(IIF(EMPTY(SM0->M0_ENDENT),SM0->M0_ENDCOB,SM0->M0_ENDENT),35)
+- register: '22'
+  subtype: H
+  name: COMPLEMENTO
+  start: 178
+  end: 192
+  flag: '0'
+  pattern: raw
+  args:
+    value: SM0->M0_COMPENT
+- register: '22'
+  subtype: H
+  name: CIDADE
+  start: 193
+  end: 212
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADR(IIF(EMPTY(SM0->M0_CIDENT),SM0->M0_CIDCOB,SM0->M0_CIDENT),20)
+- register: '22'
+  subtype: H
+  name: CEP
+  start: 213
+  end: 220
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADR(IIF(EMPTY(SM0->M0_CEPENT),SM0->M0_CEPCOB,SM0->M0_CEPENT),8,"0")
+- register: '22'
+  subtype: H
+  name: ESTADO
+  start: 221
+  end: 222
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADR(IIF(EMPTY(SM0->M0_ESTENT),SM0->M0_ESTCOB,SM0->M0_ESTENT),2)
+- register: '22'
+  subtype: H
+  name: FILLER
+  start: 223
+  end: 230
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(8)
+- register: '22'
+  subtype: H
+  name: OCORRENCIAS
+  start: 231
+  end: 240
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(10)
+- register: '23'
+  subtype: D1
+  name: BANCO
+  start: 1
+  end: 3
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"001"'
+- register: '23'
+  subtype: D1
+  name: LOTE
+  start: 4
+  end: 7
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(NLOTCNAB2,4)
+- register: '23'
+  subtype: D1
+  name: TIPO REGISTRO
+  start: 8
+  end: 8
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"3"'
+- register: '23'
+  subtype: D1
+  name: SEQ LOTE
+  start: 9
+  end: 13
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(F420SEQLOT(),5)
+- register: '23'
+  subtype: D1
+  name: COD SEGMENTO
+  start: 14
+  end: 14
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"J"'
+- register: '23'
+  subtype: D1
+  name: FILLER
+  start: 15
+  end: 15
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(1)
+- register: '23'
+  subtype: D1
+  name: COD MOV
+  start: 16
+  end: 17
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"00"'
+- register: '23'
+  subtype: D1
+  name: IDENT REGISTRO
+  start: 18
+  end: 19
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"52"'
+- register: '23'
+  subtype: D1
+  name: TP INSC SACADO
+  start: 20
+  end: 20
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"2"'
+- register: '23'
+  subtype: D1
+  name: NUM INSC
+  start: 21
+  end: 35
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(VAL(SM0->M0_CGC),15)
+- register: '23'
+  subtype: D1
+  name: NOME SACADO
+  start: 36
+  end: 75
+  flag: '0'
+  pattern: raw
+  args:
+    value: SUBSTR(SM0->M0_NOMECOM,1,30)
+- register: '23'
+  subtype: D1
+  name: TP INSC CEDENTE
+  start: 76
+  end: 76
+  flag: '0'
+  pattern: raw
+  args:
+    value: IIF(SA2->A2_TIPO == "F","1","2")
+- register: '23'
+  subtype: D1
+  name: NUM INSC CEDENT
+  start: 77
+  end: 91
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(VAL(SA2->A2_CGC),15)
+- register: '23'
+  subtype: D1
+  name: NOME CEDENTE
+  start: 92
+  end: 131
+  flag: '0'
+  pattern: raw
+  args:
+    value: SA2->A2_NOME
+- register: '23'
+  subtype: D1
+  name: FILLER
+  start: 132
+  end: 240
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(108)
+- register: '26'
+  subtype: H
+  name: COD BANCO
+  start: 1
+  end: 3
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"001"'
+- register: '26'
+  subtype: H
+  name: LOTE  SERVICO
+  start: 4
+  end: 7
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(NLOTCNAB2,4)
+- register: '26'
+  subtype: H
+  name: TP REGISTRO
+  start: 8
+  end: 8
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"1"'
+- register: '26'
+  subtype: H
+  name: TP OPERACAO
+  start: 9
+  end: 9
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"C"'
+- register: '26'
+  subtype: H
+  name: TP SERVICO
+  start: 10
+  end: 11
+  flag: '0'
+  pattern: raw
+  args:
+    value: IIF (SEA->EA_TIPOPAG = "20", "20","98")
+- register: '26'
+  subtype: H
+  name: FORMA LANCAM
+  start: 12
+  end: 13
+  flag: '0'
+  pattern: raw
+  args:
+    value: SEA->EA_MODELO
+- register: '26'
+  subtype: H
+  name: NUM VERS LOTE
+  start: 14
+  end: 16
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"012"'
+- register: '26'
+  subtype: H
+  name: FILLER
+  start: 17
+  end: 17
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(1)
+- register: '26'
+  subtype: H
+  name: TP INSC EMP
+  start: 18
+  end: 18
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"2"'
+- register: '26'
+  subtype: H
+  name: Nº INSC EMPRESA
+  start: 19
+  end: 32
+  flag: '0'
+  pattern: raw
+  args:
+    value: SUBSTR(SM0->M0_CGC,1,14)
+- register: '26'
+  subtype: H
+  name: COD CONVENIO
+  start: 33
+  end: 52
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADL(ALLTRIM(SEE->EE_CODEMP),13,"0")
+- register: '26'
+  subtype: H
+  name: COD AGENCIA
+  start: 53
+  end: 57
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADL(ALLTRIM(SEE->EE_AGENCIA),5,"0")
+- register: '26'
+  subtype: H
+  name: DV AGENCIA
+  start: 58
+  end: 58
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADL(ALLTRIM(SEE->EE_DVAGE),1,"0")
+- register: '26'
+  subtype: H
+  name: NUM CONTA
+  start: 59
+  end: 70
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADL(ALLTRIM(SUBSTR(SEE->EE_CONTA,1,10)),12,"0")
+- register: '26'
+  subtype: H
+  name: DV CONTA
+  start: 71
+  end: 71
+  flag: '0'
+  pattern: raw
+  args:
+    value: SEE->EE_DVCTA
+- register: '26'
+  subtype: H
+  name: DV AG/CONTA
+  start: 72
+  end: 72
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(1)
+- register: '26'
+  subtype: H
+  name: NOME EMPRESA
+  start: 73
+  end: 102
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADR(SM0->M0_NOMECOM,30)
+- register: '26'
+  subtype: H
+  name: MENSAGEM
+  start: 103
+  end: 142
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(40)
+- register: '26'
+  subtype: H
+  name: ENDERECO
+  start: 143
+  end: 177
+  flag: '0'
+  pattern: raw
+  args:
+    value: IIF(EMPTY(SM0->M0_ENDENT),SM0->M0_ENDENT,SM0->M0_ENDENT)
+- register: '26'
+  subtype: H
+  name: COMPLEMENTO
+  start: 178
+  end: 192
+  flag: '0'
+  pattern: raw
+  args:
+    value: SM0->M0_COMPENT
+- register: '26'
+  subtype: H
+  name: CIDADE
+  start: 193
+  end: 212
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADR(IIF(EMPTY(SM0->M0_CIDENT),SM0->M0_CIDCOB,SM0->M0_CIDENT),20)
+- register: '26'
+  subtype: H
+  name: CEP
+  start: 213
+  end: 220
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADR(IIF(EMPTY(SM0->M0_CEPENT),SM0->M0_CEPCOB,SM0->M0_CEPENT),8,"0")
+- register: '26'
+  subtype: H
+  name: ESTADO
+  start: 221
+  end: 222
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADR(IIF(EMPTY(SM0->M0_ESTENT),SM0->M0_ESTCOB,SM0->M0_ESTENT),2)
+- register: '26'
+  subtype: H
+  name: CNAB
+  start: 223
+  end: 230
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(8)
+- register: '26'
+  subtype: H
+  name: OCORRENCIAS
+  start: 231
+  end: 240
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(10)
+- register: '27'
+  subtype: H
+  name: COD BCO COMPENS
+  start: 1
+  end: 3
+  flag: '0'
+  pattern: raw
+  args:
+    value: SEE->EE_CODIGO
+- register: '27'
+  subtype: H
+  name: LOTE DE SERVICO
+  start: 4
+  end: 7
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"0001"'
+- register: '27'
+  subtype: H
+  name: REG.HEADER LOTE
+  start: 8
+  end: 8
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"1"'
+- register: '27'
+  subtype: H
+  name: TIPO OPERACAO
+  start: 9
+  end: 9
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"C"'
+- register: '27'
+  subtype: H
+  name: TIPO DE SERVICO
+  start: 10
+  end: 11
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"98"'
+- register: '27'
+  subtype: H
+  name: FORMA LANCAMENT
+  start: 12
+  end: 13
+  flag: '0'
+  pattern: raw
+  args:
+    value: SEA->EA_MODELO
+- register: '27'
+  subtype: H
+  name: NR V. LAYOUT
+  start: 14
+  end: 16
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"012"'
+- register: '27'
+  subtype: H
+  name: USO FEBRA/CNAB
+  start: 101
+  end: 701
+  flag: '7'
+  pattern: raw
+  args:
+    value: 0SPACE(1)
+- register: '27'
+  subtype: H
+  name: TIPO INSCR EMPR
+  start: 18
+  end: 18
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"2"'
+- register: '27'
+  subtype: H
+  name: NR. INSCR EMPRE
+  start: 19
+  end: 32
+  flag: '0'
+  pattern: raw
+  args:
+    value: SM0->M0_CGC
+- register: '27'
+  subtype: H
+  name: CONVENIO
+  start: 33
+  end: 45
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(VAL(SEE->EE_CODEMP),13)
+- register: '27'
+  subtype: H
+  name: VAZIO
+  start: 46
+  end: 52
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(7)
+- register: '27'
+  subtype: H
+  name: AGENCIA CONTA
+  start: 53
+  end: 57
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(VAL(SEE->EE_AGENCIA),5)
+- register: '27'
+  subtype: H
+  name: DV. DA AGENCIA
+  start: 58
+  end: 58
+  flag: '0'
+  pattern: raw
+  args:
+    value: SEE->EE_DVAGE
+- register: '27'
+  subtype: H
+  name: NR. C. CORRENTE
+  start: 59
+  end: 70
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(VAL(SEE->EE_CONTA),12)
+- register: '27'
+  subtype: H
+  name: DV. DA CONTA
+  start: 71
+  end: 71
+  flag: '0'
+  pattern: raw
+  args:
+    value: SEE->EE_DVCTA
+- register: '27'
+  subtype: H
+  name: DIGIT VER AG/CO
+  start: 72
+  end: 72
+  flag: '0'
+  pattern: raw
+  args:
+    value: ''
+- register: '27'
+  subtype: H
+  name: NOME DA EMPRESA
+  start: 73
+  end: 102
+  flag: '0'
+  pattern: raw
+  args:
+    value: SM0->M0_NOMECOM
+- register: '27'
+  subtype: H
+  name: MENSAGEM
+  start: 103
+  end: 142
+  flag: '0'
+  pattern: raw
+  args:
+    value: ''
+- register: '27'
+  subtype: H
+  name: NOME R,AV,PCA,
+  start: 114
+  end: 317
+  flag: '2'
+  pattern: raw
+  args:
+    value: 0SUBSTR(SM0->M0_CIDENT,1,30)
+- register: '27'
+  subtype: H
+  name: NUMERO
+  start: 173
+  end: 177
+  flag: '0'
+  pattern: raw
+  args:
+    value: ''
+- register: '27'
+  subtype: H
+  name: COMPLEMENTO
+  start: 178
+  end: 192
+  flag: '0'
+  pattern: raw
+  args:
+    value: ''
+- register: '27'
+  subtype: H
+  name: CIDADE
+  start: 193
+  end: 212
+  flag: '0'
+  pattern: raw
+  args:
+    value: SUBSTR(SM0->M0_CIDENT,1,20)
+- register: '27'
+  subtype: H
+  name: CEP
+  start: 213
+  end: 220
+  flag: '0'
+  pattern: raw
+  args:
+    value: SM0->M0_CEPENT
+- register: '27'
+  subtype: H
+  name: ESTADO
+  start: 221
+  end: 222
+  flag: '0'
+  pattern: raw
+  args:
+    value: SM0->M0_ESTENT
+- register: '27'
+  subtype: H
+  name: EMISSAO EM LOTE
+  start: 223
+  end: 230
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(8)
+- register: '27'
+  subtype: H
+  name: COD.OCORR P/RET
+  start: 231
+  end: 240
+  flag: ' '
+  pattern: raw
+  args:
+    value: SPACE(10)
+- register: '27'
+  subtype: T
+  name: BCO COMPENSACAO
+  start: 1
+  end: 3
+  flag: '0'
+  pattern: raw
+  args:
+    value: SEE->EE_CODIGO
+- register: '27'
+  subtype: T
+  name: LOTE SERVICO
+  start: 4
+  end: 7
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"0001"'
+- register: '27'
+  subtype: T
+  name: TIPO REGISTRO
+  start: 8
+  end: 8
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"5"'
+- register: '27'
+  subtype: T
+  name: FEBRABAN
+  start: 9
+  end: 17
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(9)
+- register: '27'
+  subtype: T
+  name: QNTE REG LOTE
+  start: 18
+  end: 23
+  flag: '0'
+  pattern: raw
+  args:
+    value: NSEQ:=NSEQ+2
+- register: '27'
+  subtype: T
+  name: SOMATORIO
+  start: 24
+  end: 41
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(SOMAVALOR(),18)
+- register: '27'
+  subtype: T
+  name: ZEROS
+  start: 42
+  end: 59
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(18)
+- register: '27'
+  subtype: T
+  name: ZEROS
+  start: 60
+  end: 65
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(6)
+- register: '27'
+  subtype: T
+  name: COMPLEM
+  start: 66
+  end: 230
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(171)
+- register: '27'
+  subtype: T
+  name: OCORRENCIAS
+  start: 231
+  end: 240
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(10)
+- register: '27'
+  subtype: D1
+  name: COD BCO COMPENS
+  start: 1
+  end: 3
+  flag: '0'
+  pattern: raw
+  args:
+    value: SEE->EE_CODIGO
+- register: '27'
+  subtype: D1
+  name: LOTE DE SERVICO
+  start: 4
+  end: 7
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"0001"'
+- register: '27'
+  subtype: D1
+  name: RG.DETALHE LOTE
+  start: 8
+  end: 8
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"3"'
+- register: '27'
+  subtype: D1
+  name: SEQ. REG. LOTE
+  start: 9
+  end: 13
+  flag: '0'
+  pattern: raw
+  args:
+    value: ' INCREMENTAL()-1'
+- register: '27'
+  subtype: D1
+  name: SEG.
+  start: 14
+  end: 14
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"N"'
+- register: '27'
+  subtype: D1
+  name: TIPO DE MOVIMEN
+  start: 15
+  end: 15
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"0"'
+- register: '27'
+  subtype: D1
+  name: CODIGO DA INSTR
+  start: 16
+  end: 17
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"00"'
+- register: '27'
+  subtype: D1
+  name: Nº DCTO EMPRESA
+  start: 18
+  end: 37
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(VAL(SE2->E2_IDCNAB),20)
+- register: '27'
+  subtype: D1
+  name: Nº DCTO BANCO
+  start: 38
+  end: 57
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(20)
+- register: '27'
+  subtype: D1
+  name: NOME DO CONTRIB
+  start: 58
+  end: 87
+  flag: '0'
+  pattern: raw
+  args:
+    value: LEFT(SM0->M0_NOMECOM,30)
+- register: '27'
+  subtype: D1
+  name: DATA DO PAGAMEN
+  start: 88
+  end: 95
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(DAY(SE2->E2_VENCTO),2)+STRZERO(MONTH(SE2->E2_VENCTO),2)+STRZERO(YEAR(SE2->E2_VENCTO),4)
+- register: '27'
+  subtype: D1
+  name: VALOR DO TOTAL
+  start: 96
+  end: 110
+  flag: '2'
+  pattern: raw
+  args:
+    value: STRZERO((ROUND(SE2->E2_SALDO,2)*100),15)
+- register: '27'
+  subtype: D1
+  name: COD RECE TRIBUT
+  start: 111
+  end: 116
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADR(SE2->E2_CODRET,6)
+- register: '27'
+  subtype: D1
+  name: TIPO IDENT.CONT
+  start: 117
+  end: 118
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"01"'
+- register: '27'
+  subtype: D1
+  name: NR.INSC.CONTRIB
+  start: 119
+  end: 132
+  flag: '0'
+  pattern: raw
+  args:
+    value: SM0->M0_CGC
+- register: '27'
+  subtype: D1
+  name: COD.IDENT.TRIBU
+  start: 133
+  end: 134
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"18"'
+- register: '27'
+  subtype: D1
+  name: PERIODO APURACA
+  start: 135
+  end: 142
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(DAY(SE2->E2_EMISSAO),2)+STRZERO(MONTH(SE2->E2_EMISSAO),2)+STRZERO(YEAR(SE2->E2_EMISSAO),4)
+- register: '27'
+  subtype: D1
+  name: NR. REFERENCIA
+  start: 143
+  end: 159
+  flag: '0'
+  pattern: raw
+  args:
+    value: SE2->E2_XNRREFE
+- register: '27'
+  subtype: D1
+  name: VALOR PRINCIPAL
+  start: 160
+  end: 174
+  flag: '2'
+  pattern: raw
+  args:
+    value: STRZERO(INT(NOROUND(SE2->E2_VALOR*100)),15)
+- register: '27'
+  subtype: D1
+  name: VALOR MULTA
+  start: 175
+  end: 189
+  flag: '2'
+  pattern: raw
+  args:
+    value: STRZERO(INT(NOROUND(SE2->E2_MULTA *100)),15)
+- register: '27'
+  subtype: D1
+  name: JUROS/ENCARGOS
+  start: 190
+  end: 204
+  flag: '2'
+  pattern: raw
+  args:
+    value: STRZERO(INT(NOROUND(SE2->E2_JUROS*100)),15)
+- register: '27'
+  subtype: D1
+  name: DATA VENCIMENTO
+  start: 205
+  end: 212
+  flag: '0'
+  pattern: raw
+  args:
+    value: GRAVADATA(SE2->E2_VENCTO,.F.,5)
+- register: '27'
+  subtype: D1
+  name: FILLER
+  start: 213
+  end: 230
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(18)
+- register: '27'
+  subtype: D1
+  name: BRANCO
+  start: 231
+  end: 240
+  flag: ' '
+  pattern: raw
+  args:
+    value: SPACE(10)
+- register: '21'
+  subtype: H
+  name: COD BANCO
+  start: 1
+  end: 3
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"001"'
+- register: '21'
+  subtype: H
+  name: LOTE SERVICO
+  start: 4
+  end: 7
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(NLOTCNAB2,4)
+- register: '21'
+  subtype: H
+  name: REGISTRO LOTE
+  start: 8
+  end: 8
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"1"'
+- register: '21'
+  subtype: H
+  name: TIPO OPERACAO
+  start: 9
+  end: 9
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"C"'
+- register: '21'
+  subtype: H
+  name: TIPO SERVICO
+  start: 10
+  end: 11
+  flag: '0'
+  pattern: raw
+  args:
+    value: SEA->EA_TIPOPAG
+- register: '21'
+  subtype: H
+  name: TIPO LANCAMENTO
+  start: 12
+  end: 13
+  flag: '0'
+  pattern: raw
+  args:
+    value: SEA->EA_MODELO
+- register: '21'
+  subtype: H
+  name: VERSAO LOTE
+  start: 14
+  end: 16
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"045"'
+- register: '21'
+  subtype: H
+  name: FILLER
+  start: 17
+  end: 17
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(1)
+- register: '21'
+  subtype: H
+  name: TIPO INSCR EMP
+  start: 18
+  end: 18
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"2"'
+- register: '21'
+  subtype: H
+  name: NUM INSCR EMP
+  start: 19
+  end: 32
+  flag: '0'
+  pattern: raw
+  args:
+    value: ALLTRIM(SM0->M0_CGC)
+- register: '21'
+  subtype: H
+  name: NUM CONTRATO
+  start: 33
+  end: 52
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADL(ALLTRIM(SEE->EE_CODEMP),13,"0")
+- register: '21'
+  subtype: H
+  name: COD AGENCIA
+  start: 53
+  end: 57
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADL(ALLTRIM(SEE->EE_AGENCIA),5,"0")
+- register: '21'
+  subtype: H
+  name: DV AGENCIA
+  start: 58
+  end: 58
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADL(ALLTRIM(SEE->EE_DVAGE),1,"0")
+- register: '21'
+  subtype: H
+  name: NUM CONTA
+  start: 59
+  end: 70
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADL(ALLTRIM(SUBSTR(SEE->EE_CONTA,1,10)),12,"0")
+- register: '21'
+  subtype: H
+  name: DV CONTA
+  start: 71
+  end: 71
+  flag: '0'
+  pattern: raw
+  args:
+    value: SEE->EE_DVCTA
+- register: '21'
+  subtype: H
+  name: DV AG/CONTA
+  start: 72
+  end: 72
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(1)
+- register: '21'
+  subtype: H
+  name: NOME EMPRESA
+  start: 73
+  end: 102
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADR(SM0->M0_NOMECOM,30)
+- register: '21'
+  subtype: H
+  name: MENSAGEM
+  start: 103
+  end: 142
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(40)
+- register: '21'
+  subtype: H
+  name: ENDERECO
+  start: 143
+  end: 177
+  flag: '0'
+  pattern: raw
+  args:
+    value: IIF(EMPTY(SM0->M0_ENDENT),SM0->M0_ENDENT,SM0->M0_ENDENT)
+- register: '21'
+  subtype: H
+  name: COMPLEMENTO
+  start: 178
+  end: 192
+  flag: '0'
+  pattern: raw
+  args:
+    value: SM0->M0_COMPENT
+- register: '21'
+  subtype: H
+  name: CIDADE
+  start: 193
+  end: 212
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADR(IIF(EMPTY(SM0->M0_CIDENT),SM0->M0_CIDCOB,SM0->M0_CIDENT),20)
+- register: '21'
+  subtype: H
+  name: CEP
+  start: 213
+  end: 220
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADR(IIF(EMPTY(SM0->M0_CEPENT),SM0->M0_CEPCOB,SM0->M0_CEPENT),8,"0")
+- register: '21'
+  subtype: H
+  name: ESTADO
+  start: 221
+  end: 222
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADR(IIF(EMPTY(SM0->M0_ESTENT),SM0->M0_ESTCOB,SM0->M0_ESTENT),2)
+- register: '21'
+  subtype: H
+  name: FORMA PAGTO
+  start: 223
+  end: 224
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"01"'
+- register: '21'
+  subtype: H
+  name: FILLER
+  start: 225
+  end: 230
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(6)
+- register: '21'
+  subtype: H
+  name: OCORRENCIAS
+  start: 231
+  end: 240
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(10)
+- register: '23'
+  subtype: D
+  name: COD.BANCO
+  start: 1
+  end: 3
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"001"'
+- register: '23'
+  subtype: D
+  name: LOTE SERVICO
+  start: 4
+  end: 7
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(NLOTCNAB2,4)
+- register: '23'
+  subtype: D
+  name: REGISTRO DETALH
+  start: 8
+  end: 8
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"3"'
+- register: '23'
+  subtype: D
+  name: NR.SEQ.LOTE
+  start: 9
+  end: 13
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(F420SEQLOT(),5)
+- register: '23'
+  subtype: D
+  name: COD.SEQMENTO
+  start: 14
+  end: 14
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"J"'
+- register: '23'
+  subtype: D
+  name: TIPO MOVIMENTO
+  start: 15
+  end: 15
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"0"'
+- register: '23'
+  subtype: D
+  name: COD.INSTRUCAO
+  start: 16
+  end: 17
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"00"'
+- register: '23'
+  subtype: D
+  name: COD.BCO.DESTINO
+  start: 18
+  end: 61
+  flag: '0'
+  pattern: raw
+  args:
+    value: SUBSTR(SE2->E2_CODBAR,1,44)
+- register: '23'
+  subtype: D
+  name: CEDENTE
+  start: 62
+  end: 91
+  flag: '0'
+  pattern: raw
+  args:
+    value: SUBS(SA2->A2_NOME,1,30)
+- register: '23'
+  subtype: D
+  name: VENCIMENTO
+  start: 92
+  end: 99
+  flag: '0'
+  pattern: raw
+  args:
+    value: GRAVADATA(SE2->E2_VENCREA,.F.,5)
+- register: '23'
+  subtype: D
+  name: VALOR TITULO
+  start: 100
+  end: 114
+  flag: '2'
+  pattern: raw
+  args:
+    value: STRZERO(SE2->E2_SALDO*100,15)
+- register: '23'
+  subtype: D
+  name: VALOR DESCONTO
+  start: 115
+  end: 129
+  flag: '2'
+  pattern: raw
+  args:
+    value: STRZERO((SE2->E2_DECRESC) * 100, 15)
+- register: '23'
+  subtype: D
+  name: VALOR JUROS
+  start: 130
+  end: 144
+  flag: '2'
+  pattern: raw
+  args:
+    value: STRZERO((SE2->E2_ACRESC+SE2->E2_VALJUR)*100,15)
+- register: '23'
+  subtype: D
+  name: DATA PAGTO
+  start: 145
+  end: 152
+  flag: '0'
+  pattern: raw
+  args:
+    value: GRAVADATA(SE2->E2_VENCREA,.F.,5)
+- register: '23'
+  subtype: D
+  name: VALOR PAGTO
+  start: 153
+  end: 167
+  flag: '2'
+  pattern: raw
+  args:
+    value: STRZERO((ROUND(SE2->E2_SALDO,2)*100),15)
+- register: '23'
+  subtype: D
+  name: QTDE. MOEDA
+  start: 168
+  end: 182
+  flag: '0'
+  pattern: raw
+  args:
+    value: REPLICATE("0",15)
+- register: '23'
+  subtype: D
+  name: COD.REF.SACADO
+  start: 183
+  end: 202
+  flag: '0'
+  pattern: raw
+  args:
+    value: SE2->E2_IDCNAB
+- register: '23'
+  subtype: D
+  name: NRO ATR BANCO
+  start: 203
+  end: 222
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(20)
+- register: '23'
+  subtype: D
+  name: COD MOEDA
+  start: 223
+  end: 224
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"09"'
+- register: '23'
+  subtype: D
+  name: COD MOEDA
+  start: 225
+  end: 230
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(6)
+- register: '23'
+  subtype: D
+  name: CNAB
+  start: 231
+  end: 240
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(10)
+- register: '26'
+  subtype: D
+  name: COD BANCO
+  start: 1
+  end: 3
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"001"'
+- register: '26'
+  subtype: D
+  name: LOTE SERVICO
+  start: 4
+  end: 7
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(NLOTCNAB2,4)
+- register: '26'
+  subtype: D
+  name: REGISTRO LOTE
+  start: 8
+  end: 8
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"3"'
+- register: '26'
+  subtype: D
+  name: SEQUENCIAL LOTE
+  start: 9
+  end: 13
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(F420SEQLOT(),5)
+- register: '26'
+  subtype: D
+  name: SEGMENTO LOTE
+  start: 14
+  end: 14
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"O"'
+- register: '26'
+  subtype: D
+  name: TIPO MOVIMENTO
+  start: 15
+  end: 15
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"0"'
+- register: '26'
+  subtype: D
+  name: COD INSTR MOVTO
+  start: 16
+  end: 17
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"00"'
+- register: '26'
+  subtype: D
+  name: COD BARRAS
+  start: 18
+  end: 61
+  flag: '0'
+  pattern: raw
+  args:
+    value: SUBSTR(SE2->E2_CODBAR,1,44)
+- register: '26'
+  subtype: D
+  name: NOME CONCESSION
+  start: 62
+  end: 91
+  flag: '0'
+  pattern: raw
+  args:
+    value: SUBS(SA2->A2_NOME,1,30)
+- register: '26'
+  subtype: D
+  name: DATA VENCIMENTO
+  start: 92
+  end: 99
+  flag: '0'
+  pattern: raw
+  args:
+    value: GRAVADATA(SE2->E2_VENCREA,.F.,5)
+- register: '26'
+  subtype: D
+  name: DATA PAGTO
+  start: 100
+  end: 107
+  flag: '0'
+  pattern: raw
+  args:
+    value: GRAVADATA(SE2->E2_VENCREA,.F.,5)
+- register: '26'
+  subtype: D
+  name: VALOR PAGTO
+  start: 108
+  end: 122
+  flag: '2'
+  pattern: raw
+  args:
+    value: STRZERO((ROUND(SE2->E2_SALDO,2)*100),15)
+- register: '26'
+  subtype: D
+  name: Nº DOC ATR EMPR
+  start: 123
+  end: 142
+  flag: '0'
+  pattern: raw
+  args:
+    value: SE2->E2_IDCNAB
+- register: '26'
+  subtype: D
+  name: Nº DOC ATR BCO
+  start: 143
+  end: 162
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(20)
+- register: '26'
+  subtype: D
+  name: FEBRABAN
+  start: 163
+  end: 230
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(68)
+- register: '26'
+  subtype: D
+  name: OCORRENCIAS
+  start: 231
+  end: 240
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(10)
+- register: '20'
+  subtype: H
+  name: CODIGO DO BANCO
+  start: 1
+  end: 3
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"001"'
+- register: '20'
+  subtype: H
+  name: LOTE DE SERVICO
+  start: 4
+  end: 7
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"0000"'
+- register: '20'
+  subtype: H
+  name: REG.HEADER ARQ.
+  start: 8
+  end: 8
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"0"'
+- register: '20'
+  subtype: H
+  name: TIPO OPERACAO
+  start: 9
+  end: 17
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(9)
+- register: '20'
+  subtype: H
+  name: TP.INSCR. EMPRE
+  start: 18
+  end: 18
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"2"'
+- register: '20'
+  subtype: H
+  name: N. INCR.EMPRESA
+  start: 19
+  end: 32
+  flag: '0'
+  pattern: raw
+  args:
+    value: ALLTRIM(SM0->M0_CGC)
+- register: '20'
+  subtype: H
+  name: COD. CONV. BCO.
+  start: 33
+  end: 52
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADL(ALLTRIM(SEE->EE_CODEMP),13,"0")
+- register: '20'
+  subtype: H
+  name: AG. MANT. CONTA
+  start: 53
+  end: 57
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADL(ALLTRIM(SEE->EE_AGENCIA),5,"0")
+- register: '20'
+  subtype: H
+  name: DIGITO VER. AG.
+  start: 58
+  end: 58
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADL(ALLTRIM(SEE->EE_DVAGE),1,"0")
+- register: '20'
+  subtype: H
+  name: NUM. C/CORRENTE
+  start: 59
+  end: 70
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADL(ALLTRIM(SEE->EE_CONTA),12,"0")
+- register: '20'
+  subtype: H
+  name: DIG. VER. CONTA
+  start: 71
+  end: 71
+  flag: '0'
+  pattern: raw
+  args:
+    value: SEE->EE_DVCTA
+- register: '20'
+  subtype: H
+  name: DIG. VER. AG/C.
+  start: 72
+  end: 72
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(1)
+- register: '20'
+  subtype: H
+  name: NOME EMPRESA
+  start: 73
+  end: 102
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADR(SM0->M0_NOMECOM,30)
+- register: '20'
+  subtype: H
+  name: NOME BANCO
+  start: 103
+  end: 132
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"BANCO DO BRASIL"'
+- register: '20'
+  subtype: H
+  name: FILLER
+  start: 133
+  end: 142
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(10)
+- register: '20'
+  subtype: H
+  name: COD. REM/RETOR.
+  start: 143
+  end: 143
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"1"'
+- register: '20'
+  subtype: H
+  name: DT. GERAC. ARQ.
+  start: 144
+  end: 151
+  flag: '0'
+  pattern: raw
+  args:
+    value: SUBSTR(DTOS(DDATABASE),7,2)+SUBSTR(DTOS(DDATABASE),5,2)+SUBSTR(DTOS(DDATABASE),1,4)
+- register: '20'
+  subtype: H
+  name: HORA GER.ARQ.
+  start: 152
+  end: 157
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRTRAN(TIME(),":")
+- register: '20'
+  subtype: H
+  name: N.SEQUEN.ARQ.
+  start: 158
+  end: 163
+  flag: '0'
+  pattern: raw
+  args:
+    value: SEE->EE_ULTDSK
+- register: '20'
+  subtype: H
+  name: N.VERSAO L.OUT.
+  start: 164
+  end: 166
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"087"'
+- register: '20'
+  subtype: H
+  name: DENSID. GRAVAC.
+  start: 167
+  end: 171
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"00000"'
+- register: '20'
+  subtype: H
+  name: P/ USO RES.BCO
+  start: 172
+  end: 191
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(20)
+- register: '20'
+  subtype: H
+  name: P/USO RES.EMPRE
+  start: 192
+  end: 211
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(20)
+- register: '20'
+  subtype: H
+  name: FILLER
+  start: 212
+  end: 240
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(29)
+- register: '27'
+  subtype: D
+  name: COD BANCO
+  start: 1
+  end: 3
+  flag: '0'
+  pattern: raw
+  args:
+    value: SEE->EE_CODIGO
+- register: '27'
+  subtype: D
+  name: LOTE SERVICO
+  start: 4
+  end: 7
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(NLOTCNAB2,4)
+- register: '27'
+  subtype: D
+  name: REGISTRO LOTE
+  start: 8
+  end: 8
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"3"'
+- register: '27'
+  subtype: D
+  name: SEQUENCIAL LOTE
+  start: 9
+  end: 13
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(F420SEQLOT(),5)
+- register: '27'
+  subtype: D
+  name: SEGMENTO LOTE
+  start: 14
+  end: 14
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"N"'
+- register: '27'
+  subtype: D
+  name: TP LANCAMENTO
+  start: 15
+  end: 15
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"0"'
+- register: '27'
+  subtype: D
+  name: COD MOVTO.
+  start: 16
+  end: 17
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"00"'
+- register: '27'
+  subtype: D
+  name: NUMERO TITULO
+  start: 18
+  end: 37
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(VAL(SE2->E2_IDCNAB),20)
+- register: '27'
+  subtype: D
+  name: NUMERO BANCO
+  start: 38
+  end: 57
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(20)
+- register: '27'
+  subtype: D
+  name: NOME CONTRIB
+  start: 58
+  end: 87
+  flag: '0'
+  pattern: raw
+  args:
+    value: PADR(UPPER(SM0->M0_NOME),30)
+- register: '27'
+  subtype: D
+  name: DATA PAGTO
+  start: 88
+  end: 95
+  flag: '0'
+  pattern: raw
+  args:
+    value: GRAVADATA(SE2->E2_VENCREA,.F.,5)
+- register: '27'
+  subtype: D
+  name: VALOR PAGTO
+  start: 96
+  end: 110
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO((ROUND(SE2->E2_SALDO,2)*100),15)
+- register: '27'
+  subtype: D
+  name: COD RECE TRIBUT
+  start: 111
+  end: 116
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(VAL(SE2->E2_CODRET),6)
+- register: '27'
+  subtype: D
+  name: TIPO DE IDENTIF
+  start: 117
+  end: 118
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"01"'
+- register: '27'
+  subtype: D
+  name: IDENTIFICACAO D
+  start: 119
+  end: 132
+  flag: '0'
+  pattern: raw
+  args:
+    value: ALLTRIM(SM0->M0_CGC)
+- register: '27'
+  subtype: D
+  name: COD IDENT TRIBU
+  start: 133
+  end: 134
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"17"'
+- register: '27'
+  subtype: D
+  name: COMPETENCIA
+  start: 135
+  end: 140
+  flag: '0'
+  pattern: raw
+  args:
+    value: SE2->E2_XCOMPET
+- register: '27'
+  subtype: D
+  name: VLR INSS
+  start: 141
+  end: 155
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO((ROUND(SE2->E2_XVLINSS,2)*100),15)
+- register: '27'
+  subtype: D
+  name: VLR D OU ENT
+  start: 156
+  end: 170
+  flag: '2'
+  pattern: raw
+  args:
+    value: STRZERO(INT(NOROUND(SE2->E2_XVLENTI*100)),15)
+- register: '27'
+  subtype: D
+  name: ATUA MONE
+  start: 171
+  end: 185
+  flag: '2'
+  pattern: raw
+  args:
+    value: STRZERO(INT(NOROUND(SE2->E2_ACRESC*100)),15)
+- register: '27'
+  subtype: D
+  name: USO EXCLUSI
+  start: 186
+  end: 230
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(45)
+- register: '27'
+  subtype: D
+  name: OCOR. RETORNO
+  start: 231
+  end: 240
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(10)
 - register: '21'
   subtype: D
-  name: OCORRENCIAS RET2
-  start: 312
-  end: 400
-  flag: S
+  name: COD BANCO
+  start: 1
+  end: 3
+  flag: '0'
   pattern: raw
   args:
-    value: PACE(10)
+    value: '"001"'
+- register: '21'
+  subtype: D
+  name: LOTE SERVICO
+  start: 4
+  end: 7
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(NLOTCNAB2,4)
+- register: '21'
+  subtype: D
+  name: REGISTRO LOTE
+  start: 8
+  end: 8
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"3"'
+- register: '21'
+  subtype: D
+  name: SEQUENCIAL LOTE
+  start: 9
+  end: 13
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(F420SEQLOT(),5)
+- register: '21'
+  subtype: D
+  name: SEGMENTO LOTE
+  start: 14
+  end: 14
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"A"'
+- register: '21'
+  subtype: D
+  name: TIPO MOVIMENTO
+  start: 15
+  end: 15
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"0"'
+- register: '21'
+  subtype: D
+  name: COD INSTR MOVTO
+  start: 16
+  end: 17
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"00"'
+- register: '21'
+  subtype: D
+  name: COMPENSACAO
+  start: 18
+  end: 20
+  flag: '0'
+  pattern: raw
+  args:
+    value: IIF(SEA->EA_MODELO=="03","700",IIF(SEA->EA_MODELO$"41/43","018","000"))
+- register: '21'
+  subtype: D
+  name: BANCO FAVOR
+  start: 21
+  end: 23
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(VAL(SE2->E2_FORBCO),3)
+- register: '21'
+  subtype: D
+  name: AGENCIA FAVOR
+  start: 24
+  end: 28
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(VAL(SE2->E2_FORAGE),5)
+- register: '21'
+  subtype: D
+  name: DV AGENCIA FAVO
+  start: 29
+  end: 29
+  flag: '0'
+  pattern: raw
+  args:
+    value: SE2->E2_FAGEDV
+- register: '21'
+  subtype: D
+  name: NUMERO CONTA
+  start: 30
+  end: 41
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO(VAL(SE2->E2_FORCTA),12)
+- register: '21'
+  subtype: D
+  name: DV CONTA
+  start: 42
+  end: 43
+  flag: '0'
+  pattern: raw
+  args:
+    value: SE2->E2_FCTADV
+- register: '21'
+  subtype: D
+  name: FAV NOME
+  start: 44
+  end: 73
+  flag: '0'
+  pattern: raw
+  args:
+    value: SUBSTR(SE2->E2_NOMFOR,1,30)
+- register: '21'
+  subtype: D
+  name: NUM DOCUMENTO
+  start: 74
+  end: 83
+  flag: '0'
+  pattern: raw
+  args:
+    value: SE2->E2_IDCNAB
+- register: '21'
+  subtype: D
+  name: FILLER
+  start: 84
+  end: 93
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(10)
+- register: '21'
+  subtype: D
+  name: DATA CREDITO
+  start: 94
+  end: 101
+  flag: '0'
+  pattern: raw
+  args:
+    value: GRAVADATA(SE2->E2_VENCREA,.F.,5)
+- register: '21'
+  subtype: D
+  name: TIPO MOEDA
+  start: 102
+  end: 104
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"BRL"'
+- register: '21'
+  subtype: D
+  name: QTDE MOEDA
+  start: 105
+  end: 119
+  flag: '0'
+  pattern: raw
+  args:
+    value: REPLICATE("0",15)
+- register: '21'
+  subtype: D
+  name: VLR CREDITO
+  start: 120
+  end: 134
+  flag: '0'
+  pattern: raw
+  args:
+    value: STRZERO((ROUND(SE2->E2_SALDO,2)*100),15)
+- register: '21'
+  subtype: D
+  name: NUMERO BANCO
+  start: 135
+  end: 154
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(20)
+- register: '21'
+  subtype: D
+  name: DATA REAL PGTO
+  start: 155
+  end: 162
+  flag: '0'
+  pattern: raw
+  args:
+    value: REPLICATE("0",8)
+- register: '21'
+  subtype: D
+  name: VLR REAL PGTO
+  start: 163
+  end: 177
+  flag: '0'
+  pattern: raw
+  args:
+    value: REPLICATE("0",15)
+- register: '21'
+  subtype: D
+  name: OUTRAS INFORMAC
+  start: 178
+  end: 217
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(40)
+- register: '21'
+  subtype: D
+  name: FILLER
+  start: 218
+  end: 229
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(12)
+- register: '21'
+  subtype: D
+  name: EMISSAO AVISO
+  start: 230
+  end: 230
+  flag: '0'
+  pattern: raw
+  args:
+    value: '"5"'
+- register: '21'
+  subtype: D
+  name: OCORRENCIAS RET
+  start: 231
+  end: 240
+  flag: '0'
+  pattern: raw
+  args:
+    value: SPACE(10)
 

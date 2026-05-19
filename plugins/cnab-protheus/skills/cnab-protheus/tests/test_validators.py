@@ -201,3 +201,40 @@ def test_split_sections_with_mixed_types():
     assert section1[1][0:2] == "11"
     assert section2[0][0:2] == "25"
     assert section2[1][0:2] == "24"
+
+
+def test_parse_field_definition_variable_length_name():
+    """Fixture has some lines where name is 15 chars and runs directly into position with no trailing space."""
+    # INSC DIV ATI/ET (15 chars) followed by 0460620
+    name = "INSC DIV ATI/ET"  # exactly 15 chars, no padding
+    pos = "0460620"  # start=046, end=062, flag=0
+    raw = "25D " + name + pos
+    line = raw + " " * (500 - len(raw))
+    assert len(line) == 500
+    fd = parse_field_definition(line)
+    assert fd.register == "25"
+    assert fd.subtype == "D"
+    assert fd.name == "INSC DIV ATI/ET"
+    assert fd.start == 46
+    assert fd.end == 62
+    assert fd.flag == "0"
+    assert fd.expression == ""
+
+
+def test_parse_field_definition_variable_length_with_expression():
+    """Another variant: name is 15 chars, position block, then expression."""
+    # This tests the regex correctly finds position and extracts expression
+    name = "SOME LONG NAME"  # 14 chars
+    pos = "0010050"  # start=001, end=005, flag=0
+    expr = "EXPR()"
+    raw = "24H " + name + pos + expr
+    line = raw + " " * (500 - len(raw))
+    assert len(line) == 500
+    fd = parse_field_definition(line)
+    assert fd.register == "24"
+    assert fd.subtype == "H"
+    assert fd.name == "SOME LONG NAME"
+    assert fd.start == 1
+    assert fd.end == 5
+    assert fd.flag == "0"
+    assert fd.expression == "EXPR()"

@@ -73,8 +73,9 @@ def test_load_spec_invalid_direcao_raises(tmp_path):
 
 
 def test_load_spec_overlapping_positions_allowed(tmp_path):
-    # Overlapping fields are legitimate in real fixtures (e.g., 001PG)
-    # where fields may be conditionally rendered based on operation mode
+    # Overlapping fields are allowed and load successfully.
+    # Some overlaps are legitimate in real fixtures (e.g., 001PG)
+    # where fields with different flags may be conditionally rendered based on operation mode.
     spec_data = {
         "banco": "001",
         "operacao": "pagamento",
