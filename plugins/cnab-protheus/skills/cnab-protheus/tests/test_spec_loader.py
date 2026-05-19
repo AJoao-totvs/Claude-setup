@@ -72,8 +72,10 @@ def test_load_spec_invalid_direcao_raises(tmp_path):
         load_spec(path)
 
 
-def test_load_spec_overlapping_positions_raises(tmp_path):
-    bad = {
+def test_load_spec_overlapping_positions_allowed(tmp_path):
+    # Overlapping fields are legitimate in real fixtures (e.g., 001PG)
+    # where fields may be conditionally rendered based on operation mode
+    spec_data = {
         "banco": "001",
         "operacao": "pagamento",
         "direcao": "remessa",
@@ -91,7 +93,8 @@ def test_load_spec_overlapping_positions_raises(tmp_path):
             },
         ],
     }
-    path = tmp_path / "bad.yaml"
-    path.write_text(yaml.safe_dump(bad))
-    with pytest.raises(SpecValidationError, match="overlap"):
-        load_spec(path)
+    path = tmp_path / "spec.yaml"
+    path.write_text(yaml.safe_dump(spec_data))
+    # Should load successfully (overlap check is relaxed for real fixtures)
+    spec = load_spec(path)
+    assert len(spec.campos) == 2

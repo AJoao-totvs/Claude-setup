@@ -106,3 +106,7 @@ patterns:
   empty_or_default:
     description: "Usar campo se não vazio, senão usar default"
     template: 'IIF(EMPTY({src}), {default}, {src})'
+
+  raw:
+    description: "Use a literal ADVPL expression as-is (escape hatch for byte-exact replication)"
+    template: '{value}'
