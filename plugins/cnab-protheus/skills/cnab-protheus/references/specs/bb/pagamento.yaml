@@ -73,7 +73,7 @@ declaracoes:
 campos:
 - register: '25'
   subtype: D
-  name: TIPO REGISTRO
+  name: 'TIPO REGISTRO  '
   start: 1
   end: 1
   flag: '0'
@@ -82,7 +82,7 @@ campos:
     value: '"M"'
 - register: '25'
   subtype: D
-  name: DATA VENCTO
+  name: 'DATA VENCTO    '
   start: 2
   end: 9
   flag: '0'
@@ -91,7 +91,7 @@ campos:
     value: ' SUBS(DTOS(SE2->E2_VENCTO),7,2)+   SUBS(DTOS(SE2->E2_VENCTO),5,2)+   SUBS(DTOS(SE2->E2_VENCTO),1,4)'
 - register: '25'
   subtype: D
-  name: COD RECEITA
+  name: 'COD RECEITA    '
   start: 10
   end: 13
   flag: '0'
@@ -100,7 +100,7 @@ campos:
     value: ''
 - register: '25'
   subtype: D
-  name: INSC ESTADUAL
+  name: 'INSC ESTADUAL  '
   start: 14
   end: 30
   flag: '0'
@@ -109,7 +109,7 @@ campos:
     value: SM0->M0_INSC
 - register: '25'
   subtype: D
-  name: TIPO CGC/CNPJ
+  name: 'TIPO CGC/CNPJ  '
   start: 31
   end: 31
   flag: '0'
@@ -118,7 +118,7 @@ campos:
     value: '"2"'
 - register: '25'
   subtype: D
-  name: CNPJ
+  name: 'CNPJ           '
   start: 32
   end: 45
   flag: '0'
@@ -136,7 +136,7 @@ campos:
     value: ''
 - register: '25'
   subtype: D
-  name: REFERENCIA
+  name: 'REFERENCIA     '
   start: 63
   end: 68
   flag: '0'
@@ -145,7 +145,7 @@ campos:
     value: SUBS(DTOS(SE2->E2_EMISSAO),5,2)+   SUBS(DTOS(SE2->E2_EMISSAO),1,4))
 - register: '25'
   subtype: D
-  name: AIM/DEIC/PARC
+  name: 'AIM/DEIC/PARC  '
   start: 69
   end: 85
   flag: '0'
@@ -154,7 +154,7 @@ campos:
     value: ''
 - register: '25'
   subtype: D
-  name: VALOR RECEITA
+  name: 'VALOR RECEITA  '
   start: 86
   end: 102
   flag: '0'
@@ -163,7 +163,7 @@ campos:
     value: ''
 - register: '25'
   subtype: D
-  name: VALOR JUROS
+  name: 'VALOR JUROS    '
   start: 103
   end: 119
   flag: '0'
@@ -172,7 +172,7 @@ campos:
     value: STRZERO(INT(SE2->E2_JUROS*100),17)
 - register: '25'
   subtype: D
-  name: VALOR MULTA
+  name: 'VALOR MULTA    '
   start: 120
   end: 136
   flag: '0'
@@ -181,7 +181,7 @@ campos:
     value: STRZERO(INT(SE2->E2_MULTA*100),17)
 - register: '25'
   subtype: D
-  name: VALOR ACRESC
+  name: 'VALOR ACRESC   '
   start: 137
   end: 153
   flag: '0'
@@ -190,7 +190,7 @@ campos:
     value: ''
 - register: '25'
   subtype: D
-  name: VALOR HONO
+  name: 'VALOR HONO     '
   start: 154
   end: 170
   flag: '0'
@@ -199,7 +199,7 @@ campos:
     value: ''
 - register: '25'
   subtype: D
-  name: VALOR TOTAL
+  name: 'VALOR TOTAL    '
   start: 171
   end: 187
   flag: '0'
@@ -208,7 +208,7 @@ campos:
     value: STRZERO(INT(SE2->E2_VLCRUZ*100),17)
 - register: '25'
   subtype: D
-  name: TIPO RECIBO
+  name: 'TIPO RECIBO    '
   start: 188
   end: 188
   flag: '0'
@@ -217,7 +217,7 @@ campos:
     value: '"1"'
 - register: '25'
   subtype: D
-  name: NOME CONTRIB
+  name: 'NOME CONTRIB   '
   start: 189
   end: 218
   flag: '0'
@@ -226,7 +226,7 @@ campos:
     value: SM0->M0_NOME
 - register: '25'
   subtype: D
-  name: OBSERVACAO
+  name: 'OBSERVACAO     '
   start: 219
   end: 258
   flag: '0'
@@ -235,7 +235,7 @@ campos:
     value: ''
 - register: '25'
   subtype: D
-  name: IND CTA DEBITO
+  name: 'IND CTA DEBITO '
   start: 259
   end: 259
   flag: '0'
@@ -244,7 +244,7 @@ campos:
     value: '"2"'
 - register: '25'
   subtype: D
-  name: FILLER
+  name: 'FILLER         '
   start: 260
   end: 295
   flag: '0'
@@ -253,7 +253,7 @@ campos:
     value: ''
 - register: '25'
   subtype: D
-  name: SEQUENCIAL
+  name: 'SEQUENCIAL     '
   start: 296
   end: 300
   flag: ' '
@@ -262,7 +262,7 @@ campos:
     value: INCREMENTA()
 - register: '24'
   subtype: T
-  name: TIPO REGISTRO
+  name: 'TIPO REGISTRO  '
   start: 1
   end: 1
   flag: '0'
@@ -271,7 +271,7 @@ campos:
     value: '"Z"'
 - register: '24'
   subtype: T
-  name: QTDE REGISTROS
+  name: 'QTDE REGISTROS '
   start: 2
   end: 7
   flag: '0'
@@ -280,7 +280,7 @@ campos:
     value: INCREMENTA() +1
 - register: '24'
   subtype: T
-  name: FILLER
+  name: 'FILLER         '
   start: 8
   end: 295
   flag: '0'
@@ -289,7 +289,7 @@ campos:
     value: ''
 - register: '24'
   subtype: T
-  name: SEQUENCIAL
+  name: 'SEQUENCIAL     '
   start: 296
   end: 300
   flag: '0'
@@ -298,7 +298,7 @@ campos:
     value: INCREMENTA() +1
 - register: '24'
   subtype: D
-  name: TIPO REGISTRO
+  name: 'TIPO REGISTRO  '
   start: 1
   end: 1
   flag: '0'
@@ -307,7 +307,7 @@ campos:
     value: '"D"'
 - register: '24'
   subtype: D
-  name: PERIODO ARRECA
+  name: 'PERIODO ARRECA '
   start: 2
   end: 9
   flag: '0'
@@ -316,7 +316,7 @@ campos:
     value: ' (SUBS(DTOS(SE2->E2_EMISSAO),1,4)+   SUBS(DTOS(SE2->E2_EMISSAO),5,2)+   SUBS(DTOS(SE2->E2_EMISSAO),7,2))'
 - register: '24'
   subtype: D
-  name: TIPO INSC
+  name: 'TIPO INSC      '
   start: 10
   end: 10
   flag: '0'
@@ -325,7 +325,7 @@ campos:
     value: '"2"'
 - register: '24'
   subtype: D
-  name: CGC
+  name: 'CGC            '
   start: 11
   end: 24
   flag: '0'
@@ -334,7 +334,7 @@ campos:
     value: SM0->M0_CGC
 - register: '24'
   subtype: D
-  name: COD RECEITA
+  name: 'COD RECEITA    '
   start: 25
   end: 28
   flag: '0'
@@ -343,7 +343,7 @@ campos:
     value: ALLTRIM(SE2->E2_CODRET)
 - register: '24'
   subtype: D
-  name: REFERENCIA
+  name: 'REFERENCIA     '
   start: 29
   end: 45
   flag: '0'
@@ -352,7 +352,7 @@ campos:
     value: '"00000000000000000"'
 - register: '24'
   subtype: D
-  name: DATA VENCTO
+  name: 'DATA VENCTO    '
   start: 46
   end: 53
   flag: '0'
@@ -361,7 +361,7 @@ campos:
     value: ' (SUBS(DTOS(SE2->E2_VENCTO),1,4)+   SUBS(DTOS(SE2->E2_VENCTO),5,2)+   SUBS(DTOS(SE2->E2_VENCTO),7,2))'
 - register: '24'
   subtype: D
-  name: VALOR PRINC
+  name: 'VALOR PRINC    '
   start: 54
   end: 70
   flag: '0'
@@ -370,7 +370,7 @@ campos:
     value: (INT(SE2->E2_VALOR*100))
 - register: '24'
   subtype: D
-  name: MULTA
+  name: 'MULTA          '
   start: 71
   end: 87
   flag: '0'
@@ -379,7 +379,7 @@ campos:
     value: (INT(SE2->E2_MULTA*100))
 - register: '24'
   subtype: D
-  name: JUROS
+  name: 'JUROS          '
   start: 88
   end: 104
   flag: '0'
@@ -388,7 +388,7 @@ campos:
     value: (INT(SE2->E2_JUROS*100))
 - register: '24'
   subtype: D
-  name: VALOR TOTAL
+  name: 'VALOR TOTAL    '
   start: 105
   end: 121
   flag: '0'
@@ -397,7 +397,7 @@ campos:
     value: (INT(SE2->E2_VALOR*100))
 - register: '24'
   subtype: D
-  name: TIPO RECIBO
+  name: 'TIPO RECIBO    '
   start: 122
   end: 122
   flag: '0'
@@ -406,7 +406,7 @@ campos:
     value: ''
 - register: '24'
   subtype: D
-  name: CONTRIBUINTE
+  name: 'CONTRIBUINTE   '
   start: 123
   end: 152
   flag: '0'
@@ -415,7 +415,7 @@ campos:
     value: SM0->M0_NOME
 - register: '24'
   subtype: D
-  name: CONTA DEBITO
+  name: 'CONTA DEBITO   '
   start: 153
   end: 153
   flag: '0'
@@ -424,7 +424,7 @@ campos:
     value: '2'
 - register: '24'
   subtype: D
-  name: DATA PAGTO
+  name: 'DATA PAGTO     '
   start: 154
   end: 161
   flag: '0'
@@ -433,7 +433,7 @@ campos:
     value: (SUBS(DTOS(DDATABASE),1,4)+   SUBS(DTOS(DDATABASE),5,2)+   SUBS(DTOS(DDATABASE),7,2))
 - register: '24'
   subtype: D
-  name: FILLER
+  name: 'FILLER         '
   start: 162
   end: 295
   flag: '0'
@@ -442,7 +442,7 @@ campos:
     value: ''
 - register: '24'
   subtype: D
-  name: SEQUENCIAL
+  name: 'SEQUENCIAL     '
   start: 296
   end: 300
   flag: '0'
@@ -451,7 +451,7 @@ campos:
     value: INCREMENTA()
 - register: '24'
   subtype: H
-  name: TIPO REGISTRO
+  name: 'TIPO REGISTRO  '
   start: 1
   end: 1
   flag: '0'
@@ -460,7 +460,7 @@ campos:
     value: '"A"'
 - register: '24'
   subtype: H
-  name: NOME ARQ
+  name: 'NOME ARQ       '
   start: 2
   end: 7
   flag: '0'
@@ -469,7 +469,7 @@ campos:
     value: '"ART300"'
 - register: '24'
   subtype: H
-  name: CGC
+  name: 'CGC            '
   start: 8
   end: 21
   flag: '0'
@@ -478,7 +478,7 @@ campos:
     value: SM0->M0_CGC
 - register: '24'
   subtype: H
-  name: DATA REMESSA
+  name: 'DATA REMESSA   '
   start: 22
   end: 29
   flag: '0'
@@ -487,7 +487,7 @@ campos:
     value: ' (SUBS(DTOS(DDATABASE),1,4)+   SUBS(DTOS(DDATABASE),5,2)+   SUBS(DTOS(DDATABASE),7,2))'
 - register: '24'
   subtype: H
-  name: ORIGEM REMESSA
+  name: 'ORIGEM REMESSA '
   start: 30
   end: 31
   flag: '0'
@@ -496,7 +496,7 @@ campos:
     value: '"PR"'
 - register: '24'
   subtype: H
-  name: NUMERO REMESSA
+  name: 'NUMERO REMESSA '
   start: 32
   end: 33
   flag: '0'
@@ -505,7 +505,7 @@ campos:
     value: NSEQ + 1
 - register: '24'
   subtype: H
-  name: AGENCIA
+  name: 'AGENCIA        '
   start: 34
   end: 37
   flag: '0'
@@ -514,7 +514,7 @@ campos:
     value: (SUBSTR(SA6->A6_AGENCIA,2,4))
 - register: '24'
   subtype: H
-  name: DIG AGENCIA
+  name: 'DIG AGENCIA    '
   start: 38
   end: 38
   flag: '0'
@@ -523,7 +523,7 @@ campos:
     value: SA6->A6_DIGAGE
 - register: '24'
   subtype: H
-  name: C/C
+  name: 'C/C            '
   start: 39
   end: 47
   flag: '0'
@@ -532,7 +532,7 @@ campos:
     value: PADL(SUBSTR(SA6->A6_NUMCON,2,9),9,"0")
 - register: '24'
   subtype: H
-  name: DIG C/C
+  name: 'DIG C/C        '
   start: 48
   end: 48
   flag: '0'
@@ -541,7 +541,7 @@ campos:
     value: SA6->A6_DIGCONT
 - register: '24'
   subtype: H
-  name: DOC
+  name: 'DOC            '
   start: 49
   end: 50
   flag: '0'
@@ -550,7 +550,7 @@ campos:
     value: IIF(SEA->EA_MODELO $ "17", "09","01")
 - register: '24'
   subtype: H
-  name: NOME CONVENIO
+  name: 'NOME CONVENIO  '
   start: 51
   end: 90
   flag: '0'
@@ -559,7 +559,7 @@ campos:
     value: SM0->M0_NOME
 - register: '24'
   subtype: H
-  name: FILLER
+  name: 'FILLER         '
   start: 91
   end: 98
   flag: '0'
@@ -568,7 +568,7 @@ campos:
     value: ''
 - register: '24'
   subtype: H
-  name: COD CONVENIO
+  name: 'COD CONVENIO   '
   start: 99
   end: 104
   flag: '0'
@@ -577,7 +577,7 @@ campos:
     value: (SEE->EE_CODEMP)
 - register: '24'
   subtype: H
-  name: FILLER
+  name: 'FILLER         '
   start: 105
   end: 287
   flag: '0'
@@ -586,7 +586,7 @@ campos:
     value: ''
 - register: '24'
   subtype: H
-  name: VERSAO APLIC
+  name: 'VERSAO APLIC   '
   start: 288
   end: 295
   flag: '0'
@@ -595,7 +595,7 @@ campos:
     value: SPACE(8)
 - register: '24'
   subtype: H
-  name: SEQUENCIA
+  name: 'SEQUENCIA      '
   start: 296
   end: 300
   flag: '0'
@@ -604,7 +604,7 @@ campos:
     value: INCREMENTA()
 - register: '23'
   subtype: T
-  name: COD BANCO
+  name: 'COD BANCO      '
   start: 1
   end: 3
   flag: '0'
@@ -613,7 +613,7 @@ campos:
     value: '"001"'
 - register: '22'
   subtype: T
-  name: COD BANCO
+  name: 'COD BANCO      '
   start: 1
   end: 3
   flag: '0'
@@ -622,7 +622,7 @@ campos:
     value: '"001"'
 - register: '22'
   subtype: T
-  name: LOTE SERVICO
+  name: 'LOTE SERVICO   '
   start: 4
   end: 7
   flag: '0'
@@ -631,7 +631,7 @@ campos:
     value: '"9999"'
 - register: '22'
   subtype: T
-  name: REGISTRO LOTE
+  name: 'REGISTRO LOTE  '
   start: 8
   end: 8
   flag: '0'
@@ -640,7 +640,7 @@ campos:
     value: '"9"'
 - register: '22'
   subtype: T
-  name: FILLER
+  name: 'FILLER         '
   start: 9
   end: 17
   flag: '0'
@@ -649,7 +649,7 @@ campos:
     value: SPACE(9)
 - register: '22'
   subtype: T
-  name: QTDE LOTES
+  name: 'QTDE LOTES     '
   start: 18
   end: 23
   flag: '0'
@@ -658,7 +658,7 @@ campos:
     value: U_TTCNABM2(5)
 - register: '22'
   subtype: T
-  name: QTDE REGISTROS
+  name: 'QTDE REGISTROS '
   start: 24
   end: 29
   flag: '0'
@@ -667,7 +667,7 @@ campos:
     value: NTOTCNAB2 + 3
 - register: '22'
   subtype: T
-  name: ZERO
+  name: 'ZERO           '
   start: 30
   end: 30
   flag: '0'
@@ -676,7 +676,7 @@ campos:
     value: U_TTCNABM2()
 - register: '22'
   subtype: T
-  name: QTDE CONTAS
+  name: 'QTDE CONTAS    '
   start: 31
   end: 35
   flag: '0'
@@ -685,7 +685,7 @@ campos:
     value: '"00000"'
 - register: '22'
   subtype: T
-  name: OCORRENCIA RET
+  name: 'OCORRENCIA RET '
   start: 36
   end: 240
   flag: '0'
@@ -694,7 +694,7 @@ campos:
     value: SPACE(205)
 - register: '20'
   subtype: T
-  name: COD BANCO
+  name: 'COD BANCO      '
   start: 1
   end: 3
   flag: '0'
@@ -703,7 +703,7 @@ campos:
     value: '"001"'
 - register: '20'
   subtype: T
-  name: LOTE SERVICO
+  name: 'LOTE SERVICO   '
   start: 4
   end: 7
   flag: '0'
@@ -712,7 +712,7 @@ campos:
     value: '"9999"'
 - register: '20'
   subtype: T
-  name: REGISTRO ARQ
+  name: 'REGISTRO ARQ   '
   start: 8
   end: 8
   flag: '0'
@@ -721,7 +721,7 @@ campos:
     value: '"9"'
 - register: '20'
   subtype: T
-  name: FILLER
+  name: 'FILLER         '
   start: 9
   end: 17
   flag: '0'
@@ -730,7 +730,7 @@ campos:
     value: SPACE(9)
 - register: '20'
   subtype: T
-  name: QTDE LOTES
+  name: 'QTDE LOTES     '
   start: 18
   end: 23
   flag: '0'
@@ -739,7 +739,7 @@ campos:
     value: STRZERO(NLOTCNAB2,6)
 - register: '20'
   subtype: T
-  name: QTDE REGISTROS
+  name: 'QTDE REGISTROS '
   start: 24
   end: 29
   flag: '0'
@@ -748,7 +748,7 @@ campos:
     value: STRZERO(FNLINCNAB2(),6)
 - register: '20'
   subtype: T
-  name: ZERO
+  name: 'ZERO           '
   start: 30
   end: 35
   flag: '0'
@@ -757,7 +757,7 @@ campos:
     value: '"000000"'
 - register: '20'
   subtype: T
-  name: FILLER
+  name: 'FILLER         '
   start: 36
   end: 240
   flag: '0'
@@ -766,7 +766,7 @@ campos:
     value: SPACE(205)
 - register: '25'
   subtype: T
-  name: COD BANCO
+  name: 'COD BANCO      '
   start: 1
   end: 3
   flag: '0'
@@ -775,7 +775,7 @@ campos:
     value: '"001"'
 - register: '25'
   subtype: T
-  name: LOTE SERVICO
+  name: 'LOTE SERVICO   '
   start: 4
   end: 7
   flag: '0'
@@ -784,7 +784,7 @@ campos:
     value: STRZERO(NLOTCNAB2,4)
 - register: '25'
   subtype: T
-  name: REGISTRO ARQ
+  name: 'REGISTRO ARQ   '
   start: 8
   end: 8
   flag: '0'
@@ -793,7 +793,7 @@ campos:
     value: '"5"'
 - register: '25'
   subtype: T
-  name: FILLER
+  name: 'FILLER         '
   start: 9
   end: 17
   flag: '0'
@@ -802,7 +802,7 @@ campos:
     value: SPACE(9)
 - register: '25'
   subtype: T
-  name: QTDE LOTES
+  name: 'QTDE LOTES     '
   start: 18
   end: 23
   flag: '0'
@@ -811,7 +811,7 @@ campos:
     value: STRZERO(F420LINLOT(),6)
 - register: '25'
   subtype: T
-  name: QTDE REGISTROS
+  name: 'QTDE REGISTROS '
   start: 24
   end: 41
   flag: '0'
@@ -820,7 +820,7 @@ campos:
     value: STRZERO(NSOMAVLLOTE*100,18)
 - register: '25'
   subtype: T
-  name: SOMA DE MOEDA
+  name: 'SOMA DE MOEDA  '
   start: 42
   end: 59
   flag: '0'
@@ -829,7 +829,7 @@ campos:
     value: REPLICATE("0",18)
 - register: '25'
   subtype: T
-  name: NRO AVISO DEB
+  name: 'NRO AVISO DEB  '
   start: 60
   end: 65
   flag: '0'
@@ -838,7 +838,7 @@ campos:
     value: REPLICATE("0",6)
 - register: '25'
   subtype: T
-  name: FILLER
+  name: 'FILLER         '
   start: 66
   end: 230
   flag: '0'
@@ -847,7 +847,7 @@ campos:
     value: SPACE(165)
 - register: '25'
   subtype: T
-  name: OCORRENCIA RET
+  name: 'OCORRENCIA RET '
   start: 231
   end: 240
   flag: '0'
@@ -856,7 +856,7 @@ campos:
     value: SPACE(10)
 - register: '26'
   subtype: T
-  name: COD BANCO
+  name: 'COD BANCO      '
   start: 1
   end: 3
   flag: '0'
@@ -865,7 +865,7 @@ campos:
     value: '"001"'
 - register: '26'
   subtype: T
-  name: LOTE SERVICO
+  name: 'LOTE SERVICO   '
   start: 4
   end: 7
   flag: '0'
@@ -874,7 +874,7 @@ campos:
     value: STRZERO(NLOTCNAB2,4)
 - register: '26'
   subtype: T
-  name: REGISTRO ARQ
+  name: 'REGISTRO ARQ   '
   start: 8
   end: 8
   flag: '0'
@@ -883,7 +883,7 @@ campos:
     value: '"5"'
 - register: '26'
   subtype: T
-  name: FEBRABAN
+  name: 'FEBRABAN       '
   start: 9
   end: 17
   flag: '0'
@@ -901,7 +901,7 @@ campos:
     value: STRZERO(F420LINLOT(),6)
 - register: '26'
   subtype: T
-  name: SOMATORIA VLRS
+  name: 'SOMATORIA VLRS '
   start: 24
   end: 41
   flag: '2'
@@ -919,7 +919,7 @@ campos:
     value: SPACE(189)
 - register: '26'
   subtype: T
-  name: OCORRENCIA
+  name: 'OCORRENCIA     '
   start: 231
   end: 240
   flag: '0'
@@ -928,7 +928,7 @@ campos:
     value: SPACE(10)
 - register: '21'
   subtype: T
-  name: COD BANCO
+  name: 'COD BANCO      '
   start: 1
   end: 3
   flag: '0'
@@ -937,7 +937,7 @@ campos:
     value: '"001"'
 - register: '21'
   subtype: T
-  name: LOTE SERVICO
+  name: 'LOTE SERVICO   '
   start: 4
   end: 7
   flag: '0'
@@ -946,7 +946,7 @@ campos:
     value: STRZERO(NLOTCNAB2,4)
 - register: '21'
   subtype: T
-  name: REGISTRO LOTE
+  name: 'REGISTRO LOTE  '
   start: 8
   end: 8
   flag: '0'
@@ -955,7 +955,7 @@ campos:
     value: '"5"'
 - register: '21'
   subtype: T
-  name: FILLER
+  name: 'FILLER         '
   start: 9
   end: 17
   flag: '0'
@@ -964,7 +964,7 @@ campos:
     value: SPACE(9)
 - register: '21'
   subtype: T
-  name: QTDE REG 01
+  name: 'QTDE REG 01    '
   start: 18
   end: 23
   flag: '0'
@@ -973,7 +973,7 @@ campos:
     value: STRZERO(F420LINLOT(),6)
 - register: '21'
   subtype: T
-  name: SOMATORIA VLRS
+  name: 'SOMATORIA VLRS '
   start: 24
   end: 41
   flag: '0'
@@ -1000,7 +1000,7 @@ campos:
     value: REPLICATE("0",6)
 - register: '21'
   subtype: T
-  name: FILLER
+  name: 'FILLER         '
   start: 66
   end: 230
   flag: '0'
@@ -1009,7 +1009,7 @@ campos:
     value: SPACE(165)
 - register: '21'
   subtype: T
-  name: OCORRENCIA RET
+  name: 'OCORRENCIA RET '
   start: 231
   end: 240
   flag: '0'
@@ -1018,7 +1018,7 @@ campos:
     value: SPACE(10)
 - register: '22'
   subtype: D
-  name: COD BANCO
+  name: 'COD BANCO      '
   start: 1
   end: 3
   flag: '0'
@@ -1027,7 +1027,7 @@ campos:
     value: '"001"'
 - register: '22'
   subtype: D
-  name: LOTE SERVICO
+  name: 'LOTE SERVICO   '
   start: 4
   end: 7
   flag: '0'
@@ -1036,7 +1036,7 @@ campos:
     value: STRZERO(NLOTCNAB2,4)
 - register: '22'
   subtype: D
-  name: REGISTRO LOTE
+  name: 'REGISTRO LOTE  '
   start: 8
   end: 8
   flag: '0'
@@ -1054,7 +1054,7 @@ campos:
     value: STRZERO(F420SEQLOT(),5)
 - register: '22'
   subtype: D
-  name: SEGMENTO LOTE
+  name: 'SEGMENTO LOTE  '
   start: 14
   end: 14
   flag: '0'
@@ -1063,7 +1063,7 @@ campos:
     value: '"B"'
 - register: '22'
   subtype: D
-  name: FILLER
+  name: 'FILLER         '
   start: 15
   end: 17
   flag: '0'
@@ -1072,7 +1072,7 @@ campos:
     value: SPACE(3)
 - register: '22'
   subtype: D
-  name: FAV TIPO INSCR
+  name: 'FAV TIPO INSCR '
   start: 18
   end: 18
   flag: '0'
@@ -1081,7 +1081,7 @@ campos:
     value: IIF(SA2->A2_TIPO == "J", 2, 1)
 - register: '22'
   subtype: D
-  name: IDENT CONTRIBU
+  name: 'IDENT CONTRIBU '
   start: 19
   end: 32
   flag: '0'
@@ -1090,7 +1090,7 @@ campos:
     value: PADL((ALLTRIM(SA2->A2_CGC)),14,"0")
 - register: '22'
   subtype: D
-  name: FAV ENDERECO
+  name: 'FAV ENDERECO   '
   start: 33
   end: 67
   flag: '0'
@@ -1099,7 +1099,7 @@ campos:
     value: ALLTRIM(SUBSTR(SA2->A2_END,AT(",",SA2->A2_END)+1))
 - register: '22'
   subtype: D
-  name: COMPLEMENTO
+  name: 'COMPLEMENTO    '
   start: 68
   end: 82
   flag: '0'
@@ -1108,7 +1108,7 @@ campos:
     value: ALLTRIM(SA2->A2_COMPLEM)
 - register: '22'
   subtype: D
-  name: FAV BAIRRO
+  name: 'FAV BAIRRO     '
   start: 83
   end: 97
   flag: '0'
@@ -1117,7 +1117,7 @@ campos:
     value: ALLTRIM(SA2->A2_BAIRRO)
 - register: '22'
   subtype: D
-  name: FAV CIDADE
+  name: 'FAV CIDADE     '
   start: 98
   end: 117
   flag: '0'
@@ -1126,7 +1126,7 @@ campos:
     value: ALLTRIM(SA2->A2_MUN)
 - register: '22'
   subtype: D
-  name: FAV CEP
+  name: 'FAV CEP        '
   start: 118
   end: 125
   flag: '0'
@@ -1135,7 +1135,7 @@ campos:
     value: SA2->A2_CEP
 - register: '22'
   subtype: D
-  name: FAV ESTADO
+  name: 'FAV ESTADO     '
   start: 126
   end: 127
   flag: '0'
@@ -1153,7 +1153,7 @@ campos:
     value: GRAVADATA(SE2->E2_VENCREA,.F.,5)
 - register: '22'
   subtype: D
-  name: VALOR DOC
+  name: 'VALOR DOC      '
   start: 136
   end: 150
   flag: '0'
@@ -1171,7 +1171,7 @@ campos:
     value: REPLICATE("0",15)
 - register: '22'
   subtype: D
-  name: VALOR DESCONTO
+  name: 'VALOR DESCONTO '
   start: 166
   end: 180
   flag: '0'
@@ -1180,7 +1180,7 @@ campos:
     value: STRZERO(SE2->E2_DECRESC*100,15)
 - register: '22'
   subtype: D
-  name: VALOR MORA
+  name: 'VALOR MORA     '
   start: 181
   end: 195
   flag: '0'
@@ -1189,7 +1189,7 @@ campos:
     value: STRZERO(SE2->E2_ACRESC*100,15)
 - register: '22'
   subtype: D
-  name: VALOR MULTA
+  name: 'VALOR MULTA    '
   start: 196
   end: 210
   flag: '0'
@@ -1198,7 +1198,7 @@ campos:
     value: STRZERO(SE2->E2_VALJUR*100,15)
 - register: '22'
   subtype: D
-  name: COD FAVORECIDO
+  name: 'COD FAVORECIDO '
   start: 211
   end: 225
   flag: '0'
@@ -1207,7 +1207,7 @@ campos:
     value: SPACE(15)
 - register: '22'
   subtype: D
-  name: AVISO FAVOREC
+  name: 'AVISO FAVOREC  '
   start: 226
   end: 226
   flag: '0'
@@ -1225,7 +1225,7 @@ campos:
     value: SPACE(6)
 - register: '22'
   subtype: D
-  name: CNAB
+  name: 'CNAB           '
   start: 233
   end: 240
   flag: '0'
@@ -1234,7 +1234,7 @@ campos:
     value: SPACE(8)
 - register: '22'
   subtype: H
-  name: COD BANCO
+  name: 'COD BANCO      '
   start: 1
   end: 3
   flag: '0'
@@ -1243,7 +1243,7 @@ campos:
     value: '"001"'
 - register: '22'
   subtype: H
-  name: LOTE SERVICO
+  name: 'LOTE SERVICO   '
   start: 4
   end: 7
   flag: '0'
@@ -1252,7 +1252,7 @@ campos:
     value: STRZERO(NLOTCNAB2,4)
 - register: '22'
   subtype: H
-  name: REGISTRO LOTE
+  name: 'REGISTRO LOTE  '
   start: 8
   end: 8
   flag: '0'
@@ -1261,7 +1261,7 @@ campos:
     value: '"1"'
 - register: '22'
   subtype: H
-  name: TIPO OPERACAO
+  name: 'TIPO OPERACAO  '
   start: 9
   end: 9
   flag: '0'
@@ -1270,7 +1270,7 @@ campos:
     value: '"C"'
 - register: '22'
   subtype: H
-  name: TIPO SERVICO
+  name: 'TIPO SERVICO   '
   start: 10
   end: 11
   flag: '0'
@@ -1288,7 +1288,7 @@ campos:
     value: SEA->EA_MODELO
 - register: '22'
   subtype: H
-  name: VERSAO LOTE
+  name: 'VERSAO LOTE    '
   start: 14
   end: 16
   flag: '0'
@@ -1297,7 +1297,7 @@ campos:
     value: '"040"'
 - register: '22'
   subtype: H
-  name: FILLER
+  name: 'FILLER         '
   start: 17
   end: 17
   flag: '0'
@@ -1306,7 +1306,7 @@ campos:
     value: SPACE(1)
 - register: '22'
   subtype: H
-  name: TIPO INSCR EMP
+  name: 'TIPO INSCR EMP '
   start: 18
   end: 18
   flag: '0'
@@ -1315,7 +1315,7 @@ campos:
     value: '"2"'
 - register: '22'
   subtype: H
-  name: NUM INSCR EMP
+  name: 'NUM INSCR EMP  '
   start: 19
   end: 32
   flag: '0'
@@ -1324,7 +1324,7 @@ campos:
     value: ALLTRIM(SM0->M0_CGC)
 - register: '22'
   subtype: H
-  name: NUM CONTRATO
+  name: 'NUM CONTRATO   '
   start: 33
   end: 52
   flag: '0'
@@ -1333,7 +1333,7 @@ campos:
     value: PADL(ALLTRIM(SEE->EE_CODEMP),13,"0")
 - register: '22'
   subtype: H
-  name: COD AGENCIA
+  name: 'COD AGENCIA    '
   start: 53
   end: 57
   flag: '0'
@@ -1342,7 +1342,7 @@ campos:
     value: PADL(ALLTRIM(SEE->EE_AGENCIA),5,"0")
 - register: '22'
   subtype: H
-  name: DV AGENCIA
+  name: 'DV AGENCIA     '
   start: 58
   end: 58
   flag: '0'
@@ -1351,7 +1351,7 @@ campos:
     value: PADL(ALLTRIM(SEE->EE_DVAGE),1,"0")
 - register: '22'
   subtype: H
-  name: NUM CONTA
+  name: 'NUM CONTA      '
   start: 59
   end: 70
   flag: '0'
@@ -1360,7 +1360,7 @@ campos:
     value: PADL(ALLTRIM(SUBSTR(SEE->EE_CONTA,1,10)),12,"0")
 - register: '22'
   subtype: H
-  name: DV CONTA
+  name: 'DV CONTA       '
   start: 71
   end: 71
   flag: '0'
@@ -1369,7 +1369,7 @@ campos:
     value: SEE->EE_DVCTA
 - register: '22'
   subtype: H
-  name: DV AG/CONTA
+  name: 'DV AG/CONTA    '
   start: 72
   end: 72
   flag: '0'
@@ -1378,7 +1378,7 @@ campos:
     value: SPACE(1)
 - register: '22'
   subtype: H
-  name: NOME EMPRESA
+  name: 'NOME EMPRESA   '
   start: 73
   end: 102
   flag: '0'
@@ -1387,7 +1387,7 @@ campos:
     value: PADR(SM0->M0_NOMECOM,30)
 - register: '22'
   subtype: H
-  name: MENSAGEM
+  name: 'MENSAGEM       '
   start: 103
   end: 142
   flag: '0'
@@ -1396,7 +1396,7 @@ campos:
     value: SPACE(40)
 - register: '22'
   subtype: H
-  name: ENDERECO
+  name: 'ENDERECO       '
   start: 143
   end: 177
   flag: '0'
@@ -1405,7 +1405,7 @@ campos:
     value: PADR(IIF(EMPTY(SM0->M0_ENDENT),SM0->M0_ENDCOB,SM0->M0_ENDENT),35)
 - register: '22'
   subtype: H
-  name: COMPLEMENTO
+  name: 'COMPLEMENTO    '
   start: 178
   end: 192
   flag: '0'
@@ -1414,7 +1414,7 @@ campos:
     value: SM0->M0_COMPENT
 - register: '22'
   subtype: H
-  name: CIDADE
+  name: 'CIDADE         '
   start: 193
   end: 212
   flag: '0'
@@ -1423,7 +1423,7 @@ campos:
     value: PADR(IIF(EMPTY(SM0->M0_CIDENT),SM0->M0_CIDCOB,SM0->M0_CIDENT),20)
 - register: '22'
   subtype: H
-  name: CEP
+  name: 'CEP            '
   start: 213
   end: 220
   flag: '0'
@@ -1432,7 +1432,7 @@ campos:
     value: PADR(IIF(EMPTY(SM0->M0_CEPENT),SM0->M0_CEPCOB,SM0->M0_CEPENT),8,"0")
 - register: '22'
   subtype: H
-  name: ESTADO
+  name: 'ESTADO         '
   start: 221
   end: 222
   flag: '0'
@@ -1441,7 +1441,7 @@ campos:
     value: PADR(IIF(EMPTY(SM0->M0_ESTENT),SM0->M0_ESTCOB,SM0->M0_ESTENT),2)
 - register: '22'
   subtype: H
-  name: FILLER
+  name: 'FILLER         '
   start: 223
   end: 230
   flag: '0'
@@ -1450,7 +1450,7 @@ campos:
     value: SPACE(8)
 - register: '22'
   subtype: H
-  name: OCORRENCIAS
+  name: 'OCORRENCIAS    '
   start: 231
   end: 240
   flag: '0'
@@ -1459,7 +1459,7 @@ campos:
     value: SPACE(10)
 - register: '23'
   subtype: D1
-  name: BANCO
+  name: 'BANCO          '
   start: 1
   end: 3
   flag: '0'
@@ -1468,7 +1468,7 @@ campos:
     value: '"001"'
 - register: '23'
   subtype: D1
-  name: LOTE
+  name: 'LOTE           '
   start: 4
   end: 7
   flag: '0'
@@ -1477,7 +1477,7 @@ campos:
     value: STRZERO(NLOTCNAB2,4)
 - register: '23'
   subtype: D1
-  name: TIPO REGISTRO
+  name: 'TIPO REGISTRO  '
   start: 8
   end: 8
   flag: '0'
@@ -1486,7 +1486,7 @@ campos:
     value: '"3"'
 - register: '23'
   subtype: D1
-  name: SEQ LOTE
+  name: 'SEQ LOTE       '
   start: 9
   end: 13
   flag: '0'
@@ -1495,7 +1495,7 @@ campos:
     value: STRZERO(F420SEQLOT(),5)
 - register: '23'
   subtype: D1
-  name: COD SEGMENTO
+  name: 'COD SEGMENTO   '
   start: 14
   end: 14
   flag: '0'
@@ -1504,7 +1504,7 @@ campos:
     value: '"J"'
 - register: '23'
   subtype: D1
-  name: FILLER
+  name: 'FILLER         '
   start: 15
   end: 15
   flag: '0'
@@ -1513,7 +1513,7 @@ campos:
     value: SPACE(1)
 - register: '23'
   subtype: D1
-  name: COD MOV
+  name: 'COD MOV        '
   start: 16
   end: 17
   flag: '0'
@@ -1522,7 +1522,7 @@ campos:
     value: '"00"'
 - register: '23'
   subtype: D1
-  name: IDENT REGISTRO
+  name: 'IDENT REGISTRO '
   start: 18
   end: 19
   flag: '0'
@@ -1531,7 +1531,7 @@ campos:
     value: '"52"'
 - register: '23'
   subtype: D1
-  name: TP INSC SACADO
+  name: 'TP INSC SACADO '
   start: 20
   end: 20
   flag: '0'
@@ -1540,7 +1540,7 @@ campos:
     value: '"2"'
 - register: '23'
   subtype: D1
-  name: NUM INSC
+  name: 'NUM INSC       '
   start: 21
   end: 35
   flag: '0'
@@ -1549,7 +1549,7 @@ campos:
     value: STRZERO(VAL(SM0->M0_CGC),15)
 - register: '23'
   subtype: D1
-  name: NOME SACADO
+  name: 'NOME SACADO    '
   start: 36
   end: 75
   flag: '0'
@@ -1576,7 +1576,7 @@ campos:
     value: STRZERO(VAL(SA2->A2_CGC),15)
 - register: '23'
   subtype: D1
-  name: NOME CEDENTE
+  name: 'NOME CEDENTE   '
   start: 92
   end: 131
   flag: '0'
@@ -1585,7 +1585,7 @@ campos:
     value: SA2->A2_NOME
 - register: '23'
   subtype: D1
-  name: FILLER
+  name: 'FILLER         '
   start: 132
   end: 240
   flag: '0'
@@ -1594,7 +1594,7 @@ campos:
     value: SPACE(108)
 - register: '26'
   subtype: H
-  name: COD BANCO
+  name: 'COD BANCO      '
   start: 1
   end: 3
   flag: '0'
@@ -1603,7 +1603,7 @@ campos:
     value: '"001"'
 - register: '26'
   subtype: H
-  name: LOTE  SERVICO
+  name: 'LOTE  SERVICO  '
   start: 4
   end: 7
   flag: '0'
@@ -1612,7 +1612,7 @@ campos:
     value: STRZERO(NLOTCNAB2,4)
 - register: '26'
   subtype: H
-  name: TP REGISTRO
+  name: 'TP REGISTRO    '
   start: 8
   end: 8
   flag: '0'
@@ -1621,7 +1621,7 @@ campos:
     value: '"1"'
 - register: '26'
   subtype: H
-  name: TP OPERACAO
+  name: 'TP OPERACAO    '
   start: 9
   end: 9
   flag: '0'
@@ -1630,7 +1630,7 @@ campos:
     value: '"C"'
 - register: '26'
   subtype: H
-  name: TP SERVICO
+  name: 'TP SERVICO     '
   start: 10
   end: 11
   flag: '0'
@@ -1639,7 +1639,7 @@ campos:
     value: IIF (SEA->EA_TIPOPAG = "20", "20","98")
 - register: '26'
   subtype: H
-  name: FORMA LANCAM
+  name: 'FORMA LANCAM   '
   start: 12
   end: 13
   flag: '0'
@@ -1648,7 +1648,7 @@ campos:
     value: SEA->EA_MODELO
 - register: '26'
   subtype: H
-  name: NUM VERS LOTE
+  name: 'NUM VERS LOTE  '
   start: 14
   end: 16
   flag: '0'
@@ -1657,7 +1657,7 @@ campos:
     value: '"012"'
 - register: '26'
   subtype: H
-  name: FILLER
+  name: 'FILLER         '
   start: 17
   end: 17
   flag: '0'
@@ -1666,7 +1666,7 @@ campos:
     value: SPACE(1)
 - register: '26'
   subtype: H
-  name: TP INSC EMP
+  name: 'TP INSC EMP    '
   start: 18
   end: 18
   flag: '0'
@@ -1675,7 +1675,7 @@ campos:
     value: '"2"'
 - register: '26'
   subtype: H
-  name: Nº INSC EMPRESA
+  name: "N\xBA INSC EMPRESA"
   start: 19
   end: 32
   flag: '0'
@@ -1684,7 +1684,7 @@ campos:
     value: SUBSTR(SM0->M0_CGC,1,14)
 - register: '26'
   subtype: H
-  name: COD CONVENIO
+  name: 'COD CONVENIO   '
   start: 33
   end: 52
   flag: '0'
@@ -1693,7 +1693,7 @@ campos:
     value: PADL(ALLTRIM(SEE->EE_CODEMP),13,"0")
 - register: '26'
   subtype: H
-  name: COD AGENCIA
+  name: 'COD AGENCIA    '
   start: 53
   end: 57
   flag: '0'
@@ -1702,7 +1702,7 @@ campos:
     value: PADL(ALLTRIM(SEE->EE_AGENCIA),5,"0")
 - register: '26'
   subtype: H
-  name: DV AGENCIA
+  name: 'DV AGENCIA     '
   start: 58
   end: 58
   flag: '0'
@@ -1711,7 +1711,7 @@ campos:
     value: PADL(ALLTRIM(SEE->EE_DVAGE),1,"0")
 - register: '26'
   subtype: H
-  name: NUM CONTA
+  name: 'NUM CONTA      '
   start: 59
   end: 70
   flag: '0'
@@ -1720,7 +1720,7 @@ campos:
     value: PADL(ALLTRIM(SUBSTR(SEE->EE_CONTA,1,10)),12,"0")
 - register: '26'
   subtype: H
-  name: DV CONTA
+  name: 'DV CONTA       '
   start: 71
   end: 71
   flag: '0'
@@ -1729,7 +1729,7 @@ campos:
     value: SEE->EE_DVCTA
 - register: '26'
   subtype: H
-  name: DV AG/CONTA
+  name: 'DV AG/CONTA    '
   start: 72
   end: 72
   flag: '0'
@@ -1738,7 +1738,7 @@ campos:
     value: SPACE(1)
 - register: '26'
   subtype: H
-  name: NOME EMPRESA
+  name: 'NOME EMPRESA   '
   start: 73
   end: 102
   flag: '0'
@@ -1747,7 +1747,7 @@ campos:
     value: PADR(SM0->M0_NOMECOM,30)
 - register: '26'
   subtype: H
-  name: MENSAGEM
+  name: 'MENSAGEM       '
   start: 103
   end: 142
   flag: '0'
@@ -1756,7 +1756,7 @@ campos:
     value: SPACE(40)
 - register: '26'
   subtype: H
-  name: ENDERECO
+  name: 'ENDERECO       '
   start: 143
   end: 177
   flag: '0'
@@ -1765,7 +1765,7 @@ campos:
     value: IIF(EMPTY(SM0->M0_ENDENT),SM0->M0_ENDENT,SM0->M0_ENDENT)
 - register: '26'
   subtype: H
-  name: COMPLEMENTO
+  name: 'COMPLEMENTO    '
   start: 178
   end: 192
   flag: '0'
@@ -1774,7 +1774,7 @@ campos:
     value: SM0->M0_COMPENT
 - register: '26'
   subtype: H
-  name: CIDADE
+  name: 'CIDADE         '
   start: 193
   end: 212
   flag: '0'
@@ -1783,7 +1783,7 @@ campos:
     value: PADR(IIF(EMPTY(SM0->M0_CIDENT),SM0->M0_CIDCOB,SM0->M0_CIDENT),20)
 - register: '26'
   subtype: H
-  name: CEP
+  name: 'CEP            '
   start: 213
   end: 220
   flag: '0'
@@ -1792,7 +1792,7 @@ campos:
     value: PADR(IIF(EMPTY(SM0->M0_CEPENT),SM0->M0_CEPCOB,SM0->M0_CEPENT),8,"0")
 - register: '26'
   subtype: H
-  name: ESTADO
+  name: 'ESTADO         '
   start: 221
   end: 222
   flag: '0'
@@ -1801,7 +1801,7 @@ campos:
     value: PADR(IIF(EMPTY(SM0->M0_ESTENT),SM0->M0_ESTCOB,SM0->M0_ESTENT),2)
 - register: '26'
   subtype: H
-  name: CNAB
+  name: 'CNAB           '
   start: 223
   end: 230
   flag: '0'
@@ -1810,7 +1810,7 @@ campos:
     value: SPACE(8)
 - register: '26'
   subtype: H
-  name: OCORRENCIAS
+  name: 'OCORRENCIAS    '
   start: 231
   end: 240
   flag: '0'
@@ -1846,7 +1846,7 @@ campos:
     value: '"1"'
 - register: '27'
   subtype: H
-  name: TIPO OPERACAO
+  name: 'TIPO OPERACAO  '
   start: 9
   end: 9
   flag: '0'
@@ -1873,7 +1873,7 @@ campos:
     value: SEA->EA_MODELO
 - register: '27'
   subtype: H
-  name: NR V. LAYOUT
+  name: 'NR V. LAYOUT   '
   start: 14
   end: 16
   flag: '0'
@@ -1909,7 +1909,7 @@ campos:
     value: SM0->M0_CGC
 - register: '27'
   subtype: H
-  name: CONVENIO
+  name: 'CONVENIO       '
   start: 33
   end: 45
   flag: '0'
@@ -1918,7 +1918,7 @@ campos:
     value: STRZERO(VAL(SEE->EE_CODEMP),13)
 - register: '27'
   subtype: H
-  name: VAZIO
+  name: 'VAZIO          '
   start: 46
   end: 52
   flag: '0'
@@ -1927,7 +1927,7 @@ campos:
     value: SPACE(7)
 - register: '27'
   subtype: H
-  name: AGENCIA CONTA
+  name: 'AGENCIA CONTA  '
   start: 53
   end: 57
   flag: '0'
@@ -1936,7 +1936,7 @@ campos:
     value: STRZERO(VAL(SEE->EE_AGENCIA),5)
 - register: '27'
   subtype: H
-  name: DV. DA AGENCIA
+  name: 'DV. DA AGENCIA '
   start: 58
   end: 58
   flag: '0'
@@ -1954,7 +1954,7 @@ campos:
     value: STRZERO(VAL(SEE->EE_CONTA),12)
 - register: '27'
   subtype: H
-  name: DV. DA CONTA
+  name: 'DV. DA CONTA   '
   start: 71
   end: 71
   flag: '0'
@@ -1981,7 +1981,7 @@ campos:
     value: SM0->M0_NOMECOM
 - register: '27'
   subtype: H
-  name: MENSAGEM
+  name: 'MENSAGEM       '
   start: 103
   end: 142
   flag: '0'
@@ -1999,7 +1999,7 @@ campos:
     value: 0SUBSTR(SM0->M0_CIDENT,1,30)
 - register: '27'
   subtype: H
-  name: NUMERO
+  name: 'NUMERO         '
   start: 173
   end: 177
   flag: '0'
@@ -2008,7 +2008,7 @@ campos:
     value: ''
 - register: '27'
   subtype: H
-  name: COMPLEMENTO
+  name: 'COMPLEMENTO    '
   start: 178
   end: 192
   flag: '0'
@@ -2017,7 +2017,7 @@ campos:
     value: ''
 - register: '27'
   subtype: H
-  name: CIDADE
+  name: 'CIDADE         '
   start: 193
   end: 212
   flag: '0'
@@ -2026,7 +2026,7 @@ campos:
     value: SUBSTR(SM0->M0_CIDENT,1,20)
 - register: '27'
   subtype: H
-  name: CEP
+  name: 'CEP            '
   start: 213
   end: 220
   flag: '0'
@@ -2035,7 +2035,7 @@ campos:
     value: SM0->M0_CEPENT
 - register: '27'
   subtype: H
-  name: ESTADO
+  name: 'ESTADO         '
   start: 221
   end: 222
   flag: '0'
@@ -2071,7 +2071,7 @@ campos:
     value: SEE->EE_CODIGO
 - register: '27'
   subtype: T
-  name: LOTE SERVICO
+  name: 'LOTE SERVICO   '
   start: 4
   end: 7
   flag: '0'
@@ -2080,7 +2080,7 @@ campos:
     value: '"0001"'
 - register: '27'
   subtype: T
-  name: TIPO REGISTRO
+  name: 'TIPO REGISTRO  '
   start: 8
   end: 8
   flag: '0'
@@ -2089,7 +2089,7 @@ campos:
     value: '"5"'
 - register: '27'
   subtype: T
-  name: FEBRABAN
+  name: 'FEBRABAN       '
   start: 9
   end: 17
   flag: '0'
@@ -2098,7 +2098,7 @@ campos:
     value: SPACE(9)
 - register: '27'
   subtype: T
-  name: QNTE REG LOTE
+  name: 'QNTE REG LOTE  '
   start: 18
   end: 23
   flag: '0'
@@ -2107,7 +2107,7 @@ campos:
     value: NSEQ:=NSEQ+2
 - register: '27'
   subtype: T
-  name: SOMATORIO
+  name: 'SOMATORIO      '
   start: 24
   end: 41
   flag: '0'
@@ -2116,7 +2116,7 @@ campos:
     value: STRZERO(SOMAVALOR(),18)
 - register: '27'
   subtype: T
-  name: ZEROS
+  name: 'ZEROS          '
   start: 42
   end: 59
   flag: '0'
@@ -2125,7 +2125,7 @@ campos:
     value: SPACE(18)
 - register: '27'
   subtype: T
-  name: ZEROS
+  name: 'ZEROS          '
   start: 60
   end: 65
   flag: '0'
@@ -2134,7 +2134,7 @@ campos:
     value: SPACE(6)
 - register: '27'
   subtype: T
-  name: COMPLEM
+  name: 'COMPLEM        '
   start: 66
   end: 230
   flag: '0'
@@ -2143,7 +2143,7 @@ campos:
     value: SPACE(171)
 - register: '27'
   subtype: T
-  name: OCORRENCIAS
+  name: 'OCORRENCIAS    '
   start: 231
   end: 240
   flag: '0'
@@ -2179,7 +2179,7 @@ campos:
     value: '"3"'
 - register: '27'
   subtype: D1
-  name: SEQ. REG. LOTE
+  name: 'SEQ. REG. LOTE '
   start: 9
   end: 13
   flag: '0'
@@ -2188,7 +2188,7 @@ campos:
     value: ' INCREMENTAL()-1'
 - register: '27'
   subtype: D1
-  name: SEG.
+  name: 'SEG.           '
   start: 14
   end: 14
   flag: '0'
@@ -2215,7 +2215,7 @@ campos:
     value: '"00"'
 - register: '27'
   subtype: D1
-  name: Nº DCTO EMPRESA
+  name: "N\xBA DCTO EMPRESA"
   start: 18
   end: 37
   flag: '0'
@@ -2224,7 +2224,7 @@ campos:
     value: STRZERO(VAL(SE2->E2_IDCNAB),20)
 - register: '27'
   subtype: D1
-  name: Nº DCTO BANCO
+  name: "N\xBA DCTO BANCO  "
   start: 38
   end: 57
   flag: '0'
@@ -2251,7 +2251,7 @@ campos:
     value: STRZERO(DAY(SE2->E2_VENCTO),2)+STRZERO(MONTH(SE2->E2_VENCTO),2)+STRZERO(YEAR(SE2->E2_VENCTO),4)
 - register: '27'
   subtype: D1
-  name: VALOR DO TOTAL
+  name: 'VALOR DO TOTAL '
   start: 96
   end: 110
   flag: '2'
@@ -2305,7 +2305,7 @@ campos:
     value: STRZERO(DAY(SE2->E2_EMISSAO),2)+STRZERO(MONTH(SE2->E2_EMISSAO),2)+STRZERO(YEAR(SE2->E2_EMISSAO),4)
 - register: '27'
   subtype: D1
-  name: NR. REFERENCIA
+  name: 'NR. REFERENCIA '
   start: 143
   end: 159
   flag: '0'
@@ -2323,7 +2323,7 @@ campos:
     value: STRZERO(INT(NOROUND(SE2->E2_VALOR*100)),15)
 - register: '27'
   subtype: D1
-  name: VALOR MULTA
+  name: 'VALOR MULTA    '
   start: 175
   end: 189
   flag: '2'
@@ -2332,7 +2332,7 @@ campos:
     value: STRZERO(INT(NOROUND(SE2->E2_MULTA *100)),15)
 - register: '27'
   subtype: D1
-  name: JUROS/ENCARGOS
+  name: 'JUROS/ENCARGOS '
   start: 190
   end: 204
   flag: '2'
@@ -2350,7 +2350,7 @@ campos:
     value: GRAVADATA(SE2->E2_VENCTO,.F.,5)
 - register: '27'
   subtype: D1
-  name: FILLER
+  name: 'FILLER         '
   start: 213
   end: 230
   flag: '0'
@@ -2359,7 +2359,7 @@ campos:
     value: SPACE(18)
 - register: '27'
   subtype: D1
-  name: BRANCO
+  name: 'BRANCO         '
   start: 231
   end: 240
   flag: ' '
@@ -2368,7 +2368,7 @@ campos:
     value: SPACE(10)
 - register: '21'
   subtype: H
-  name: COD BANCO
+  name: 'COD BANCO      '
   start: 1
   end: 3
   flag: '0'
@@ -2377,7 +2377,7 @@ campos:
     value: '"001"'
 - register: '21'
   subtype: H
-  name: LOTE SERVICO
+  name: 'LOTE SERVICO   '
   start: 4
   end: 7
   flag: '0'
@@ -2386,7 +2386,7 @@ campos:
     value: STRZERO(NLOTCNAB2,4)
 - register: '21'
   subtype: H
-  name: REGISTRO LOTE
+  name: 'REGISTRO LOTE  '
   start: 8
   end: 8
   flag: '0'
@@ -2395,7 +2395,7 @@ campos:
     value: '"1"'
 - register: '21'
   subtype: H
-  name: TIPO OPERACAO
+  name: 'TIPO OPERACAO  '
   start: 9
   end: 9
   flag: '0'
@@ -2404,7 +2404,7 @@ campos:
     value: '"C"'
 - register: '21'
   subtype: H
-  name: TIPO SERVICO
+  name: 'TIPO SERVICO   '
   start: 10
   end: 11
   flag: '0'
@@ -2422,7 +2422,7 @@ campos:
     value: SEA->EA_MODELO
 - register: '21'
   subtype: H
-  name: VERSAO LOTE
+  name: 'VERSAO LOTE    '
   start: 14
   end: 16
   flag: '0'
@@ -2431,7 +2431,7 @@ campos:
     value: '"045"'
 - register: '21'
   subtype: H
-  name: FILLER
+  name: 'FILLER         '
   start: 17
   end: 17
   flag: '0'
@@ -2440,7 +2440,7 @@ campos:
     value: SPACE(1)
 - register: '21'
   subtype: H
-  name: TIPO INSCR EMP
+  name: 'TIPO INSCR EMP '
   start: 18
   end: 18
   flag: '0'
@@ -2449,7 +2449,7 @@ campos:
     value: '"2"'
 - register: '21'
   subtype: H
-  name: NUM INSCR EMP
+  name: 'NUM INSCR EMP  '
   start: 19
   end: 32
   flag: '0'
@@ -2458,7 +2458,7 @@ campos:
     value: ALLTRIM(SM0->M0_CGC)
 - register: '21'
   subtype: H
-  name: NUM CONTRATO
+  name: 'NUM CONTRATO   '
   start: 33
   end: 52
   flag: '0'
@@ -2467,7 +2467,7 @@ campos:
     value: PADL(ALLTRIM(SEE->EE_CODEMP),13,"0")
 - register: '21'
   subtype: H
-  name: COD AGENCIA
+  name: 'COD AGENCIA    '
   start: 53
   end: 57
   flag: '0'
@@ -2476,7 +2476,7 @@ campos:
     value: PADL(ALLTRIM(SEE->EE_AGENCIA),5,"0")
 - register: '21'
   subtype: H
-  name: DV AGENCIA
+  name: 'DV AGENCIA     '
   start: 58
   end: 58
   flag: '0'
@@ -2485,7 +2485,7 @@ campos:
     value: PADL(ALLTRIM(SEE->EE_DVAGE),1,"0")
 - register: '21'
   subtype: H
-  name: NUM CONTA
+  name: 'NUM CONTA      '
   start: 59
   end: 70
   flag: '0'
@@ -2494,7 +2494,7 @@ campos:
     value: PADL(ALLTRIM(SUBSTR(SEE->EE_CONTA,1,10)),12,"0")
 - register: '21'
   subtype: H
-  name: DV CONTA
+  name: 'DV CONTA       '
   start: 71
   end: 71
   flag: '0'
@@ -2503,7 +2503,7 @@ campos:
     value: SEE->EE_DVCTA
 - register: '21'
   subtype: H
-  name: DV AG/CONTA
+  name: 'DV AG/CONTA    '
   start: 72
   end: 72
   flag: '0'
@@ -2512,7 +2512,7 @@ campos:
     value: SPACE(1)
 - register: '21'
   subtype: H
-  name: NOME EMPRESA
+  name: 'NOME EMPRESA   '
   start: 73
   end: 102
   flag: '0'
@@ -2521,7 +2521,7 @@ campos:
     value: PADR(SM0->M0_NOMECOM,30)
 - register: '21'
   subtype: H
-  name: MENSAGEM
+  name: 'MENSAGEM       '
   start: 103
   end: 142
   flag: '0'
@@ -2530,7 +2530,7 @@ campos:
     value: SPACE(40)
 - register: '21'
   subtype: H
-  name: ENDERECO
+  name: 'ENDERECO       '
   start: 143
   end: 177
   flag: '0'
@@ -2539,7 +2539,7 @@ campos:
     value: IIF(EMPTY(SM0->M0_ENDENT),SM0->M0_ENDENT,SM0->M0_ENDENT)
 - register: '21'
   subtype: H
-  name: COMPLEMENTO
+  name: 'COMPLEMENTO    '
   start: 178
   end: 192
   flag: '0'
@@ -2548,7 +2548,7 @@ campos:
     value: SM0->M0_COMPENT
 - register: '21'
   subtype: H
-  name: CIDADE
+  name: 'CIDADE         '
   start: 193
   end: 212
   flag: '0'
@@ -2557,7 +2557,7 @@ campos:
     value: PADR(IIF(EMPTY(SM0->M0_CIDENT),SM0->M0_CIDCOB,SM0->M0_CIDENT),20)
 - register: '21'
   subtype: H
-  name: CEP
+  name: 'CEP            '
   start: 213
   end: 220
   flag: '0'
@@ -2566,7 +2566,7 @@ campos:
     value: PADR(IIF(EMPTY(SM0->M0_CEPENT),SM0->M0_CEPCOB,SM0->M0_CEPENT),8,"0")
 - register: '21'
   subtype: H
-  name: ESTADO
+  name: 'ESTADO         '
   start: 221
   end: 222
   flag: '0'
@@ -2575,7 +2575,7 @@ campos:
     value: PADR(IIF(EMPTY(SM0->M0_ESTENT),SM0->M0_ESTCOB,SM0->M0_ESTENT),2)
 - register: '21'
   subtype: H
-  name: FORMA PAGTO
+  name: 'FORMA PAGTO    '
   start: 223
   end: 224
   flag: '0'
@@ -2584,7 +2584,7 @@ campos:
     value: '"01"'
 - register: '21'
   subtype: H
-  name: FILLER
+  name: 'FILLER         '
   start: 225
   end: 230
   flag: '0'
@@ -2593,7 +2593,7 @@ campos:
     value: SPACE(6)
 - register: '21'
   subtype: H
-  name: OCORRENCIAS
+  name: 'OCORRENCIAS    '
   start: 231
   end: 240
   flag: '0'
@@ -2602,7 +2602,7 @@ campos:
     value: SPACE(10)
 - register: '23'
   subtype: D
-  name: COD.BANCO
+  name: 'COD.BANCO      '
   start: 1
   end: 3
   flag: '0'
@@ -2611,7 +2611,7 @@ campos:
     value: '"001"'
 - register: '23'
   subtype: D
-  name: LOTE SERVICO
+  name: 'LOTE SERVICO   '
   start: 4
   end: 7
   flag: '0'
@@ -2629,7 +2629,7 @@ campos:
     value: '"3"'
 - register: '23'
   subtype: D
-  name: NR.SEQ.LOTE
+  name: 'NR.SEQ.LOTE    '
   start: 9
   end: 13
   flag: '0'
@@ -2638,7 +2638,7 @@ campos:
     value: STRZERO(F420SEQLOT(),5)
 - register: '23'
   subtype: D
-  name: COD.SEQMENTO
+  name: 'COD.SEQMENTO   '
   start: 14
   end: 14
   flag: '0'
@@ -2647,7 +2647,7 @@ campos:
     value: '"J"'
 - register: '23'
   subtype: D
-  name: TIPO MOVIMENTO
+  name: 'TIPO MOVIMENTO '
   start: 15
   end: 15
   flag: '0'
@@ -2656,7 +2656,7 @@ campos:
     value: '"0"'
 - register: '23'
   subtype: D
-  name: COD.INSTRUCAO
+  name: 'COD.INSTRUCAO  '
   start: 16
   end: 17
   flag: '0'
@@ -2674,7 +2674,7 @@ campos:
     value: SUBSTR(SE2->E2_CODBAR,1,44)
 - register: '23'
   subtype: D
-  name: CEDENTE
+  name: 'CEDENTE        '
   start: 62
   end: 91
   flag: '0'
@@ -2683,7 +2683,7 @@ campos:
     value: SUBS(SA2->A2_NOME,1,30)
 - register: '23'
   subtype: D
-  name: VENCIMENTO
+  name: 'VENCIMENTO     '
   start: 92
   end: 99
   flag: '0'
@@ -2692,7 +2692,7 @@ campos:
     value: GRAVADATA(SE2->E2_VENCREA,.F.,5)
 - register: '23'
   subtype: D
-  name: VALOR TITULO
+  name: 'VALOR TITULO   '
   start: 100
   end: 114
   flag: '2'
@@ -2701,7 +2701,7 @@ campos:
     value: STRZERO(SE2->E2_SALDO*100,15)
 - register: '23'
   subtype: D
-  name: VALOR DESCONTO
+  name: 'VALOR DESCONTO '
   start: 115
   end: 129
   flag: '2'
@@ -2710,7 +2710,7 @@ campos:
     value: STRZERO((SE2->E2_DECRESC) * 100, 15)
 - register: '23'
   subtype: D
-  name: VALOR JUROS
+  name: 'VALOR JUROS    '
   start: 130
   end: 144
   flag: '2'
@@ -2719,7 +2719,7 @@ campos:
     value: STRZERO((SE2->E2_ACRESC+SE2->E2_VALJUR)*100,15)
 - register: '23'
   subtype: D
-  name: DATA PAGTO
+  name: 'DATA PAGTO     '
   start: 145
   end: 152
   flag: '0'
@@ -2728,7 +2728,7 @@ campos:
     value: GRAVADATA(SE2->E2_VENCREA,.F.,5)
 - register: '23'
   subtype: D
-  name: VALOR PAGTO
+  name: 'VALOR PAGTO    '
   start: 153
   end: 167
   flag: '2'
@@ -2737,7 +2737,7 @@ campos:
     value: STRZERO((ROUND(SE2->E2_SALDO,2)*100),15)
 - register: '23'
   subtype: D
-  name: QTDE. MOEDA
+  name: 'QTDE. MOEDA    '
   start: 168
   end: 182
   flag: '0'
@@ -2746,7 +2746,7 @@ campos:
     value: REPLICATE("0",15)
 - register: '23'
   subtype: D
-  name: COD.REF.SACADO
+  name: 'COD.REF.SACADO '
   start: 183
   end: 202
   flag: '0'
@@ -2755,7 +2755,7 @@ campos:
     value: SE2->E2_IDCNAB
 - register: '23'
   subtype: D
-  name: NRO ATR BANCO
+  name: 'NRO ATR BANCO  '
   start: 203
   end: 222
   flag: '0'
@@ -2764,7 +2764,7 @@ campos:
     value: SPACE(20)
 - register: '23'
   subtype: D
-  name: COD MOEDA
+  name: 'COD MOEDA      '
   start: 223
   end: 224
   flag: '0'
@@ -2773,7 +2773,7 @@ campos:
     value: '"09"'
 - register: '23'
   subtype: D
-  name: COD MOEDA
+  name: 'COD MOEDA      '
   start: 225
   end: 230
   flag: '0'
@@ -2782,7 +2782,7 @@ campos:
     value: SPACE(6)
 - register: '23'
   subtype: D
-  name: CNAB
+  name: 'CNAB           '
   start: 231
   end: 240
   flag: '0'
@@ -2791,7 +2791,7 @@ campos:
     value: SPACE(10)
 - register: '26'
   subtype: D
-  name: COD BANCO
+  name: 'COD BANCO      '
   start: 1
   end: 3
   flag: '0'
@@ -2800,7 +2800,7 @@ campos:
     value: '"001"'
 - register: '26'
   subtype: D
-  name: LOTE SERVICO
+  name: 'LOTE SERVICO   '
   start: 4
   end: 7
   flag: '0'
@@ -2809,7 +2809,7 @@ campos:
     value: STRZERO(NLOTCNAB2,4)
 - register: '26'
   subtype: D
-  name: REGISTRO LOTE
+  name: 'REGISTRO LOTE  '
   start: 8
   end: 8
   flag: '0'
@@ -2827,7 +2827,7 @@ campos:
     value: STRZERO(F420SEQLOT(),5)
 - register: '26'
   subtype: D
-  name: SEGMENTO LOTE
+  name: 'SEGMENTO LOTE  '
   start: 14
   end: 14
   flag: '0'
@@ -2836,7 +2836,7 @@ campos:
     value: '"O"'
 - register: '26'
   subtype: D
-  name: TIPO MOVIMENTO
+  name: 'TIPO MOVIMENTO '
   start: 15
   end: 15
   flag: '0'
@@ -2854,7 +2854,7 @@ campos:
     value: '"00"'
 - register: '26'
   subtype: D
-  name: COD BARRAS
+  name: 'COD BARRAS     '
   start: 18
   end: 61
   flag: '0'
@@ -2881,7 +2881,7 @@ campos:
     value: GRAVADATA(SE2->E2_VENCREA,.F.,5)
 - register: '26'
   subtype: D
-  name: DATA PAGTO
+  name: 'DATA PAGTO     '
   start: 100
   end: 107
   flag: '0'
@@ -2890,7 +2890,7 @@ campos:
     value: GRAVADATA(SE2->E2_VENCREA,.F.,5)
 - register: '26'
   subtype: D
-  name: VALOR PAGTO
+  name: 'VALOR PAGTO    '
   start: 108
   end: 122
   flag: '2'
@@ -2899,7 +2899,7 @@ campos:
     value: STRZERO((ROUND(SE2->E2_SALDO,2)*100),15)
 - register: '26'
   subtype: D
-  name: Nº DOC ATR EMPR
+  name: "N\xBA DOC ATR EMPR"
   start: 123
   end: 142
   flag: '0'
@@ -2908,7 +2908,7 @@ campos:
     value: SE2->E2_IDCNAB
 - register: '26'
   subtype: D
-  name: Nº DOC ATR BCO
+  name: "N\xBA DOC ATR BCO "
   start: 143
   end: 162
   flag: '0'
@@ -2917,7 +2917,7 @@ campos:
     value: SPACE(20)
 - register: '26'
   subtype: D
-  name: FEBRABAN
+  name: 'FEBRABAN       '
   start: 163
   end: 230
   flag: '0'
@@ -2926,7 +2926,7 @@ campos:
     value: SPACE(68)
 - register: '26'
   subtype: D
-  name: OCORRENCIAS
+  name: 'OCORRENCIAS    '
   start: 231
   end: 240
   flag: '0'
@@ -2962,7 +2962,7 @@ campos:
     value: '"0"'
 - register: '20'
   subtype: H
-  name: TIPO OPERACAO
+  name: 'TIPO OPERACAO  '
   start: 9
   end: 17
   flag: '0'
@@ -3043,7 +3043,7 @@ campos:
     value: SPACE(1)
 - register: '20'
   subtype: H
-  name: NOME EMPRESA
+  name: 'NOME EMPRESA   '
   start: 73
   end: 102
   flag: '0'
@@ -3052,7 +3052,7 @@ campos:
     value: PADR(SM0->M0_NOMECOM,30)
 - register: '20'
   subtype: H
-  name: NOME BANCO
+  name: 'NOME BANCO     '
   start: 103
   end: 132
   flag: '0'
@@ -3061,7 +3061,7 @@ campos:
     value: '"BANCO DO BRASIL"'
 - register: '20'
   subtype: H
-  name: FILLER
+  name: 'FILLER         '
   start: 133
   end: 142
   flag: '0'
@@ -3088,7 +3088,7 @@ campos:
     value: SUBSTR(DTOS(DDATABASE),7,2)+SUBSTR(DTOS(DDATABASE),5,2)+SUBSTR(DTOS(DDATABASE),1,4)
 - register: '20'
   subtype: H
-  name: HORA GER.ARQ.
+  name: 'HORA GER.ARQ.  '
   start: 152
   end: 157
   flag: '0'
@@ -3097,7 +3097,7 @@ campos:
     value: STRTRAN(TIME(),":")
 - register: '20'
   subtype: H
-  name: N.SEQUEN.ARQ.
+  name: 'N.SEQUEN.ARQ.  '
   start: 158
   end: 163
   flag: '0'
@@ -3124,7 +3124,7 @@ campos:
     value: '"00000"'
 - register: '20'
   subtype: H
-  name: P/ USO RES.BCO
+  name: 'P/ USO RES.BCO '
   start: 172
   end: 191
   flag: '0'
@@ -3142,7 +3142,7 @@ campos:
     value: SPACE(20)
 - register: '20'
   subtype: H
-  name: FILLER
+  name: 'FILLER         '
   start: 212
   end: 240
   flag: '0'
@@ -3151,7 +3151,7 @@ campos:
     value: SPACE(29)
 - register: '27'
   subtype: D
-  name: COD BANCO
+  name: 'COD BANCO      '
   start: 1
   end: 3
   flag: '0'
@@ -3160,7 +3160,7 @@ campos:
     value: SEE->EE_CODIGO
 - register: '27'
   subtype: D
-  name: LOTE SERVICO
+  name: 'LOTE SERVICO   '
   start: 4
   end: 7
   flag: '0'
@@ -3169,7 +3169,7 @@ campos:
     value: STRZERO(NLOTCNAB2,4)
 - register: '27'
   subtype: D
-  name: REGISTRO LOTE
+  name: 'REGISTRO LOTE  '
   start: 8
   end: 8
   flag: '0'
@@ -3187,7 +3187,7 @@ campos:
     value: STRZERO(F420SEQLOT(),5)
 - register: '27'
   subtype: D
-  name: SEGMENTO LOTE
+  name: 'SEGMENTO LOTE  '
   start: 14
   end: 14
   flag: '0'
@@ -3196,7 +3196,7 @@ campos:
     value: '"N"'
 - register: '27'
   subtype: D
-  name: TP LANCAMENTO
+  name: 'TP LANCAMENTO  '
   start: 15
   end: 15
   flag: '0'
@@ -3205,7 +3205,7 @@ campos:
     value: '"0"'
 - register: '27'
   subtype: D
-  name: COD MOVTO.
+  name: 'COD MOVTO.     '
   start: 16
   end: 17
   flag: '0'
@@ -3214,7 +3214,7 @@ campos:
     value: '"00"'
 - register: '27'
   subtype: D
-  name: NUMERO TITULO
+  name: 'NUMERO TITULO  '
   start: 18
   end: 37
   flag: '0'
@@ -3223,7 +3223,7 @@ campos:
     value: STRZERO(VAL(SE2->E2_IDCNAB),20)
 - register: '27'
   subtype: D
-  name: NUMERO BANCO
+  name: 'NUMERO BANCO   '
   start: 38
   end: 57
   flag: '0'
@@ -3232,7 +3232,7 @@ campos:
     value: SPACE(20)
 - register: '27'
   subtype: D
-  name: NOME CONTRIB
+  name: 'NOME CONTRIB   '
   start: 58
   end: 87
   flag: '0'
@@ -3241,7 +3241,7 @@ campos:
     value: PADR(UPPER(SM0->M0_NOME),30)
 - register: '27'
   subtype: D
-  name: DATA PAGTO
+  name: 'DATA PAGTO     '
   start: 88
   end: 95
   flag: '0'
@@ -3250,7 +3250,7 @@ campos:
     value: GRAVADATA(SE2->E2_VENCREA,.F.,5)
 - register: '27'
   subtype: D
-  name: VALOR PAGTO
+  name: 'VALOR PAGTO    '
   start: 96
   end: 110
   flag: '0'
@@ -3295,7 +3295,7 @@ campos:
     value: '"17"'
 - register: '27'
   subtype: D
-  name: COMPETENCIA
+  name: 'COMPETENCIA    '
   start: 135
   end: 140
   flag: '0'
@@ -3304,7 +3304,7 @@ campos:
     value: SE2->E2_XCOMPET
 - register: '27'
   subtype: D
-  name: VLR INSS
+  name: 'VLR INSS       '
   start: 141
   end: 155
   flag: '0'
@@ -3313,7 +3313,7 @@ campos:
     value: STRZERO((ROUND(SE2->E2_XVLINSS,2)*100),15)
 - register: '27'
   subtype: D
-  name: VLR D OU ENT
+  name: 'VLR D OU ENT   '
   start: 156
   end: 170
   flag: '2'
@@ -3322,7 +3322,7 @@ campos:
     value: STRZERO(INT(NOROUND(SE2->E2_XVLENTI*100)),15)
 - register: '27'
   subtype: D
-  name: ATUA MONE
+  name: 'ATUA MONE      '
   start: 171
   end: 185
   flag: '2'
@@ -3331,7 +3331,7 @@ campos:
     value: STRZERO(INT(NOROUND(SE2->E2_ACRESC*100)),15)
 - register: '27'
   subtype: D
-  name: USO EXCLUSI
+  name: 'USO EXCLUSI    '
   start: 186
   end: 230
   flag: '0'
@@ -3340,7 +3340,7 @@ campos:
     value: SPACE(45)
 - register: '27'
   subtype: D
-  name: OCOR. RETORNO
+  name: 'OCOR. RETORNO  '
   start: 231
   end: 240
   flag: '0'
@@ -3349,7 +3349,7 @@ campos:
     value: SPACE(10)
 - register: '21'
   subtype: D
-  name: COD BANCO
+  name: 'COD BANCO      '
   start: 1
   end: 3
   flag: '0'
@@ -3358,7 +3358,7 @@ campos:
     value: '"001"'
 - register: '21'
   subtype: D
-  name: LOTE SERVICO
+  name: 'LOTE SERVICO   '
   start: 4
   end: 7
   flag: '0'
@@ -3367,7 +3367,7 @@ campos:
     value: STRZERO(NLOTCNAB2,4)
 - register: '21'
   subtype: D
-  name: REGISTRO LOTE
+  name: 'REGISTRO LOTE  '
   start: 8
   end: 8
   flag: '0'
@@ -3385,7 +3385,7 @@ campos:
     value: STRZERO(F420SEQLOT(),5)
 - register: '21'
   subtype: D
-  name: SEGMENTO LOTE
+  name: 'SEGMENTO LOTE  '
   start: 14
   end: 14
   flag: '0'
@@ -3394,7 +3394,7 @@ campos:
     value: '"A"'
 - register: '21'
   subtype: D
-  name: TIPO MOVIMENTO
+  name: 'TIPO MOVIMENTO '
   start: 15
   end: 15
   flag: '0'
@@ -3412,7 +3412,7 @@ campos:
     value: '"00"'
 - register: '21'
   subtype: D
-  name: COMPENSACAO
+  name: 'COMPENSACAO    '
   start: 18
   end: 20
   flag: '0'
@@ -3421,7 +3421,7 @@ campos:
     value: IIF(SEA->EA_MODELO=="03","700",IIF(SEA->EA_MODELO$"41/43","018","000"))
 - register: '21'
   subtype: D
-  name: BANCO FAVOR
+  name: 'BANCO FAVOR    '
   start: 21
   end: 23
   flag: '0'
@@ -3430,7 +3430,7 @@ campos:
     value: STRZERO(VAL(SE2->E2_FORBCO),3)
 - register: '21'
   subtype: D
-  name: AGENCIA FAVOR
+  name: 'AGENCIA FAVOR  '
   start: 24
   end: 28
   flag: '0'
@@ -3448,7 +3448,7 @@ campos:
     value: SE2->E2_FAGEDV
 - register: '21'
   subtype: D
-  name: NUMERO CONTA
+  name: 'NUMERO CONTA   '
   start: 30
   end: 41
   flag: '0'
@@ -3457,7 +3457,7 @@ campos:
     value: STRZERO(VAL(SE2->E2_FORCTA),12)
 - register: '21'
   subtype: D
-  name: DV CONTA
+  name: 'DV CONTA       '
   start: 42
   end: 43
   flag: '0'
@@ -3466,7 +3466,7 @@ campos:
     value: SE2->E2_FCTADV
 - register: '21'
   subtype: D
-  name: FAV NOME
+  name: 'FAV NOME       '
   start: 44
   end: 73
   flag: '0'
@@ -3475,7 +3475,7 @@ campos:
     value: SUBSTR(SE2->E2_NOMFOR,1,30)
 - register: '21'
   subtype: D
-  name: NUM DOCUMENTO
+  name: 'NUM DOCUMENTO  '
   start: 74
   end: 83
   flag: '0'
@@ -3484,7 +3484,7 @@ campos:
     value: SE2->E2_IDCNAB
 - register: '21'
   subtype: D
-  name: FILLER
+  name: 'FILLER         '
   start: 84
   end: 93
   flag: '0'
@@ -3493,7 +3493,7 @@ campos:
     value: SPACE(10)
 - register: '21'
   subtype: D
-  name: DATA CREDITO
+  name: 'DATA CREDITO   '
   start: 94
   end: 101
   flag: '0'
@@ -3502,7 +3502,7 @@ campos:
     value: GRAVADATA(SE2->E2_VENCREA,.F.,5)
 - register: '21'
   subtype: D
-  name: TIPO MOEDA
+  name: 'TIPO MOEDA     '
   start: 102
   end: 104
   flag: '0'
@@ -3511,7 +3511,7 @@ campos:
     value: '"BRL"'
 - register: '21'
   subtype: D
-  name: QTDE MOEDA
+  name: 'QTDE MOEDA     '
   start: 105
   end: 119
   flag: '0'
@@ -3520,7 +3520,7 @@ campos:
     value: REPLICATE("0",15)
 - register: '21'
   subtype: D
-  name: VLR CREDITO
+  name: 'VLR CREDITO    '
   start: 120
   end: 134
   flag: '0'
@@ -3529,7 +3529,7 @@ campos:
     value: STRZERO((ROUND(SE2->E2_SALDO,2)*100),15)
 - register: '21'
   subtype: D
-  name: NUMERO BANCO
+  name: 'NUMERO BANCO   '
   start: 135
   end: 154
   flag: '0'
@@ -3538,7 +3538,7 @@ campos:
     value: SPACE(20)
 - register: '21'
   subtype: D
-  name: DATA REAL PGTO
+  name: 'DATA REAL PGTO '
   start: 155
   end: 162
   flag: '0'
@@ -3547,7 +3547,7 @@ campos:
     value: REPLICATE("0",8)
 - register: '21'
   subtype: D
-  name: VLR REAL PGTO
+  name: 'VLR REAL PGTO  '
   start: 163
   end: 177
   flag: '0'
@@ -3565,7 +3565,7 @@ campos:
     value: SPACE(40)
 - register: '21'
   subtype: D
-  name: FILLER
+  name: 'FILLER         '
   start: 218
   end: 229
   flag: '0'
@@ -3574,7 +3574,7 @@ campos:
     value: SPACE(12)
 - register: '21'
   subtype: D
-  name: EMISSAO AVISO
+  name: 'EMISSAO AVISO  '
   start: 230
   end: 230
   flag: '0'
@@ -3590,4 +3590,3 @@ campos:
   pattern: raw
   args:
     value: SPACE(10)
-
