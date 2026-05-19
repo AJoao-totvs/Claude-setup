@@ -1,0 +1,108 @@
+# Patterns from CNAB-field-semantic → ADVPL expression template.
+# Each pattern has placeholders ({src}, {length}, ...) substituted by pattern_applier.py.
+# Patterns extracted by reverse-engineering 001PG.2PE.
+
+patterns:
+  date_ddmmaaaa:
+    description: "Data formatada DDMMAAAA (8 chars)"
+    template: 'SUBS(DTOS({src}),7,2)+SUBS(DTOS({src}),5,2)+SUBS(DTOS({src}),1,4)'
+
+  date_aaaammdd:
+    description: "Data formatada AAAAMMDD (8 chars) — período arrecadação"
+    template: 'SUBS(DTOS({src}),1,4)+SUBS(DTOS({src}),5,2)+SUBS(DTOS({src}),7,2)'
+
+  date_gravadata5:
+    description: "Data via GRAVADATA helper (formato 5 = DDMMAAAA)"
+    template: 'GRAVADATA({src},.F.,5)'
+
+  value_centavos_zeropad:
+    description: "Valor inteiro * 100, zero-padded à esquerda"
+    template: 'STRZERO(INT({src}*100), {length})'
+
+  value_centavos_noround:
+    description: "Valor com NOROUND para evitar arredondamento de centavos"
+    template: 'STRZERO(INT(NOROUND({src}*100)), {length})'
+
+  value_centavos_round2:
+    description: "Valor arredondado a 2 casas, em centavos"
+    template: 'STRZERO((ROUND({src},2)*100), {length})'
+
+  value_centavos_plain:
+    description: "Valor * 100 sem STRZERO (resultado já tem tamanho fixo)"
+    template: '(INT({src}*100))'
+
+  alpha_padr:
+    description: "Alfa preenchido à direita com espaços"
+    template: 'PADR(ALLTRIM({src}), {length})'
+
+  alpha_padl_zeros:
+    description: "Alfa-numérico preenchido à esquerda com zeros"
+    template: 'PADL(ALLTRIM({src}), {length}, "0")'
+
+  alpha_strzero_val:
+    description: "Converter campo alfa para numérico via VAL, então zero-pad"
+    template: 'STRZERO(VAL({src}), {length})'
+
+  alpha_substr:
+    description: "Substring fixa de campo alfa"
+    template: 'SUBSTR({src}, 1, {length})'
+
+  alpha_upper_padr:
+    description: "Upper-case + right-pad com espaços"
+    template: 'PADR(UPPER({src}), {length})'
+
+  filler_spaces:
+    description: "Filler com N espaços"
+    template: 'SPACE({length})'
+
+  filler_zeros:
+    description: "Filler com N zeros"
+    template: 'REPLICATE("0", {length})'
+
+  filler_empty:
+    description: "Filler implícito (expressão vazia — Protheus preenche com defaults)"
+    template: ''
+
+  literal_constant:
+    description: "Valor constante literal"
+    template: '"{value}"'
+
+  literal_numeric:
+    description: "Constante numérica sem aspas"
+    template: '{value}'
+
+  counter_global:
+    description: "Contador automático"
+    template: 'INCREMENTA()'
+
+  counter_global_incremental:
+    description: "Variante INCREMENTAL com -1 (observado em 27D1)"
+    template: 'INCREMENTAL()-1'
+
+  counter_seq_lote:
+    description: "Sequencial dentro do lote"
+    template: 'STRZERO(F420SEQLOT(), {length})'
+
+  total_lotes:
+    description: "Total de lotes do arquivo"
+    template: 'STRZERO(NLOTCNAB2, {length})'
+
+  total_linhas_lote:
+    description: "Quantidade de linhas no lote"
+    template: 'STRZERO(F420LINLOT(), {length})'
+
+  total_linhas_arquivo:
+    description: "Quantidade total de linhas no arquivo"
+    template: 'STRZERO(FNLINCNAB2(), {length})'
+
+  soma_valores_lote:
+    description: "Soma dos valores do lote (em centavos)"
+    template: 'STRZERO(NSOMAVLLOTE*100, {length})'
+
+  condicional_modelo:
+    description: "Condição por modelo de operação (SEA->EA_MODELO em lista)"
+    template: 'IIF(SEA->EA_MODELO $ "{modelos}", {true_val}, {false_val})'
+
+  empty_or_default:
+    description: "Usar campo se não vazio, senão usar default"
+    template: 'IIF(EMPTY({src}), {default}, {src})'
