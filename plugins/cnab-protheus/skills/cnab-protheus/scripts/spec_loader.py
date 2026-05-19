@@ -102,9 +102,20 @@ def _parse_field(f: dict[str, Any]) -> FieldSpec:
 
 
 def _check_no_overlap(campos: list[FieldSpec]) -> None:
-    # Per register+subtype, sort by start and check no overlap
-    # Note: Some overlaps are legitimate in real fixtures (e.g., 001PG)
-    # where fields with different flags may be conditionally rendered based on operation mode.
-    # We skip strict validation here and allow overlaps to pass.
-    # The byte-diff test during actual encoding/decoding will validate correctness.
-    pass
+    """Validate overlaps within same flag are not allowed.
+
+    Overlaps across different flags ARE allowed (legitimate conditional rendering paths).
+    Group by (register, subtype, flag). Within a group, fields must not overlap.
+    """
+    groups: dict[tuple[str, str, str], list[FieldSpec]] = {}
+    for c in campos:
+        groups.setdefault((c.register, c.subtype, c.flag), []).append(c)
+    for key, fields in groups.items():
+        sorted_fields = sorted(fields, key=lambda x: x.start)
+        for prev, curr in zip(sorted_fields, sorted_fields[1:]):
+            if curr.start <= prev.end:
+                raise SpecValidationError(
+                    f"register {key[0]}{key[1]} flag={key[2]!r}: "
+                    f"field {curr.name!r} (start {curr.start}) "
+                    f"overlaps with {prev.name!r} (end {prev.end})"
+                )

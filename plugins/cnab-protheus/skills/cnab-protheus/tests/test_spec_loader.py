@@ -72,10 +72,8 @@ def test_load_spec_invalid_direcao_raises(tmp_path):
         load_spec(path)
 
 
-def test_load_spec_overlapping_positions_allowed(tmp_path):
-    # Overlapping fields are allowed and load successfully.
-    # Some overlaps are legitimate in real fixtures (e.g., 001PG)
-    # where fields with different flags may be conditionally rendered based on operation mode.
+def test_load_spec_different_flag_overlap_allowed(tmp_path):
+    # Overlapping fields with different flags are allowed (conditional rendering).
     spec_data = {
         "banco": "001",
         "operacao": "pagamento",
@@ -89,13 +87,40 @@ def test_load_spec_overlapping_positions_allowed(tmp_path):
             },
             {
                 "register": "20", "subtype": "H", "name": "B",
-                "start": 4, "end": 10, "flag": "0",  # overlaps with A
+                "start": 4, "end": 10, "flag": "1",  # overlaps with A but DIFFERENT flag
                 "pattern": "filler_spaces", "args": {"length": 7},
             },
         ],
     }
     path = tmp_path / "spec.yaml"
     path.write_text(yaml.safe_dump(spec_data))
-    # Should load successfully (overlap check is relaxed for real fixtures)
+    # Should load successfully (different flags allow overlaps)
     spec = load_spec(path)
     assert len(spec.campos) == 2
+
+
+def test_load_spec_same_flag_overlap_raises(tmp_path):
+    # Overlapping fields with the same flag should raise.
+    spec_data = {
+        "banco": "001",
+        "operacao": "pagamento",
+        "direcao": "remessa",
+        "declaracoes": [],
+        "campos": [
+            {
+                "register": "20", "subtype": "H", "name": "A",
+                "start": 1, "end": 5, "flag": "0",
+                "pattern": "filler_spaces", "args": {"length": 5},
+            },
+            {
+                "register": "20", "subtype": "H", "name": "B",
+                "start": 4, "end": 10, "flag": "0",  # overlaps with A, SAME flag
+                "pattern": "filler_spaces", "args": {"length": 7},
+            },
+        ],
+    }
+    path = tmp_path / "spec.yaml"
+    path.write_text(yaml.safe_dump(spec_data))
+    # Should raise due to overlap with same flag
+    with pytest.raises(SpecValidationError, match="overlaps"):
+        load_spec(path)
