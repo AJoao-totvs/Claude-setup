@@ -71,6 +71,13 @@ Forçar re-pesquisa (refresh) do spec:
 - `scripts/` — gerador Python e validadores
 - `agents/cnab-config-reviewer.md` — agent semântico de review
 
+## Status de Integração v1.0-a
+
+- ✅ **Geração `.2PE` BB pagamento:** validado byte-a-byte contra fixture `001PG.2PE`
+- ⚠️ **`research_orchestrator.py`:** stub que levanta `NotImplementedError`. Specs hand-curadas em v1.0-a; integração de pesquisa automática chega em v1.0-b
+- ⚠️ **`cnab-config-reviewer` agent:** definido em `agents/cnab-config-reviewer.md` mas invocação NÃO está automatizada no fluxo. Para review semântico em v1.0-a, dispatch manualmente após gerar o arquivo
+- ⚠️ **`.2PR` (retorno):** fixture presente em `references/fixtures/001PG.2PR` mas gerador NÃO suporta ainda (v1.0-b adiciona)
+
 ## Confiança por combo
 
 Por ora apenas BB pagamento tem byte-fixture. Demais combinações (a serem implementadas em v1.0-b/c/d/e) terão **confiança reduzida** — sintática + review LLM, sem ground truth byte-a-byte. Cada arquivo gerado terá um header indicando o nível de confiança.
