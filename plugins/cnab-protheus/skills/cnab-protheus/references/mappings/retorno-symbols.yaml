@@ -1,0 +1,15 @@
+# Symbolic names allowed in section-2 expressions of .2PR files.
+# Used by validators.py to reject unknown symbols in retorno specs.
+
+symbols:
+  - SEGMENTO
+  - DATA
+  - DATACREDITO
+  - VALOR
+  - TITULO
+  - ESPECIE
+  - OCORRENCIA
+  - ABATIMENTO
+  - DESCONTO
+  - MULTA
+  - RESERVADO
