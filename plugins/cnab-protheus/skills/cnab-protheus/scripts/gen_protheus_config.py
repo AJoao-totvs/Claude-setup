@@ -3,9 +3,9 @@
 import sys
 from pathlib import Path
 
-from scripts.format_writer import write_file
-from scripts.pattern_applier import PatternApplier
-from scripts.spec_loader import Declaration, FieldSpec, Spec, load_spec
+from .format_writer import write_file
+from .pattern_applier import PatternApplier
+from .spec_loader import Declaration, FieldSpec, Spec, load_spec
 
 
 def render_declaration(d: Declaration) -> str:
