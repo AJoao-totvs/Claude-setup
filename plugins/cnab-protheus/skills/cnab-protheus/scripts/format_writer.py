@@ -44,7 +44,14 @@ def write_line(content: str) -> bytes:
 
 
 def write_file(path: Path, lines: list[str]) -> None:
-    """Write all lines to file as Protheus SIGACFG (500 chars + CRLF each)."""
-    with open(path, "wb") as f:
-        for line in lines:
-            f.write(write_line(line))
+    """Write all lines to file as Protheus SIGACFG (500 chars + CRLF each).
+
+    Raises:
+        OSError: if path's parent directory doesn't exist or write fails.
+    """
+    try:
+        with open(path, "wb") as f:
+            for line in lines:
+                f.write(write_line(line))
+    except OSError as e:
+        raise OSError(f"failed to write {path}: {e}") from e
