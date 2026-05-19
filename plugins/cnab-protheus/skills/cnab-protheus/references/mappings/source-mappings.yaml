@@ -1,0 +1,85 @@
+# CNAB-field-semantic → Protheus table.field source.
+# Resolves "give me the CNPJ of the empresa" → "SM0->M0_CGC".
+
+mappings:
+  empresa:
+    cnpj: "SM0->M0_CGC"
+    nome: "SM0->M0_NOMECOM"
+    nome_long: "SM0->M0_NOME"
+    inscricao_estadual: "SM0->M0_INSC"
+    endereco_cobranca: "SM0->M0_ENDCOB"
+    endereco_entrega: "SM0->M0_ENDENT"
+    cidade_cobranca: "SM0->M0_CIDCOB"
+    cidade_entrega: "SM0->M0_CIDENT"
+    cep_cobranca: "SM0->M0_CEPCOB"
+    cep_entrega: "SM0->M0_CEPENT"
+    estado_cobranca: "SM0->M0_ESTCOB"
+    estado_entrega: "SM0->M0_ESTENT"
+    complemento_entrega: "SM0->M0_COMPENT"
+    tipo_inscricao: "SM0->M0_TPINSC"
+
+  banco_convenio:
+    codigo_banco: "SEE->EE_CODIGO"
+    codigo_empresa: "SEE->EE_CODEMP"
+    agencia: "SEE->EE_AGENCIA"
+    dv_agencia: "SEE->EE_DVAGE"
+    conta: "SEE->EE_CONTA"
+    dv_conta: "SEE->EE_DVCTA"
+    ultimo_nsa: "SEE->EE_ULTDSK"
+
+  banco_cadastro:
+    codigo: "SA6->A6_COD"
+    agencia: "SA6->A6_AGENCIA"
+    dv_agencia: "SA6->A6_DIGAGE"
+    conta: "SA6->A6_NUMCON"
+    dv_conta: "SA6->A6_DIGCONT"
+
+  cnab_modelo:
+    modelo_operacional: "SEA->EA_MODELO"
+    tipo_pagamento: "SEA->EA_TIPOPAG"
+    codigo_banco: "SEA->EA_BANCO"
+
+  titulo_pagar:
+    vencimento: "SE2->E2_VENCTO"
+    vencimento_real: "SE2->E2_VENCREA"
+    emissao: "SE2->E2_EMISSAO"
+    valor_nominal: "SE2->E2_VALOR"
+    saldo: "SE2->E2_SALDO"
+    juros: "SE2->E2_JUROS"
+    multa: "SE2->E2_MULTA"
+    decrescimo: "SE2->E2_DECRESC"
+    acrescimo: "SE2->E2_ACRESC"
+    valor_juros: "SE2->E2_VALJUR"
+    valor_cruzado: "SE2->E2_VLCRUZ"
+    id_cnab: "SE2->E2_IDCNAB"
+    codigo_receita: "SE2->E2_CODRET"
+    codigo_barras: "SE2->E2_CODBAR"
+    nome_fornecedor: "SE2->E2_NOMFOR"
+    fornecedor_banco: "SE2->E2_FORBCO"
+    fornecedor_agencia: "SE2->E2_FORAGE"
+    fornecedor_conta: "SE2->E2_FORCTA"
+    fornecedor_age_dv: "SE2->E2_FAGEDV"
+    fornecedor_cta_dv: "SE2->E2_FCTADV"
+    referencia_custom: "SE2->E2_XNRREFE"
+    competencia: "SE2->E2_XCOMPET"
+    valor_inss: "SE2->E2_XVLINSS"
+    valor_entidade: "SE2->E2_XVLENTI"
+
+  fornecedor:
+    tipo_pessoa: "SA2->A2_TIPO"
+    cnpj_cpf: "SA2->A2_CGC"
+    nome: "SA2->A2_NOME"
+    endereco: "SA2->A2_END"
+    complemento: "SA2->A2_COMPLEM"
+    bairro: "SA2->A2_BAIRRO"
+    municipio: "SA2->A2_MUN"
+    estado: "SA2->A2_EST"
+    cep: "SA2->A2_CEP"
+
+  sistema:
+    data_corrente: "DDATABASE"
+    hora_corrente: "TIME()"
+    nsa: "NSEQ"
+    lote_atual: "NLOTCNAB2"
+    soma_valor_lote: "NSOMAVLLOTE"
+    total_registros: "NTOTCNAB2"
