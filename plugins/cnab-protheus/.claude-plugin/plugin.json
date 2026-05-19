@@ -1,0 +1,12 @@
+{
+  "name": "cnab-protheus",
+  "version": "1.0.0-a",
+  "description": "Gera arquivos de configuração Protheus SIGACFG (.2PE remessa / .2PR retorno) para CNAB 240 dos principais bancos brasileiros (BB, Bradesco, Itaú, Santander).",
+  "author": {
+    "name": "Augusto João",
+    "email": "augusto.zanini@totvs.com.br"
+  },
+  "homepage": "https://github.com/AJoao-totvs/Claude-setup",
+  "repository": "https://github.com/AJoao-totvs/Claude-setup",
+  "keywords": ["cnab", "protheus", "totvs", "sigacfg", "banking", "brazil"]
+}
