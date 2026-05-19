@@ -2,6 +2,7 @@
 
 LINE_LENGTH = 500
 ENCODING = "cp1252"
+LINE_TERMINATOR = b"\r\n"
 
 
 def pad_to_500(s: str) -> str:
@@ -17,3 +18,9 @@ def encode_ansi(s: str, policy: str = "replace") -> bytes:
             'strict' raises UnicodeEncodeError instead.
     """
     return s.encode(ENCODING, errors=policy)
+
+
+def write_line(content: str) -> bytes:
+    """Pad content to 500 chars, encode CP-1252, append CRLF. Returns 502 bytes."""
+    padded = pad_to_500(content)
+    return encode_ansi(padded) + LINE_TERMINATOR

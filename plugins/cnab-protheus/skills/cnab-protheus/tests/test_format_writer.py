@@ -51,3 +51,29 @@ def test_encode_ansi_replaces_unencodable():
 def test_encode_ansi_strict_raises_on_unencodable():
     with pytest.raises(UnicodeEncodeError):
         encode_ansi("hi 🚀", policy="strict")
+
+
+from scripts.format_writer import write_line
+
+
+def test_write_line_returns_bytes_of_length_502():
+    # 500 content + CRLF = 502
+    result = write_line("hello")
+    assert len(result) == 502
+    assert result.endswith(b"\r\n")
+
+
+def test_write_line_pads_with_spaces():
+    result = write_line("hello")
+    assert result[:5] == b"hello"
+    assert result[5:500] == b" " * 495
+
+
+def test_write_line_encodes_accented():
+    result = write_line("ação")
+    assert result[:4] == "ação".encode("cp1252")
+
+
+def test_write_line_too_long_raises():
+    with pytest.raises(ValueError, match="exceeds 500 chars"):
+        write_line("x" * 501)
