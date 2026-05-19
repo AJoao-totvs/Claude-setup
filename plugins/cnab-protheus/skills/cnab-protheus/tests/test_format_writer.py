@@ -77,3 +77,33 @@ def test_write_line_encodes_accented():
 def test_write_line_too_long_raises():
     with pytest.raises(ValueError, match="exceeds 500 chars"):
         write_line("x" * 501)
+
+
+from pathlib import Path
+
+from scripts.format_writer import write_file
+
+
+def test_write_file_writes_lines_with_crlf(tmp_path):
+    output = tmp_path / "out.2PE"
+    write_file(output, ["line1", "line2", "line3"])
+    raw = output.read_bytes()
+    assert len(raw) == 502 * 3
+    assert raw[500:502] == b"\r\n"
+    assert raw[1002:1004] == b"\r\n"
+    assert raw[1504:1506] == b"\r\n"
+
+
+def test_write_file_no_trailing_extra_newline(tmp_path):
+    output = tmp_path / "out.2PE"
+    write_file(output, ["only"])
+    raw = output.read_bytes()
+    # Exactly 502 bytes — 500 content + CRLF — no extra
+    assert len(raw) == 502
+    assert raw[-2:] == b"\r\n"
+
+
+def test_write_file_empty_list(tmp_path):
+    output = tmp_path / "out.2PE"
+    write_file(output, [])
+    assert output.read_bytes() == b""
