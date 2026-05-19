@@ -19,7 +19,7 @@ _PLACEHOLDER_RE = re.compile(r"\{(\w+)\}")
 
 
 class PatternApplier:
-    def __init__(self, patterns_yaml: Path):
+    def __init__(self, patterns_yaml: Path) -> None:
         raw = yaml.safe_load(patterns_yaml.read_text(encoding="utf-8"))
         self.patterns: dict[str, dict[str, Any]] = raw["patterns"]
 
