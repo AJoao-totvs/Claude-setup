@@ -34,6 +34,10 @@ _NAME_COLS = slice(4, 20)
 _POSITION_COLS = slice(20, 27)
 _EXPRESSION_COLS = slice(27, LINE_LENGTH)
 
+# Section 1 (Declaration) columns
+_DECL_NAME_COLS = slice(4, 37)
+_DECL_CONDITION_COLS = slice(37, LINE_LENGTH)
+
 
 def parse_field_definition(line: str) -> FieldDefinition:
     if len(line) != LINE_LENGTH:
@@ -54,4 +58,27 @@ def parse_field_definition(line: str) -> FieldDefinition:
         end=end,
         flag=flag,
         expression=expression,
+    )
+
+
+@dataclass
+class Declaration:
+    register: str
+    subtype: str
+    name: str
+    condition: str
+
+
+def parse_declaration(line: str) -> Declaration:
+    if len(line) != LINE_LENGTH:
+        raise ValidationError(f"line not 500 chars: got {len(line)}")
+    register = line[_REGISTER_COLS]
+    subtype = line[_SUBTYPE_COLS].rstrip()
+    name = line[_DECL_NAME_COLS].rstrip()
+    condition = line[_DECL_CONDITION_COLS].rstrip()
+    return Declaration(
+        register=register,
+        subtype=subtype,
+        name=name,
+        condition=condition,
     )

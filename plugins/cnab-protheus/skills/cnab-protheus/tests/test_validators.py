@@ -87,3 +87,43 @@ def test_parse_field_definition_blank_expression():
     assert fd.start == 10
     assert fd.end == 13
     assert fd.expression == ""
+
+
+from scripts.validators import Declaration, parse_declaration
+
+
+def test_parse_declaration_always_true():
+    # Reg (0-2): "10"
+    # Sub (2-4): "H "
+    # Name (4-37): "Header de Arquivo" (33 chars, right-padded)
+    # Cond (37+): ".T."
+    name = "Header de Arquivo".ljust(33)
+    cond = ".T."
+    raw = "10H " + name + cond
+    line = raw + " " * (500 - len(raw))
+    d = parse_declaration(line)
+    assert d.register == "10"
+    assert d.subtype == "H"
+    assert d.name == "Header de Arquivo"
+    assert d.condition == ".T."
+
+
+def test_parse_declaration_iif_condition():
+    name = "DETALHE - SEGTO A".ljust(33)
+    cond = 'IIF(SEA->EA_MODELO $ "01/03/05/02/41/43",.T.,.F.)'
+    raw = '11D ' + name + cond
+    line = raw + " " * (500 - len(raw))
+    d = parse_declaration(line)
+    assert d.register == "11"
+    assert d.subtype == "D"
+    assert d.condition == cond
+
+
+def test_parse_declaration_d1_subtype():
+    name = "DETALHE SEGTO J-52".ljust(33)
+    cond = "IIF(.T.,.F.)"
+    raw = '13D1' + name + cond
+    line = raw + " " * (500 - len(raw))
+    d = parse_declaration(line)
+    assert d.subtype == "D1"
+    assert d.name == "DETALHE SEGTO J-52"
