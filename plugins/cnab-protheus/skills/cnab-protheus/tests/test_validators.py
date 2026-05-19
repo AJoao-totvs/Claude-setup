@@ -127,3 +127,77 @@ def test_parse_declaration_d1_subtype():
     d = parse_declaration(line)
     assert d.subtype == "D1"
     assert d.name == "DETALHE SEGTO J-52"
+
+
+from scripts.validators import split_sections, validate_file_structure
+
+
+def test_split_sections_basic():
+    lines = [
+        "10H " + "Header de Arquivo".ljust(33) + ".T." + " " * (500 - 40),
+        "11D " + "DETALHE - SEGTO A".ljust(33) + ".T." + " " * (500 - 40),
+        "20H " + "DOC".ljust(16) + "0010010" + '"001"' + " " * (500 - 32),
+        "21D " + "NAME".ljust(16) + "0010010" + '"001"' + " " * (500 - 32),
+    ]
+    section1, section2 = split_sections(lines)
+    assert len(section1) == 2
+    assert len(section2) == 2
+    assert section1[0].startswith("10H")
+    assert section2[0].startswith("20H")
+
+
+def test_validate_file_structure_round_trip(fixture_001pg_2pe_path):
+    raw = fixture_001pg_2pe_path.read_bytes()
+    text = raw.decode("cp1252")
+    lines = text.split("\r\n")
+    if lines and lines[-1] == "":
+        lines = lines[:-1]
+    validate_file_structure(lines)  # should not raise
+
+
+def test_validate_file_structure_unknown_register_raises():
+    raw = "99X " + "Test".ljust(33) + ".T."
+    lines = [raw + " " * (500 - len(raw))]
+    assert len(lines[0]) == 500
+    with pytest.raises(ValidationError, match=r"unknown register"):
+        validate_file_structure(lines)
+
+
+def test_validate_file_structure_section_order_violation():
+    # Section 1 after section 2 should raise
+    line1 = "25D " + "NAME".ljust(16) + "0010010" + '"001"' + " " * (500 - 32)  # section 2
+    line2 = "10H " + "Header".ljust(33) + ".T." + " " * (500 - 40)  # section 1 - OUT OF ORDER
+    lines = [line1, line2]
+    with pytest.raises(ValidationError, match=r"section-1 register.*after section-2"):
+        validate_file_structure(lines)
+
+
+def test_parse_field_definition_with_flag():
+    # Test the flag extraction (line 44 coverage)
+    name = "TEST".ljust(16)
+    pos = "0100101"  # start=010, end=010, flag=1
+    expr = "EXPR"
+    raw = '24H ' + name + pos + expr
+    line = raw + " " * (500 - len(raw))
+    fd = parse_field_definition(line)
+    assert fd.flag == "1"
+    assert fd.start == 10
+    assert fd.end == 10
+
+
+def test_split_sections_with_mixed_types():
+    # Test that split_sections handles both section 1 and 2 registers correctly
+    line1 = "10H " + "Header".ljust(33) + ".T." + " " * (500 - 40)
+    line2 = "25D " + "FIELD1".ljust(16) + "0010010" + '"001"' + " " * (500 - 32)
+    line3 = "11D " + "Detail".ljust(33) + "IIF(.T.)" + " " * (500 - 45)
+    line4 = "24T " + "TRAILER".ljust(16) + "0100100" + '"002"' + " " * (500 - 32)
+    lines = [line1, line2, line3, line4]
+    section1, section2 = split_sections(lines)
+    # Should have section 1 registers 10, 11
+    assert len(section1) == 2
+    # Should have section 2 registers 25, 24
+    assert len(section2) == 2
+    assert section1[0][0:2] == "10"
+    assert section1[1][0:2] == "11"
+    assert section2[0][0:2] == "25"
+    assert section2[1][0:2] == "24"

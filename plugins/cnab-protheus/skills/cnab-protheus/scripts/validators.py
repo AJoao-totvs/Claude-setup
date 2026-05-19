@@ -82,3 +82,37 @@ def parse_declaration(line: str) -> Declaration:
         name=name,
         condition=condition,
     )
+
+
+SECTION_1_REGISTERS = {"10", "11", "12", "13", "14", "15", "16", "17"}
+SECTION_2_REGISTERS = {"20", "21", "22", "23", "24", "25", "26", "27"}
+KNOWN_REGISTERS = SECTION_1_REGISTERS | SECTION_2_REGISTERS
+
+
+def split_sections(lines: list[str]) -> tuple[list[str], list[str]]:
+    """Split lines into section 1 (declarations) and section 2 (field definitions)."""
+    section1 = []
+    section2 = []
+    for line in lines:
+        reg = line[_REGISTER_COLS]
+        if reg in SECTION_1_REGISTERS:
+            section1.append(line)
+        elif reg in SECTION_2_REGISTERS:
+            section2.append(line)
+    return section1, section2
+
+
+def validate_file_structure(lines: list[str]) -> None:
+    """Validate entire file structure: all lines 500 chars, all registers known, no out-of-order sections."""
+    validate_line_length(lines)
+    seen_section_2 = False
+    for i, line in enumerate(lines, start=1):
+        reg = line[_REGISTER_COLS]
+        if reg not in KNOWN_REGISTERS:
+            raise ValidationError(f"line {i}: unknown register '{reg}'")
+        if reg in SECTION_2_REGISTERS:
+            seen_section_2 = True
+        elif seen_section_2 and reg in SECTION_1_REGISTERS:
+            raise ValidationError(
+                f"line {i}: section-1 register '{reg}' after section-2 started"
+            )
