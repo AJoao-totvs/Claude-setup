@@ -1,3 +1,5 @@
+import warnings
+
 import pytest
 
 from scripts.format_writer import pad_to_500
@@ -43,14 +45,24 @@ def test_encode_ansi_accented_pt_br():
 
 
 def test_encode_ansi_replaces_unencodable():
-    # Emoji not in cp1252; with default policy "replace", becomes "?"
-    result = encode_ansi("hi 🚀")
+    # Emoji not in cp1252; with default policy "replace", becomes "?" and emits warning
+    with pytest.warns(UnicodeWarning):
+        result = encode_ansi("hi 🚀")
     assert result == b"hi ?"
 
 
 def test_encode_ansi_strict_raises_on_unencodable():
     with pytest.raises(UnicodeEncodeError):
         encode_ansi("hi 🚀", policy="strict")
+
+
+def test_encode_ansi_silent_no_warning():
+    # Silent policy replaces without emitting a warning
+    with warnings.catch_warnings(record=True) as w:
+        warnings.simplefilter("always")
+        result = encode_ansi("hi 🚀", policy="silent")
+        assert result == b"hi ?"
+        assert len(w) == 0
 
 
 from scripts.format_writer import write_line

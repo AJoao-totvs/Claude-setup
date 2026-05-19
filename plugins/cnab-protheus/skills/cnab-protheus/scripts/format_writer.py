@@ -1,5 +1,6 @@
 """Protheus SIGACFG format writer (.2PE / .2PR)."""
 
+import warnings
 from pathlib import Path
 
 LINE_LENGTH = 500
@@ -16,10 +17,24 @@ def pad_to_500(s: str) -> str:
 def encode_ansi(s: str, policy: str = "replace") -> bytes:
     """Encode string to Windows-1252 (Protheus SIGACFG canonical encoding).
 
-    policy: 'replace' (default) substitutes unencodable chars with '?'.
+    policy: 'replace' (default) substitutes unencodable chars with '?' and emits a warning.
             'strict' raises UnicodeEncodeError instead.
+            'silent' replaces without warning (use only for tests).
     """
-    return s.encode(ENCODING, errors=policy)
+    if policy == "silent":
+        return s.encode(ENCODING, errors="replace")
+    if policy == "strict":
+        return s.encode(ENCODING, errors="strict")
+    # default "replace" path: try strict first, warn on failure, then replace
+    try:
+        return s.encode(ENCODING, errors="strict")
+    except UnicodeEncodeError as e:
+        warnings.warn(
+            f"Non-CP1252 chars replaced with '?' (position {e.start}-{e.end}): {s[e.start:e.end]!r}",
+            UnicodeWarning,
+            stacklevel=2,
+        )
+        return s.encode(ENCODING, errors="replace")
 
 
 def write_line(content: str) -> bytes:
