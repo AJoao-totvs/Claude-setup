@@ -81,6 +81,7 @@ GitHub: https://github.com/thalysjuvenal/advpl-specialist
 
 | Plugin | Comando | O que faz |
 |--------|---------|-----------|
+| **iqs-k8s** | Skill interna (bundle) | Deploy e debug no cluster Kubernetes IQS (ns iqs) + Harbor docker.totvs.io; dois modos: subir/atualizar e investigar workloads que ja estao no ar |
 | **DevOps Automation Pack** | `ccpi install devops-automation-pack` | K8s, Docker, CI/CD, monitoring |
 | **Kubernetes Operations** | `ccpi install kubernetes-operations` | K8s deployment skills |
 | **Docker Compose Generator** | `ccpi install docker-compose-generator` | Multi-container Docker configs |

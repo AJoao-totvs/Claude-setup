@@ -47,6 +47,12 @@ VALIDATE
 | frontend-design | `claude plugin add frontend-design@claude-plugins-official` | UI production-grade |
 | advpl-specialist | `claude plugin marketplace add thalysjuvenal/advpl-specialist` | Agentes ADVPL/Protheus |
 
+## Skills internas do bundle
+
+| Skill | Para que serve |
+|-------|----------------|
+| iqs-k8s | Deploy e debug no cluster Kubernetes IQS (ns iqs) + Harbor docker.totvs.io |
+
 ## MCP Servers
 
 ### Obrigatorios
