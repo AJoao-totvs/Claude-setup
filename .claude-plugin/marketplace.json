@@ -43,6 +43,18 @@
       },
       "category": "banking",
       "tags": ["cnab", "protheus", "totvs", "banking", "brazil"]
+    },
+    {
+      "name": "iqs-k8s",
+      "source": "./plugins/iqs-k8s",
+      "description": "Deploy e debug de aplicacoes no cluster Kubernetes IQS (namespace iqs) via Harbor privado docker.totvs.io. Wizard de deploy stack-aware (Node/Python/Go/Angular) + modo debug guiado por sintoma.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Augusto João",
+        "email": "augusto.zanini@totvs.com.br"
+      },
+      "category": "infrastructure",
+      "tags": ["kubernetes", "k8s", "deploy", "harbor", "iqs", "totvs"]
     }
   ]
 }
