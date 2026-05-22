@@ -43,14 +43,15 @@ fi
 
 # 5. Manifests render to valid k8s (client-side dry-run if kubectl present)
 if [ -f "$DIR/assets/deployment.yaml.template" ]; then
+  mkdir -p "$tmp/manifests"
   for f in deployment service; do
     sed -e 's/__APP_NAME__/sample-app/g' \
         -e 's#__IMAGE__#docker.totvs.io/iqs/sample-app:v0.0.1#g' \
         -e 's/__CONTAINER_PORT__/3000/g' \
-        "$DIR/assets/$f.yaml.template" > "$tmp/$f.yaml"
+        "$DIR/assets/$f.yaml.template" > "$tmp/manifests/$f.yaml"
   done
   if command -v kubectl >/dev/null 2>&1; then
-    kubectl apply --dry-run=client -f "$tmp" >/dev/null \
+    kubectl apply --dry-run=client -f "$tmp/manifests" >/dev/null \
       && echo "manifests: dry-run OK" || { echo "manifests: dry-run FAILED"; fail=1; }
   else
     echo "manifests: kubectl absent, skipped dry-run (render OK)"
