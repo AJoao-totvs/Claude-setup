@@ -1,0 +1,12 @@
+# Angular — build + nginx. Serve na porta 80 (use containerPort 80 no manifest).
+FROM node:20-alpine AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+
+FROM nginx:1.27-alpine
+# Ajuste o caminho do dist conforme seu angular.json (ex: dist/<projeto>/browser).
+COPY --from=build /app/dist/ /usr/share/nginx/html/
+EXPOSE 80

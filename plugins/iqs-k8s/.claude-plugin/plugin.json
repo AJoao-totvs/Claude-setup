@@ -1,0 +1,12 @@
+{
+  "name": "iqs-k8s",
+  "version": "0.1.0",
+  "description": "Deploy e debug de aplicacoes no cluster Kubernetes IQS (namespace iqs) via Harbor privado docker.totvs.io. Wizard de deploy stack-aware (Node/Python/Go/Angular) + modo debug guiado por sintoma.",
+  "author": {
+    "name": "Augusto João",
+    "email": "augusto.zanini@totvs.com.br"
+  },
+  "homepage": "https://github.com/AJoao-totvs/Claude-setup",
+  "repository": "https://github.com/AJoao-totvs/Claude-setup",
+  "keywords": ["totvs", "kubernetes", "k8s", "deploy", "harbor", "iqs", "docker"]
+}
