@@ -9,6 +9,18 @@
   },
   "plugins": [
     {
+      "name": "mit-prompt-optimization",
+      "source": "./plugins/mit-prompt-optimization",
+      "description": "Otimização de pipelines de prompts de geração de documentos MIT (MIT41/45/65/37/43…) contra os schemas Structured Outputs reais: discovery da jornada, auditoria de contrato, prefixo cacheável + corpos enxutos, validador estático e eval com armadilhas.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Augusto João",
+        "email": "augusto.zanini@totvs.com.br"
+      },
+      "category": "prompt-engineering",
+      "tags": ["mit", "prompts", "structured-outputs", "prompt-caching", "totvs"]
+    },
+    {
       "name": "totvs-setup",
       "source": "./plugins/totvs-setup",
       "description": "Onboarding interativo do Claude Code para devs e gestores TOTVS (instala superpowers, context7, code-review, github, ADVPL specialist, MCPs e templates de projeto).",

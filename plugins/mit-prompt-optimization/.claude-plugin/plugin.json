@@ -1,0 +1,12 @@
+{
+  "name": "mit-prompt-optimization",
+  "version": "1.0.0",
+  "description": "Otimização de pipelines de prompts de geração de documentos MIT (MIT41/45/65/37/43…) contra os schemas Structured Outputs reais: discovery da jornada, auditoria de contrato, prefixo cacheável + corpos enxutos, validador estático e eval com armadilhas.",
+  "author": {
+    "name": "Augusto João",
+    "email": "augusto.zanini@totvs.com.br"
+  },
+  "homepage": "https://github.com/AJoao-totvs/Claude-setup",
+  "repository": "https://github.com/AJoao-totvs/Claude-setup",
+  "keywords": ["mit", "prompts", "structured-outputs", "openai", "prompt-caching", "totvs"]
+}

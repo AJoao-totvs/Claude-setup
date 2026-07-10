@@ -1,5 +1,10 @@
 # Changelog
 
+## [Unreleased] — feat: plugin mit-prompt-optimization
+
+### Adicionado
+- **Plugin `mit-prompt-optimization`** — skill de otimização de pipelines de prompts das MITs (processo destilado das entregas MIT41 v3, MIT65 e MIT45 v1): discovery da jornada → schema-first → auditoria de contrato (taxonomia de defeitos: contrato inventado, regras órfãs, enum drift, alucinação forçada) → prefixo cacheável + corpos enxutos compilados → 2 camadas de verificação (validador estático + eval com armadilhas) → DELIVERY padrão p/ infra. Instalação: `claude plugin install mit-prompt-optimization@totvs-claude-setup`.
+
 ## [Unreleased] — feat: marketplace format + totvs-rdp plugin
 
 ### Adicionado
